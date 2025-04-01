@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="trustfundbit.com">
-    <meta name="description" content="trustfundbit.com">
+    <meta name="keywords" content="altsfolio.org">
+    <meta name="description" content="altsfolio.org">
     <link rel="icon" href="img/invest-view_favicon.png" width="220" height="80" type="image/x-icon">
     <!----------------- www.designclubdev.com ----------->
     <meta name="designer" href="https://designclubdev.com/">
     <!----------------- www.designclubdev.com ----------->
-    <title>trustfundbit.com</title>
+    <title>altsfolio.org</title>
 
     <!-- Icon css link -->
     <link href="/trust/css/font-awesome.min.css" rel="stylesheet">
@@ -101,7 +101,7 @@
 
                     <div class="float-md-right">
                         <ul class="top_social">
-<li><a href="#"><i class="fa fa-envelope"></i> info@trustfundbit.com</a></li>
+<li><a href="#"><i class="fa fa-envelope"></i> info@altsfolio.org</a></li>
                         </ul>
                     </div>
                 </div>
@@ -234,7 +234,7 @@
 <img class="img-fluid" src="/trust/img/logo2.png" width="250" height="90" alt="">
                         <p>We are an award winning multinational company. We believe in quality and standard
                             worldwide.</p>
-                        <p>  trustfundbit.com was built to help you be a more confident investor and set you on
+                        <p>  altsfolio.org was built to help you be a more confident investor and set you on
                             the path to secure your financial future</p>
                     </aside>
                 </div>
@@ -256,14 +256,14 @@
                     </div>
                     <!-- <aside class="f_widget about_widget"> -->
                     <ul>
-                        <li style="color:white"><i class="fa fa-envelope" aria-hidden="true"> Email : </i> <a style="color:#0080db" href="info@trustfundbit.com">info@trustfundbit.com</a> </li>
+                        <li style="color:white"><i class="fa fa-envelope" aria-hidden="true"> Email : </i> <a style="color:#0080db" href="info@altsfolio.org">info@altsfolio.org</a> </li>
                         <!-- <br> -->
                         <!-- <li style="color:white"><i class="fa fa-whatsapp"
                                         aria-hidden="true"> Whatsapp :  </i> <a  style="color:#0080db" href="https://wa.me/">+447-3736-3727</a></li> -->
                         <!-- <br> -->
                         <li style="color:white"><i class="fa fa-map-marker" aria-hidden="true"> Address : </i> <a style="color:#0080db" href="#">The Long Lodge, 265-269 Kingston Road, UK, SW19 3NW</a> </li>
                         <!-- <br> -->
-                        <li style="color:white"><i class="fa fa-link" aria-hidden="true"> Link : </i> <a style="color:#0080db" href="/">https://trustfundbit.com</a></li>
+                        <li style="color:white"><i class="fa fa-link" aria-hidden="true"> Link : </i> <a style="color:#0080db" href="/">https://altsfolio.org</a></li>
                     </ul>
                     <img class="img-fluid" src="/trust/img/security.png" width="250" height="90" alt="">
                     <!-- </aside> -->
@@ -272,7 +272,7 @@
         </div>
     </div>
     <div class="footer_copyright" style="color:white">
-        Copyright © 2025 <a style="color:#0080db" href="#"> trustfundbit.com</a>. All Rights Reserved.
+        Copyright © 2025 <a style="color:#0080db" href="#"> altsfolio.org</a>. All Rights Reserved.
     </div>
 </footer>
 </div>
