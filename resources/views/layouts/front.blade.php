@@ -109,7 +109,7 @@
             <div class="main_menu_inner">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="/"><img width="150" height="90" alt="" src="images/lkog-removebg-preview.png"></a>
+                        <a class="navbar-brand" href="/"><img width="150" height="90" alt="" src="/trust/images/lkog-removebg-preview.png"></a>
 
                         <!-- <span>Language:</span> -->
                         <select class="custom-select lang-sel" style="width:110px;border: 0px solid #0080db00;" id="language" onchange="changeLanguageByButtonClick()">
@@ -197,20 +197,20 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="?a=home">Home</a>
+                                    <a class="nav-link" href="/">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="?a=about">About Us</a>
+                                    <a class="nav-link" href="/about">About Us</a>
                                 </li>
 
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="?a=login">Login</a>
+                                    <a class="nav-link" href="/login">Login</a>
                                 </li>
                             </ul>
                             <ul class="navbar-nav justify-content-end">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="?a=signup">Get Started</a>
+                                    <a class="nav-link" href="/register">Get Started</a>
                                 </li>
                                 </ul>
                         </div>
@@ -244,8 +244,8 @@
                             <h3>RESOURCES</h3>
                         </div>
                         <ul>
-                            <li><a href="?a=home"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Home</a></li>
-                            <li><a href="?a=about"><i class="fa fa-angle-double-right" aria-hidden="true"></i>About</a></li>
+                            <li><a href="/"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Home</a></li>
+                            <li><a href="/about"><i class="fa fa-angle-double-right" aria-hidden="true"></i>About</a></li>
 
                         </ul>
                     </aside>

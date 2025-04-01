@@ -56,7 +56,7 @@
     <div class="inner-slider" id="slider-carousel">
         <div class="exp animate__animated animate__fadeInUp" style="display: none;">
             <h1>Think Higher<span class="yellow-color"></span> <br></h1>
-            <p>trustfundbit.com was founded to provide an alternative to the volatile investment market for people.</p>
+            <p>altsfolio.org was founded to provide an alternative to the volatile investment market for people.</p>
             <div class="mt-3">
                 <a class="btn text-white mr-3" style="background-color: #0080db" href="?a=signup">REGISTER</a>
                 <a class="btn btn-light" href="?a=login">LOGIN</a>
@@ -64,7 +64,7 @@
         </div>
         <div class="exp animate__animated animate__fadeInUp" style="display: block;">
             <h1>Step Financial <span class="yellow-color">Freedom</span></h1>
-            <p> trustfundbit.com was built to help you be a more confident investor and set you on
+            <p> altsfolio.org was built to help you be a more confident investor and set you on
                 the path to secure your financial future</p>
             <div class="mt-3">
                 <a class="btn  text-white mr-3" style="background-color: #0080db" href="?a=signup">REGISTER</a>
@@ -520,7 +520,7 @@
             <div class="row">
                 <!-- TradingView Widget BEGIN -->
                 <div class="tradingview-widget-container" style="width: 100%; height: 430px;">
-                    <iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/forex-heat-map/?locale=en#%7B%22width%22%3A%22100%25%22%2C%22height%22%3A430%2C%22currencies%22%3A%5B%22EUR%22%2C%22USD%22%2C%22JPY%22%2C%22GBP%22%2C%22CHF%22%2C%22AUD%22%2C%22CAD%22%2C%22NZD%22%2C%22CNY%22%5D%2C%22isTransparent%22%3Afalse%2C%22colorTheme%22%3A%22dark%22%2C%22utm_source%22%3A%22trustfundbit.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22forex-heat-map%22%2C%22page-uri%22%3A%22trustfundbit.com%2F%22%7D" title="forex heat-map TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 100%; width: 100%;"></iframe>
+                    <iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/forex-heat-map/?locale=en#%7B%22width%22%3A%22100%25%22%2C%22height%22%3A430%2C%22currencies%22%3A%5B%22EUR%22%2C%22USD%22%2C%22JPY%22%2C%22GBP%22%2C%22CHF%22%2C%22AUD%22%2C%22CAD%22%2C%22NZD%22%2C%22CNY%22%5D%2C%22isTransparent%22%3Afalse%2C%22colorTheme%22%3A%22dark%22%2C%22utm_source%22%3A%22altsfolio.org%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22forex-heat-map%22%2C%22page-uri%22%3A%22altsfolio.org%2F%22%7D" title="forex heat-map TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 100%; width: 100%;"></iframe>
                     <!-- <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/forex-heat-map/" rel="noopener" target="_blank"><span class="blue-text">Forex Heat Map</span></a> by TradingView</div> -->
 
 
@@ -1098,7 +1098,7 @@ color: #2962FF !important;
     <section class="bitcoin_calculater_area p_100">
         <div class="container">
             <div class="main_title wh_title">
-                <h2 class="text-white">trustfundbit.com Calculator</h2>
+                <h2 class="text-white">altsfolio.org Calculator</h2>
                 <p class="text-white">Our goal is to be at the heart of the financial services industry as
                     businesses expand
                     across the globe.</p>
