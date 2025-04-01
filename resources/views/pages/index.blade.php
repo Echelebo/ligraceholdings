@@ -159,7 +159,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="trending_img">
-                        <img class="img-fluid" src="img/PF.png" alt="">
+                        <img class="img-fluid" src="/trust/img/PF.png" alt="">
                     </div>
                 </div>
             </div>
@@ -245,7 +245,7 @@
             <div class="row choose_bit_inner">
                 <div class="col-lg-4 col-md-6">
                     <div class="choose_botcoin_item">
-                        <img src="img/service1.jpg">
+                        <img src="/trust/img/service1.jpg">
 
                         <a href="#">
                             <h4>Crypto Currency</h4>
@@ -258,7 +258,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="choose_botcoin_item">
-                        <img src="img/service2.jpg">
+                        <img src="/trust/img/service2.jpg">
 
                         <a href="#">
                             <h4>Stock &amp; Forex</h4>
@@ -271,7 +271,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="choose_botcoin_item">
-                        <img src="img/service3.jpg">
+                        <img src="/trust/img/service3.jpg">
 
                         <a href="#">
                             <h4>Real estate </h4>
@@ -296,7 +296,7 @@
             <div class="row mb-3">
                 <div class="col-lg-6">
                     <div class="trending_img">
-                        <img class="img-fluid" src="img/kmd.jpg" alt="">
+                        <img class="img-fluid" src="/trust/img/kmd.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -1121,7 +1121,7 @@ color: #2962FF !important;
                 </div>
                 <div class="col-lg-6">
                     <div class="calculate_img">
-                        <img src="img/mobile-app.png" alt="">
+                        <img src="/trust/img/mobile-app.png" alt="">
                     </div>
                 </div>
             </div>
@@ -1133,7 +1133,7 @@ color: #2962FF !important;
     <!--================Clients Slider Area =================-->
     <section class="clients_slider_area">
         <div class="container">
-            <img src="img/banks.png" alt="">
+            <img src="/trust/img/banks.png" alt="">
 
         </div>
     </section>

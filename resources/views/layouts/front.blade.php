@@ -13,28 +13,28 @@
     <title>trustfundbit.com</title>
 
     <!-- Icon css link -->
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="vendors/flat-icon/flaticon.css" rel="stylesheet">
+    <link href="/trust/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/trust/vendors/flat-icon/flaticon.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/trust/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Rev slider css -->
-    <link href="vendors/revolution/css/settings.css" rel="stylesheet">
-    <link href="vendors/revolution/css/layers.css" rel="stylesheet">
-    <link href="vendors/revolution/css/navigation.css" rel="stylesheet">
+    <link href="/trust/vendors/revolution/css/settings.css" rel="stylesheet">
+    <link href="/trust/vendors/revolution/css/layers.css" rel="stylesheet">
+    <link href="/trust/vendors/revolution/css/navigation.css" rel="stylesheet">
 
     <!-- Extra plugin css -->
-    <link href="vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet">
-    <link href="vendors/animate-css/animate.css" rel="stylesheet">
-    <link href="vendors/nice-select/nice-select.css" rel="stylesheet">
+    <link href="/trust/vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet">
+    <link href="/trust/vendors/animate-css/animate.css" rel="stylesheet">
+    <link href="/trust/vendors/nice-select/nice-select.css" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="/trust/css/style.css" rel="stylesheet">
+    <link href="/trust/css/responsive.css" rel="stylesheet">
+    <link href="/trust/css/custom.css" rel="stylesheet">
 
-    <link href="scss/_banner.scss" rel="stylesheet">
+    <link href="/trust/scss/_banner.scss" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/marquee.css">
+    <link rel="stylesheet" href="/trust/css/marquee.css">
 
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
@@ -231,7 +231,7 @@
             <div class="row">
                 <div class="col-lg-5 col-sm-6">
                     <aside class="f_widget about_widget">
-<img class="img-fluid" src="img/logo2.png" width="250" height="90" alt="">
+<img class="img-fluid" src="/trust/img/logo2.png" width="250" height="90" alt="">
                         <p>We are an award winning multinational company. We believe in quality and standard
                             worldwide.</p>
                         <p>  trustfundbit.com was built to help you be a more confident investor and set you on
@@ -265,7 +265,7 @@
                         <!-- <br> -->
                         <li style="color:white"><i class="fa fa-link" aria-hidden="true"> Link : </i> <a style="color:#0080db" href="/">https://trustfundbit.com</a></li>
                     </ul>
-                    <img class="img-fluid" src="img/security.png" width="250" height="90" alt="">
+                    <img class="img-fluid" src="/trust/img/security.png" width="250" height="90" alt="">
                     <!-- </aside> -->
                 </div>
             </div>
@@ -283,37 +283,37 @@
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-3.2.1.min.js"></script>
+<script src="/trust/js/jquery-3.2.1.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="/trust/js/popper.min.js"></script>
+<script src="/trust/js/bootstrap.min.js"></script>
 <!-- Rev slider js -->
-<script src="vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
-<script src="vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
-<script src="vendors/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-<script src="vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
-<script src="vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script src="vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script src="vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script src="vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="/trust/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
+<script src="/trust/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
+<script src="/trust/vendors/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+<script src="/trust/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
+<script src="/trust/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script src="/trust/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script src="/trust/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+<script src="/trust/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
 <!-- Extra plugin css -->
-<script src="vendors/counterup/jquery.waypoints.min.js"></script>
-<script src="vendors/counterup/jquery.counterup.min.js"></script>
-<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-<script src="vendors/animate-css/wow.min.js"></script>
-<script src="vendors/parallax/parallax.min.js"></script>
-<script src="vendors/counterup/jquery.waypoints.min.js"></script>
-<script src="vendors/counterup/jquery.counterup.min.js"></script>
-<script src="vendors/counterup/apear.js"></script>
-<script src="vendors/counterup/countto.js"></script>
-<script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+<script src="/trust/vendors/counterup/jquery.waypoints.min.js"></script>
+<script src="/trust/vendors/counterup/jquery.counterup.min.js"></script>
+<script src="/trust/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="/trust/vendors/animate-css/wow.min.js"></script>
+<script src="/trust/vendors/parallax/parallax.min.js"></script>
+<script src="/trust/vendors/counterup/jquery.waypoints.min.js"></script>
+<script src="/trust/vendors/counterup/jquery.counterup.min.js"></script>
+<script src="/trust/vendors/counterup/apear.js"></script>
+<script src="/trust/vendors/counterup/countto.js"></script>
+<script src="/trust/vendors/nice-select/jquery.nice-select.min.js"></script>
 
 
-<script src="js/theme.js"></script>
-<script src="js/recent.js"></script>
-<script type="text/javascript" src="js/marquee.js"></script>
-<script type="text/javascript" src="js/particle.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
+<script src="/trust/js/theme.js"></script>
+<script src="/trust/js/recent.js"></script>
+<script type="text/javascript" src="/trust/js/marquee.js"></script>
+<script type="text/javascript" src="/trust/js/particle.js"></script>
+<script type="text/javascript" src="/trust/js/custom.js"></script>
 
 <script>
 $.ajax({
