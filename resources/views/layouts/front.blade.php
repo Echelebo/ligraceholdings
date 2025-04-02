@@ -256,12 +256,12 @@
                     </div>
                     <!-- <aside class="f_widget about_widget"> -->
                     <ul>
-                        <li style="color:white"><i class="fa fa-envelope" aria-hidden="true"> Email : </i> <a style="color:#0080db" href="info@altsfolio.org">info@altsfolio.org</a> </li>
+                        <li style="color:white"><i class="fa fa-envelope" aria-hidden="true"> Email : </i> <a style="color:#0080db" href="mailto: info@altsfolio.org">info@altsfolio.org</a> </li>
                         <!-- <br> -->
                         <!-- <li style="color:white"><i class="fa fa-whatsapp"
                                         aria-hidden="true"> Whatsapp :  </i> <a  style="color:#0080db" href="https://wa.me/">+447-3736-3727</a></li> -->
                         <!-- <br> -->
-                        <li style="color:white"><i class="fa fa-map-marker" aria-hidden="true"> Address : </i> <a style="color:#0080db" href="#">The Long Lodge, 265-269 Kingston Road, UK, SW19 3NW</a> </li>
+                        <li style="color:white"><i class="fa fa-map-marker" aria-hidden="true"> Address : </i> <a style="color:#0080db" href="#">3/46 Governor Macquarie Dr, Sydney, New South Wales, 2170, Australia            </a> </li>
                         <!-- <br> -->
                         <li style="color:white"><i class="fa fa-link" aria-hidden="true"> Link : </i> <a style="color:#0080db" href="/">https://altsfolio.org</a></li>
                     </ul>
@@ -399,7 +399,7 @@ function changeLanguageByButtonClick() {
 }
 
 </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 <style>
