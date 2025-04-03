@@ -92,6 +92,13 @@
 
     </script>
     <!-- /GetButton.io widget -->
+
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.LVBTxrA1Ouc.R.W.O/am=AAY/d=0/rs=AN8SPfr0_fyxEU4o-Nwo2HW0DAs5C_RU4Q/m=el_main_css">
+
+<script type="text/javascript" charset="UTF-8" src="https://translate.googleapis.com/_/translate_http/_/js/k=translate_http.tr.ar.puhSSgMecQA.O/am=ACA/d=1/exm=el_conf/ed=1/rs=AN8SPfoXKV9iCeXVWpWwD8yCCU32j0puMg/m=el_main"></script>
+
+<style data-styled="active" data-styled-version="5.3.11"></style>
+
 </head>
 
 <body data-new-gr-c-s-check-loaded="14.1229.0" data-gr-ext-installed="" style="position: relative; min-height: 100%; top: 0px;">
@@ -104,7 +111,7 @@
 
                     <div class="float-md-right">
                         <ul class="top_social">
-<li><a href="#"><i class="fa fa-envelope"></i> info@altsfolio.org</a></li>
+<li><a href="mailto: info@altsfolio.org"><i class="fa fa-envelope"></i> info@altsfolio.org</a></li>
                         </ul>
                     </div>
                 </div>
@@ -114,92 +121,85 @@
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                         <a class="navbar-brand" href="/"><img width="150" height="90" alt="" src="/trust/images/lkog-removebg-preview.png"></a>
 
-                        <!-- translator -->
 
-
-
-
-
-
-
-                        <!-- end translator -->
 
                         <!-- <span>Language:</span> -->
-                       <select class="custom-select lang-sel" style="width:110px;border: 0px solid #0080db00;" id="google_translate_element2" onchange="doGTranslate(this);">
-                            <option value="en|en" selected="">English</option>
-                            <option value="en|af">Afrikanns</option>
-                            <option value="en|sq">Albanian</option>
-                            <option value="en|ar">Arabic</option>
-                            <option value="en|hy">Armenian</option>
-                            <option value="en|eu">Basque</option>
-                            <option value="en|bn">Bengali</option>
-                            <option value="en|bg">Bulgarian</option>
-                            <option value="en|ca">Catalan</option>
-                            <option value="en|km">Cambodian</option>
-                            <option value="en|zh-CN">Chinese (Mandarin)</option>
-                            <option value="en|hr">Croation</option>
-                            <option value="en|cs">Czech</option>
-                            <option value="en|da">Danish</option>
-                            <option value="en|nl">Dutch</option>
-                            <option value="en|et">Estonian</option>
-                            <option value="en|fj">Fiji</option>
-                            <option value="en|fi">Finnish</option>
-                            <option value="en|fr">French</option>
-                            <option value="en|ka">Georgian</option>
-                            <option value="en|de">German</option>
-                            <option value="en|el">Greek</option>
-                            <option value="en|gu">Gujarati</option>
-                            <option value="en|he">Hebrew</option>
-                            <option value="en|hi">Hindi</option>
-                            <option value="en|hu">Hungarian</option>
-                            <option value="en|is">Icelandic</option>
-                            <option value="en|id">Indonesian</option>
-                            <option value="en|ga">Irish</option>
-                            <option value="en|it">Italian</option>
-                            <option value="en|ja">Japanese</option>
-                            <option value="en|jw">Javanese</option>
-                            <option value="en|ko">Korean</option>
-                            <option value="en|la">Latin</option>
-                            <option value="en|lv">Latvian</option>
-                            <option value="en|lt">Lithuanian</option>
-                            <option value="en|mk">Macedonian</option>
-                            <option value="en|ms">Malay</option>
-                            <option value="en|ml">Malayalam</option>
-                            <option value="en|mt">Maltese</option>
-                            <option value="en|mi">Maori</option>
-                            <option value="en|mr">Marathi</option>
-                            <option value="en|mn">Mongolian</option>
-                            <option value="en|ne">Nepali</option>
-                            <option value="en|no">Norwegian</option>
-                            <option value="en|fa">Persian</option>
-                            <option value="en|pl">Polish</option>
-                            <option value="en|pt">Portuguese</option>
-                            <option value="en|pa">Punjabi</option>
-                            <option value="en|qu">Quechua</option>
-                            <option value="en|ro">Romanian</option>
-                            <option value="en|ru">Russian</option>
-                            <option value="en|sm">Samoan</option>
-                            <option value="en|sr">Serbian</option>
-                            <option value="en|sk">Slovak</option>
-                            <option value="en|sl">Slovenian</option>
-                            <option value="en|es">Spanish</option>
-                            <option value="en|sw">Swahili</option>
-                            <option value="en|sv">Swedish </option>
-                            <option value="en|ta">Tamil</option>
-                            <option value="en|tt">Tatar</option>
-                            <option value="en|te">Telugu</option>
-                            <option value="en|th">Thai</option>
-                            <option value="en|bo">Tibetan</option>
-                            <option value="en|to">Tonga</option>
-                            <option value="en|tr">Turkish</option>
-                            <option value="en|uk">Ukranian</option>
-                            <option value="en|ur">Urdu</option>
-                            <option value="en|uz">Uzbek</option>
-                            <option value="en|vi">Vietnamese</option>
-                            <option value="en|cy">Welsh</option>
-                            <option value="en|xh">Xhosa</option>
+                        <select class="custom-select lang-sel" style="width:110px;border: 0px solid #0080db00;" id="language" onchange="changeLanguageByButtonClick()">
+                            <option value="en" selected="">English</option>
+                            <option value="af">Afrikanns</option>
+                            <option value="sq">Albanian</option>
+                            <option value="ar">Arabic</option>
+                            <option value="hy">Armenian</option>
+                            <option value="eu">Basque</option>
+                            <option value="bn">Bengali</option>
+                            <option value="bg">Bulgarian</option>
+                            <option value="ca">Catalan</option>
+                            <option value="km">Cambodian</option>
+                            <option value="zh-CN">Chinese (Mandarin)</option>
+                            <option value="hr">Croation</option>
+                            <option value="cs">Czech</option>
+                            <option value="da">Danish</option>
+                            <option value="nl">Dutch</option>
+                            <option value="et">Estonian</option>
+                            <option value="fj">Fiji</option>
+                            <option value="fi">Finnish</option>
+                            <option value="fr">French</option>
+                            <option value="ka">Georgian</option>
+                            <option value="de">German</option>
+                            <option value="el">Greek</option>
+                            <option value="gu">Gujarati</option>
+                            <option value="he">Hebrew</option>
+                            <option value="hi">Hindi</option>
+                            <option value="hu">Hungarian</option>
+                            <option value="is">Icelandic</option>
+                            <option value="id">Indonesian</option>
+                            <option value="ga">Irish</option>
+                            <option value="it">Italian</option>
+                            <option value="ja">Japanese</option>
+                            <option value="jw">Javanese</option>
+                            <option value="ko">Korean</option>
+                            <option value="la">Latin</option>
+                            <option value="lv">Latvian</option>
+                            <option value="lt">Lithuanian</option>
+                            <option value="mk">Macedonian</option>
+                            <option value="ms">Malay</option>
+                            <option value="ml">Malayalam</option>
+                            <option value="mt">Maltese</option>
+                            <option value="mi">Maori</option>
+                            <option value="mr">Marathi</option>
+                            <option value="mn">Mongolian</option>
+                            <option value="ne">Nepali</option>
+                            <option value="no">Norwegian</option>
+                            <option value="fa">Persian</option>
+                            <option value="pl">Polish</option>
+                            <option value="pt">Portuguese</option>
+                            <option value="pa">Punjabi</option>
+                            <option value="qu">Quechua</option>
+                            <option value="ro">Romanian</option>
+                            <option value="ru">Russian</option>
+                            <option value="sm">Samoan</option>
+                            <option value="sr">Serbian</option>
+                            <option value="sk">Slovak</option>
+                            <option value="sl">Slovenian</option>
+                            <option value="es">Spanish</option>
+                            <option value="sw">Swahili</option>
+                            <option value="sv">Swedish </option>
+                            <option value="ta">Tamil</option>
+                            <option value="tt">Tatar</option>
+                            <option value="te">Telugu</option>
+                            <option value="th">Thai</option>
+                            <option value="bo">Tibetan</option>
+                            <option value="to">Tonga</option>
+                            <option value="tr">Turkish</option>
+                            <option value="uk">Ukranian</option>
+                            <option value="ur">Urdu</option>
+                            <option value="uz">Uzbek</option>
+                            <option value="vi">Vietnamese</option>
+                            <option value="cy">Welsh</option>
+                            <option value="xh">Xhosa</option>
                         </select>
-                        <div id="google_translate_element2-x"></div>
+
+
                         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="my_toggle_menu">
                                 <span></span>
@@ -286,7 +286,7 @@
         </div>
     </div>
     <div class="footer_copyright" style="color:white">
-        Copyright © 2025 <a style="color:#0080db" href="#"> altsfolio.org</a>. All Rights Reserved.
+        Copyright © 2025 <a style="color:#0080db" href="/"> altsfolio.org</a>. All Rights Reserved.
     </div>
 </footer>
 </div>
@@ -384,6 +384,40 @@ $(document).ready(function() {
 
 
 
+<div id="google_translate_element" style="visibility:visible;display:none"><div class="skiptranslate goog-te-gadget" dir="rtl" style=""><div id=":0.targetLanguage"><select class="goog-te-combo" aria-label="تطبيق مصغَّر لترجمة اللغة"><option value="">اختيار اللغة</option><option value="ar">العربية</option><option value="ace">الآتشية</option><option value="is">الآيسلندية</option><option value="ab">الأبخازية</option><option value="udm">الأدمورتية</option><option value="az">الأذرية</option><option value="ur">الأردية</option><option value="hy">الأرمنية</option><option value="as">الأسامية</option><option value="es">الإسبانية</option><option value="eo">الإسبرانتو</option><option value="et">الإستونية</option><option value="ach">الأشولية</option><option value="aa">الأفار</option><option value="af">الأفريقانية</option><option value="sq">الألبانية</option><option value="de">الألمانية</option><option value="alz">الألور</option><option value="ber-Latn">الأمازيغية</option><option value="ber">الأمازيغية (التيفيناغ)</option><option value="am">الأمهرية</option><option value="id">الإندونيسية</option><option value="iu-Latn">الإنكتيتوتية (اللاتينية)</option><option value="iu">الإنكتيتوتية (المقاطع)</option><option value="awa">الأوادية</option><option value="av">الأوارية</option><option value="or">الأوديا (الأوريا)</option><option value="om">الأورومية</option><option value="uz">الأوزبكية</option><option value="os">الأوسيتية</option><option value="uk">الأوكرانية</option><option value="oc">الأوكسيتانية</option><option value="ug">الأويغورية</option><option value="iba">الإيبانية</option><option value="ga">الأيرلندية</option><option value="it">الإيطالية</option><option value="ig">الإيغبو</option><option value="ilo">الإيلوكانو</option><option value="ay">الأيمارا</option><option value="ee">الإيوي</option><option value="pap">البابيامنتو</option><option value="bts">الباتاك السيمالونغونية</option><option value="bbc">الباتاك توبا</option><option value="btx">الباتاك كارو</option><option value="jam">الباتوا الجامايكية</option><option value="eu">الباسكية</option><option value="ps">الباشتوية</option><option value="ba">الباشكيرية</option><option value="ban">البالينية</option><option value="bm">البامبارا</option><option value="pag">البانغاسينية</option><option value="bci">الباولية</option><option value="bew">البتاوية</option><option value="pt">البرتغالية (البرازيل)</option><option value="pt-PT">البرتغالية (البرتغال)</option><option value="br">البريتانية</option><option value="bg">البلغارية</option><option value="bal">البلوشية</option><option value="pa-Arab">البنجابية (الشاموخية)</option><option value="pa">البنجابية (الغورموخية)</option><option value="bn">البنغالية</option><option value="new">البهاسا النيبالية (النوارية)</option><option value="bho">البوجبورية</option><option value="my">البورمية</option><option value="bua">البوريات</option><option value="bs">البوسنية</option><option value="pl">البولندية</option><option value="bik">البيكولية</option><option value="be">البيلاروسية</option><option value="bem">البيمبا</option><option value="ta">التاميلية</option><option value="ty">التاهيتية</option><option value="th">التايلاندية</option><option value="tt">التتارية</option><option value="crh">التتارية القرمية (السيريلية)</option><option value="crh-Latn">التتارية القرمية (اللاتينية)</option><option value="tk">التركمانية</option><option value="tr">التركية</option><option value="tn">التسوانية</option><option value="ts">التسونغا</option><option value="ch">التشاموروية</option><option value="cv">التشوفاشي</option><option value="chk">التشوكية</option><option value="cs">التشيكية</option><option value="lua">التشيلوبا</option><option value="tyv">التوفان</option><option value="tpi">التوك بيسين</option><option value="tcy">التولو</option><option value="tum">التومبوكا</option><option value="to">التونغية</option><option value="ak">التّوي</option><option value="bo">التيبتية</option><option value="tet">التيتومية</option><option value="ti">التيغرينية</option><option value="tiv">التيف</option><option value="te">التيلوغوية</option><option value="gl">الجاليكية</option><option value="jw">الجاوية</option><option value="gn">الجورانية</option><option value="ka">الجورجية</option><option value="kac">الجينغفو</option><option value="kha">الخاسية</option><option value="km">الخميرية</option><option value="xh">الخوسا</option><option value="da">الدانمركية</option><option value="fa-AF">الدَرية</option><option value="dz">الدزونغا</option><option value="doi">الدوغرية</option><option value="dov">الدومبي</option><option value="dv">الديفهية</option><option value="din">الدينكاوية</option><option value="dyu">الديولية</option><option value="ru">الروسية</option><option value="ro">الرومانية</option><option value="rom">الرومنية</option><option value="rn">الروندية</option><option value="zap">الزابوتيكية</option><option value="zu">الزولو</option><option value="sm">الساموانية</option><option value="se">السامي (الشمالية)</option><option value="su">الساندينيزية</option><option value="sg">السانغو</option><option value="nso">السبيدية</option><option value="sk">السلوفاكية</option><option value="sl">السلوفينية</option><option value="sat-Latn">السنتالية (اللاتينية)</option><option value="sat">السنتالية (أول تشيكي)</option><option value="sd">السندية</option><option value="sa">السنسكريتية</option><option value="si">السنهالية</option><option value="ss">السواتية</option><option value="sw">السواحيلية</option><option value="sus">السوسو</option><option value="sv">السويدية</option><option value="ceb">السيبيوانية</option><option value="st">السيسوتو</option><option value="szl">السيليزية</option><option value="shn">الشان</option><option value="sn">الشونا</option><option value="ce">الشيشانية</option><option value="ny">الشيشيوا</option><option value="sr">الصربية</option><option value="scn">الصقلية</option><option value="so">الصومالية</option><option value="zh-TW">الصينية (التقليدية)</option><option value="zh-CN">الصينية (المبسطة)</option><option value="tg">الطاجيكية</option><option value="iw">العبرية</option><option value="gaa">الغا</option><option value="gu">الغوجاراتية</option><option value="gd">الغيلية الأسكتلندية</option><option value="fa">الفارسية</option><option value="fr">الفرنسية</option><option value="fr-CA">الفرنسية (كندا)</option><option value="fy">الفريزية</option><option value="fur">الفريولية</option><option value="tl">الفلبينية</option><option value="fi">الفنلندية</option><option value="ff">الفولانية</option><option value="fon">الفون</option><option value="fo">الفياروسية</option><option value="vi">الفيتنامية</option><option value="fj">الفيجية</option><option value="ve">الفيندا</option><option value="vec">الفينيسية</option><option value="ca">القطلونية</option><option value="ky">القيرغيزية</option><option value="pam">الكابامبانغانية</option><option value="kk">الكازاخية</option><option value="kl">الكالاليست</option><option value="yue">الكانتوني</option><option value="kr">الكانوري</option><option value="ckb">الكردية (السورانية)</option><option value="ku">الكردية (الكرمانجية)</option><option value="hr">الكرواتية</option><option value="kri">الكريو</option><option value="crs">الكريولية السيشيلية</option><option value="ht">الكريولية الهايتية</option><option value="kn">الكنادية</option><option value="co">الكورسيكية</option><option value="ko">الكورية</option><option value="trp">الكوك بوروك</option><option value="kv">الكومية</option><option value="gom">الكونكانية</option><option value="qu">الكيتشوا</option><option value="ktu">الكيتوبا</option><option value="cgg">الكيغا</option><option value="kek">الكيكتشي</option><option value="kg">الكيكونغو</option><option value="rw">الكينيارواندية</option><option value="ltg">اللاتغالية</option><option value="lv">اللاتفية</option><option value="la">اللاتينية</option><option value="lo">اللاوو</option><option value="mfe">اللغة الكرييولية (موريشيوس)</option><option value="lg">اللوغندية</option><option value="lb">اللوكسمبورغية</option><option value="lmo">اللومباردية</option><option value="lt">الليتوانية</option><option value="lij">الليغورية</option><option value="li">الليمبورغية</option><option value="ln">اللينغالا</option><option value="luo">الليو</option><option value="mad">المادريز</option><option value="mr">الماراثية</option><option value="mh">المارشالية</option><option value="mak">الماکاسار</option><option value="ml">المالايالامية</option><option value="mt">المالطيّة</option><option value="ms-Arab">الماليزية (جاوي)</option><option value="mam">المام</option><option value="gv">المانكس</option><option value="mi">الماورية</option><option value="yua">المايا اليوكاتية</option><option value="mai">المايثيلية</option><option value="mg">المدغشقرية</option><option value="mwr">المروادي</option><option value="mk">المقدونية</option><option value="ms">الملايو</option><option value="mn">المنغولية</option><option value="mni-Mtei">الميتية (المانيبورية)</option><option value="chm">الميدو ماري</option><option value="lus">الميزو</option><option value="min">المينانغكابو</option><option value="nhe">الناواتل (هواستيكا الشرقية)</option><option value="ndc-ZW">النداو</option><option value="nr">النديبيل (الجنوبية)</option><option value="no">النرويجية</option><option value="bm-Nkoo">النكو</option><option value="nus">النوير</option><option value="ne">النيبالية</option><option value="cnh">الهاكا تشين</option><option value="hrx">الهانسريك</option><option value="haw">الهاوائية</option><option value="hmn">الهمونجية</option><option value="hi">الهندية</option><option value="hu">الهنغارية</option><option value="ha">الهوسا</option><option value="nl">الهولندية</option><option value="hil">الهيليغاينونية</option><option value="war">الواراي واراي</option><option value="wo">الوُلوفية</option><option value="cy">الويلزية</option><option value="ja">اليابانية</option><option value="sah">الياقوتية</option><option value="yo">اليورباية</option><option value="el">اليونانية</option><option value="yi">الييدية</option></select></div>تدعمه <span style="white-space:nowrap"><a class="VIpgJd-ZVi9od-l4eHX-hSRGPd" href="https://translate.google.com" target="_blank"><img src="https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_42x16dp.png" width="37px" height="14px" style="padding-right: 3px" alt="Google ترجمة">ترجمة</a></span></div></div>
+
+   <script type="text/javascript">
+        document.getElementsByClassName('skiptranslate')[0].style.visibility = 'hidden';
+        document.getElementsByClassName('goog-te-banner-frame')[0].style.visibility = 'hidden';
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: "en"
+            }, 'google_translate_element');
+        }
+
+        function changeLanguageByButtonClick() {
+
+
+            var language = document.getElementById("language").value;
+            var selectField = document.querySelector("#google_translate_element select");
+            for (var i = 0; i < selectField.children.length; i++) {
+                var option = selectField.children[i];
+                // find desired langauge and change the former language of the hidden selection-field
+                if (option.value == language) {
+                    selectField.selectedIndex = i;
+                    // trigger change event afterwards to make google-lib translate this side
+                    selectField.dispatchEvent(new Event('change'));
+                    break;
+                }
+            }
+        }
+
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
 
 
 
@@ -460,17 +494,7 @@ function request() {
 </script>
 
 
-<script type="text/javascript">
-    function googleTranslateElementInit2() {new google.translate.TranslateElement({pageLanguage: 'en',autoDisplay: false}, 'google_translate_element2');}
-    </script>
 
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
-
-
-                                    <script type="text/javascript">
-    /* <![CDATA[ */
-    eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 7(a,b){n{4(2.9){3 c=2.9("o");c.p(b,f,f);a.q(c)}g{3 c=2.r();a.s(\'t\'+b,c)}}u(e){}}6 h(a){4(a.8)a=a.8;4(a==\'\')v;3 b=a.w(\'|\')[1];3 c;3 d=2.x(\'y\');z(3 i=0;i<d.5;i++)4(d[i].A==\'B-C-D\')c=d[i];4(2.j(\'k\')==E||2.j(\'k\').l.5==0||c.5==0||c.l.5==0){F(6(){h(a)},G)}g{c.8=b;7(c,\'m\');7(c,\'m\')}}',43,43,'||document|var|if|length|function|GTranslateFireEvent|value|createEvent||||||true|else|doGTranslate||getElementById|google_translate_element2|innerHTML|change|try|HTMLEvents|initEvent|dispatchEvent|createEventObject|fireEvent|on|catch|return|split|getElementsByTagName|select|for|className|goog|te|combo|null|setTimeout|500'.split('|'),0,{}))
-    /* ]]> */
-    </script>
+<div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: 'Google Sans', Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class=" VIpgJd-yAWNEb-hvhgNd-l4eHX-SIsrTd "><img src="https://fonts.gstatic.com/s/i/productlogos/translate/v14/24px.svg" width="24" height="24" alt=""></div><div class="  VIpgJd-yAWNEb-hvhgNd-k77Iif-SIsrTd "><div class="VIpgJd-yAWNEb-hvhgNd-IuizWc" dir="rtl">النص الأصلي</div><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid rtl"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od rtl" dir="rtl"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">تقييم هذه الترجمة</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">سيتم استخدام ملاحظاتك وآرائك للمساعدة في تحسين "ترجمة Google".</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 rtl"><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="ترجمة سيئة" aria-label="ترجمة سيئة" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="ترجمة جيدة" aria-label="ترجمة جيدة" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="https://translate.googleapis.com/translate_voting?client=te" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0"></iframe></div></div></div>
 
 </html>
