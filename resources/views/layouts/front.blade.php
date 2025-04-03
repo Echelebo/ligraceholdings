@@ -1,4 +1,9 @@
-<html lang="en" style="--vh: 9.53px; --animate-duration: 4s; height: 100%;"><head><meta http-equiv="content-type" content="text/html;charset=UTF-8">
+<!DOCTYPE html>
+
+<html lang="en" style="--vh: 9.53px; --animate-duration: 4s; height: 100%;">
+    <head>
+
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
 
 
     <meta charset="utf-8">
