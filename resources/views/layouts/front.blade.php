@@ -309,7 +309,6 @@
 <script src="/trust/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
 <script src="/trust/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
 <script src="/trust/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script src="/trust/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
 <!-- Extra plugin css -->
 <script src="/trust/vendors/counterup/jquery.waypoints.min.js"></script>
 <script src="/trust/vendors/counterup/jquery.counterup.min.js"></script>
