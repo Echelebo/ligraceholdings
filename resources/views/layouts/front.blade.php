@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="altsfolio.org">
     <meta name="description" content="altsfolio.org">
-    <link rel="icon" href="img/invest-view_favicon.png" width="220" height="80" type="image/x-icon">
+    <link rel="icon" href="/trust/img/favicon.png" width="220" height="80" type="image/x-icon">
     <!----------------- www.designclubdev.com ----------->
     <meta name="designer" href="https://designclubdev.com/">
     <!----------------- www.designclubdev.com ----------->
