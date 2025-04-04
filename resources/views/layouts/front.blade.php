@@ -275,11 +275,37 @@
 
 <script src="/trust/js/theme.js"></script>
 <script src="/trust/js/recent.js"></script>
-<script type="text/javascript" src="/trust/js/marquee.js"></script>
+
 <script type="text/javascript" src="/trust/js/particle.js"></script>
 <script type="text/javascript" src="/trust/js/custom.js"></script>
 
+<script>
+    $.ajax({
+        type: "GET",
+        url: "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,EUR,CNY,ETH",
+        dataType: 'text',
+        success: function(data) {
+            var ret1 = data.replace('{"USD":', '');
+            var tmp1 = ret1.split(",");
+            $('#usd').text('$ ' + tmp1[0]);
 
+            var ret2 = data.replace('"EUR":', '');
+            var tmp2 = ret2.split(",");
+            $('#eur').text('€ ' + tmp2[1]);
+
+            var ret3 = data.replace('"CNY":', '');
+            var tmp3 = ret3.split(",");
+            $('#cny').text('¥ ' + tmp3[2]);
+
+            $(function() {
+                $('.simple-marquee-container').SimpleMarquee({
+                    duration: 100000,
+                });
+            });
+        }
+    });
+
+</script>
 
 
 <script>
