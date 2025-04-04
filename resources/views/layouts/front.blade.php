@@ -275,7 +275,7 @@
 
 <script src="/trust/js/theme.js"></script>
 <script src="/trust/js/recent.js"></script>
-
+<script type="text/javascript" src="/trust/js/marquee.js"></script>
 <script type="text/javascript" src="/trust/js/particle.js"></script>
 <script type="text/javascript" src="/trust/js/custom.js"></script>
 
