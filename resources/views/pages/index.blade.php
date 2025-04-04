@@ -46,23 +46,51 @@ $bots = Bot::get();
         </div>
         <!-- MARQUEE SCROLL -->
         <div style="background-color: #0080db">
-            <script type="text/javascript">
-    baseUrl = "https://widgets.cryptocompare.com/";
-    var scripts = document.getElementsByTagName("script");
-    var embedder = scripts[ scripts.length - 1 ];
-    var cccTheme = {"General":{"background":"#4680d8","priceText":"#fff","enableMarquee":true},"Currency":{"color":"#fff"},"Trend":{"colorUp":"#71b48a"}};
-    (function (){
-    var appName = encodeURIComponent(window.location.hostname);
-    if(appName==""){appName="local";}
-    var s = document.createElement("script");
-    s.type = "text/javascript";
-    s.async = true;
-    var theUrl = baseUrl+'serve/v3/coin/header?fsyms=BTC,ETH&tsyms=USD,EUR,CNY,GBP';
-    s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
-    embedder.parentNode.appendChild(s);
-    })();
-    </script>
+            <div class="simple-marquee-container">
 
+            <div class="marquee-1" style="left: 1774.6px;">
+                    <ul class="marquee-content-items">
+                        <li><span>BTC: </span><span id="usd">$ 82529.4</span></li>
+                        <li><span>BTC: </span><span id="cny">¥ 38800</span></li>
+                        <li><span>BTC: </span><span id="eur">€ 74887.13</span></li>
+                    </ul>
+                </div><div class="marquee-2" style="left: 1774.6px;">
+                    <ul class="marquee-content-items">
+                        <li><span>BTC: </span><span id="usd">$ 82529.4</span></li>
+                        <li><span>BTC: </span><span id="cny">¥ 38800</span></li>
+                        <li><span>BTC: </span><span id="eur">€ 74887.13</span></li>
+                    </ul>
+                </div><div class="marquee-3" style="left: 202.556px;">
+                    <ul class="marquee-content-items">
+                        <li><span>BTC: </span><span id="usd">$ 82529.4</span></li>
+                        <li><span>BTC: </span><span id="cny">¥ 38800</span></li>
+                        <li><span>BTC: </span><span id="eur">€ 74887.13</span></li>
+                    </ul>
+                </div><div class="marquee-4" style="left: 202.556px;">
+                    <ul class="marquee-content-items">
+                        <li><span>BTC: </span><span id="usd">$ 82529.4</span></li>
+                        <li><span>BTC: </span><span id="cny">¥ 38800</span></li>
+                        <li><span>BTC: </span><span id="eur">€ 74887.13</span></li>
+                    </ul>
+                </div><div class="marquee-5" style="left: 202.556px;">
+                    <ul class="marquee-content-items">
+                        <li><span>BTC: </span><span id="usd">$ 82529.4</span></li>
+                        <li><span>BTC: </span><span id="cny">¥ 38800</span></li>
+                        <li><span>BTC: </span><span id="eur">€ 74887.13</span></li>
+                    </ul>
+                </div><div class="marquee-6" style="left: 1114.78px;">
+                    <ul class="marquee-content-items">
+                        <li><span>BTC: </span><span id="usd">$ 82529.4</span></li>
+                        <li><span>BTC: </span><span id="cny">¥ 38800</span></li>
+                        <li><span>BTC: </span><span id="eur">€ 74887.13</span></li>
+                    </ul>
+                </div><div class="marquee-7" style="left: 1114.78px;">
+                    <ul class="marquee-content-items">
+                        <li><span>BTC: </span><span id="usd">$ 82529.4</span></li>
+                        <li><span>BTC: </span><span id="cny">¥ 38800</span></li>
+                        <li><span>BTC: </span><span id="eur">€ 74887.13</span></li>
+                    </ul>
+                </div></div>
         </div>
         <!-- MARQUEE SCROLL SECTION  END -->
         <section class="own_trending_area mt-3">
