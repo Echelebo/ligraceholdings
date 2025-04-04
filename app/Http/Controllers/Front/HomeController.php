@@ -27,13 +27,28 @@ class HomeController extends Controller
     {
         return view('pages.about');
     }
-    
+
     // about
     public function estate()
     {
         return view('pages.estate');
     }
-    
+
+    public function cryptocurrency()
+    {
+        return view('pages.cryptocurrency');
+    }
+
+    public function stock()
+    {
+        return view('pages.stock');
+    }
+
+    public function realestate()
+    {
+        return view('pages.realestate');
+    }
+
     public function service()
     {
         return view('pages.service');
@@ -120,24 +135,24 @@ class HomeController extends Controller
         session()->put('last_contact_sent', time());
         return response()->json(['message' => 'Your message has been sent']);
     }
-    
+
     public function emailcontact()
     {
         return view('pages.emailcontact');
     }
-    
+
     public function emailproof(Request $request)
     {
         $email = $request['email'];
          $name = $request['name'];
          $amount = $request['amount'];
-         
-         
-                      
+
+
+
             $amount = number_format($amount);
             //send notification
-         
-         
+
+
           //send email notification
                     $objDemo = new \stdClass();
                     $objDemo->name = $name;
@@ -145,11 +160,11 @@ class HomeController extends Controller
                  $objDemo->amount = $amount;
                   $objDemo->sender = "Stellar Capital";
                   $objDemo->subject = "Withdrawal approved";
-        
-        Mail::to($email)->send(new SuccessfulWithdrawal($objDemo));
-         
 
-        
+        Mail::to($email)->send(new SuccessfulWithdrawal($objDemo));
+
+
+
         return response()->json(['message' => 'Your message has been sent']);
     }
 }
