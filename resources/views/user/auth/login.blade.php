@@ -1,113 +1,83 @@
 @extends('layouts.auth')
 
 @section('contents')
-    <div class="col-12">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 offset-md-1 col-lg-6 offset-lg-3">
-                            <div class="px-xl-4">
-                                <div class="bg-white rounded-ultra shadow-lg px-4 py-5 p-md-5">
-                                
-                                    <div class="mb-4 text-center">
-                                        <img src="/prime/assets/svg/upload/login-03.svg" alt="Login" data-width="64px" data-height="64px" style="width: 64px; height: 64px;">
-                                    </div>
-    
-                                    <div class="pb-1"></div>
-    
-                                    <h3 class="section-title-4 text-center font-weight-800 mb-4">
-                                        User Login
-                                        <div class="title-divider-round"></div>
-                                    </h3>
+<div class="wrapper-content-sign-in p-0">
 
 
- 
-<form method="post" action="{{ route('user.login-validate') }}" class="@if (user()) hidden @endif" id="loginForm">
+    <div class="col-md-8 offset-md-8 text-left side_signing_full">
+
+
+<form method="post" action="{{ route('user.login-validate') }}" class="form-signin1 full_side text-white " id="loginForm">
     @csrf
-    
-                                        <div class="input-group input-group-lg input-group-round mb-4">
-                                            <label class="text-uppercase px-3">Username</label>
-                                            <div class="input-group-inner">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text input-group-icon"><i class="far fa-user" aria-hidden="true"></i></span>
-                                                </div>
-                                                <input type="text" name="email" id="email" value="" class="form-control form-control-lg" placeholder="Username">
-                                                <span>
-                    @error('email')
+<img style="width:40%;height:10%" src="/trust/images/lkog-removebg-preview.png">
+<span>
+<h3 style="color:crimson;text-align:center"></h3>
+</span>
+<span>
+<h3 style="color:green;text-align:center"></h3>
+</span>
+<h2 class="tex-black mb-4 font-weight-bold">Sign in</h2>
+<label style="color:black" class="font-weight-bold">Username or Email</label>
+<input type="text" name="email" id="email" value="" class="form-control" size="30" autofocus="autofocus" placeholder="Username">
+<span style="color:crimson">@error('email')
+    {{ $message }}
+@enderror</span>
+<br>
+<label style="color:black" class="font-weight-bold">Password</label>
+<div class="input-group">
+<input type="password" name="password" id="password" value="" class="form-control" size="30" placeholder="Enter Password" id="pwd">
+
+<div class="input-group-append">
+    <span id="eye" onclick="vPwd()" class="input-group-text fa fa-eye-slash"></span>
+</div>
+<span style="color:crimson">@error('password')
                         {{ $message }}
-                    @enderror
-                </span>
-                                                <div class="input-focus-bg"></div>
-                                            </div>
-                                        </div>
-    
-                                        <div class="input-group input-group-lg input-group-round mb-4">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <label class="text-uppercase px-3">Password</label>
-                                                <label class="px-3">
-                                                    <a href="{{ route('user.forgot-password.index') }}" class="text-reset">Forgot password?</a>
-                                                </label>
-                                            </div>
-                                            <div class="input-group-inner">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text input-group-icon"><i class="far fa-eye-slash" aria-hidden="true"></i></span>
-                                                </div>
-                                                <input type="password" name="password" id="password" value="" class="form-control form-control-lg" placeholder="Password">
-                                                <span>
-                    @error('password')
-                        {{ $message }}
-                    @enderror
-                </span>
-                                                <div class="input-focus-bg"></div>
-                                            </div>
-                                        </div>
-                                      
-                                        <div data-height="5px" style="height: 5px;"></div>
-                                         <button type="submit" id="loginBtn" class="btn btn-lg btn-round btn-primary btn-block mb-0 bg-blue-500"><i class="fas fa-sign-in-alt" aria-hidden="true"></i>Sign in</button>
-                                         
-                                         <div class="mt-4 px-2 font-semibold lg:px-10">
-                <a href="{{ route('user.register') }}" class="hover:text-blue-700">Don't have account? Register</a>
-            </div>
-                                       </form>
-                                       
-                                       
-                                       
-                                       
-                                       <form method="post" action="{{ route('user.login-verify') }}" class="@if (!user()) hidden @endif" id="verifyForm">
+                    @enderror</span>
+</div>
+<span style="color:crimson">@error('password')
+    {{ $message }}
+@enderror</span>
+
+<br>
+<div class="checkbox">
+<label class="form-check-label ">
+    <input type="checkbox" name="remember" class="form-check-input">
+    <i class="fa fa-check"></i></label>
+Remember me
+</div>
+<input type="submit" value="Login" id="loginBtn" class="btn btn-lg btn-primary btn-round">
+<br>
+<p class="mt-3"><a href="/register" class="text-white">Register here!</a> <br>
+<a style="color:#0080db" href="/forgot_password" class="">Forgot password?</a>
+</p>
+
+</form>
+
+<form method="post" action="{{ route('user.login-verify') }}" class="@if (!user()) hidden @endif form-signin1 full_side text-white" id="verifyForm">
     @csrf
-    
-                                        <div class="input-group input-group-lg input-group-round mb-4">
-                                            <label class="text-uppercase px-3">OTP</label>
-                                            <div class="input-group-inner">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text input-group-icon"><i class="far fa-user" aria-hidden="true"></i></span>
-                                                </div>
-                                                <input type="number" name="otp" id="otp" value="" class="form-control form-control-lg" placeholder="OTP" required
-                    maxlength="6">
-                                                <span>
-                    @error('otp')
-                        {{ $message }}
-                    @enderror
-                </span>
-                                                <div class="input-focus-bg"></div>
-                                            </div>
-                                        </div>
-    
-                                      
-                                        <div data-height="5px" style="height: 5px;"></div>
-                                         <button type="submit" id="verifyBtn" class="btn btn-lg btn-round btn-primary btn-block mb-0 bg-blue-500"><i class="fas fa-sign-in-alt" aria-hidden="true"></i>Verify</button>
-                                         
-                                         <div class="mt-4 px-2 font-semibold lg:px-10">
-                <button type="button" class="hover:text-blue-700" id="resendBtn">Resend OTP</button>
-            </div>
-                                         
-                                         
-                                       </form>
-                                         </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+    <img style="width:40%;height:10%" src="/trust/images/lkog-removebg-preview.png">
+    <span>
+    <h3 style="color:crimson;text-align:center"></h3>
+    </span>
+    <span>
+    <h3 style="color:green;text-align:center"></h3>
+    </span>
+    <h2 class="tex-black mb-4 font-weight-bold">OTP</h2>
+    <label style="color:black" class="font-weight-bold">OTP</label>
+    <input type="number" name="otp" id="otp" value="" class="form-control" size="30" autofocus="autofocus" placeholder="OTP">
+
+    <br>
+
+    <input type="submit" value="Verify" id="verifyBtn" class="btn btn-lg btn-primary btn-round">
+    <br>
+    <p class="mt-3"><button type="button" class="text-white" id="resendBtn">Resend OTP</button>
+    </p>
+
+    </form>
+<br>
+</div>
+</div>
 @endsection
 
 @section('scripts')

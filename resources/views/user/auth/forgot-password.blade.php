@@ -1,137 +1,81 @@
 @extends('layouts.auth')
 
 @section('contents')
-    <div class="col-12">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-10 offset-md-1 col-lg-6 offset-lg-3">
-                            <div class="px-xl-4">
-                                <div class="bg-white rounded-ultra shadow-lg px-4 py-5 p-md-5">
-
-                                    <div class="mb-4 text-center">
-                                        <img src="/prime/assets/svg/upload/login-03.svg" alt="Login" data-width="64px"
-                                            data-height="64px" style="width: 64px; height: 64px;">
-                                    </div>
-
-                                    <div class="pb-1"></div>
-
-                                    <h3 class="section-title-4 text-center font-weight-800 mb-4">
-                                        Forgot Password
-                                        <div class="title-divider-round"></div>
-                                    </h3>
-
-                                    <h3>Forgot your password:</h3><br>
+<div class="wrapper-content-sign-in p-0">
 
 
+    <div class="col-md-8 offset-md-8 text-left side_signing_full">
 
 
+<form method="post" action="{{ route('user.forgot-password.send') }}" id="registerForm" class="form-signin1 full_side text-white ">
+    @csrf
+<img style="width:40%;height:10%" src="/trust/images/lkog-removebg-preview.png">
+<span>
+<h3 style="color:crimson;text-align:center"></h3>
+</span>
+<span>
+<h3 style="color:green;text-align:center"></h3>
+</span>
+<h2 class="tex-black mb-4 font-weight-bold">Forgot Password</h2>
+<label style="color:black" class="font-weight-bold">Email</label>
+<input type="email" name="email" id="email" value="" class="form-control" size="30" autofocus="autofocus" placeholder="Email">
+<span style="color:crimson">@error('email')
+    {{ $message }}
+@enderror</span>
+<br>
 
-                                    <form method="post" action="{{ route('user.forgot-password.send') }}" id="registerForm">
-                                        @csrf
-                                        
 
-                                        <div class="input-group input-group-lg input-group-round mb-4">
-                                            <label class="text-uppercase px-3">Email</label>
-                                            <div class="input-group-inner">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text input-group-icon"><i
-                                                            class="far fa-user" aria-hidden="true"></i></span>
-                                                </div>
-                                                <input class="form-control form-control-lg" type="email" id="email" name="email"
-                                                    value="" placeholder="Email">
-                                                    <span>
-                    @error('email')
-                        {{ $message }}
-                    @enderror
-                </span>
-                                                <div class="input-focus-bg"></div>
-                                            </div>
-                                        </div>
+<input type="submit" value="Send" id="registerBtn" class="btn btn-lg btn-primary btn-round">
+<br>
+<p class="mt-3"><a href="/login" class="text-white">Back to login!</a>
+</p>
 
-                                        <div data-height="5px" style="height: 5px;"></div>
-                                        <button id="registerBtn" type="submit" class="btn btn-lg btn-round btn-primary btn-block mb-0 bg-blue-500"><i
-                                                class="fas fa-sign-in-alt" aria-hidden="true"></i>Send</button>
-                                            
-                                            <div class="font-semibold mt-4 px-5 lg:px-10">
-                <a href="{{ route('user.login') }}" class="hover:text-blue-700">Back to login</a>
-            </div>
-                                    </form>
-                                    
-                                    <form method="post" class="hidden" action="{{ route('user.forgot-password.validate') }}" id="verifyForm">
-                                        @csrf
-                                        
+</form>
 
-                                        <div class="input-group input-group-lg input-group-round mb-4">
-                                            <label class="text-uppercase px-3">OTP</label>
-                                            <div class="input-group-inner">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text input-group-icon"><i
-                                                            class="far fa-user" aria-hidden="true"></i></span>
-                                                </div>
-                                                <input id="otp" class="form-control form-control-lg" type="number" name="otp"
-                                                    value="" placeholder="OTP" required
-                    maxlength="6">
-                    <span>
-                    @error('email')
-                        {{ $message }}
-                    @enderror
-                </span>
-                                                <div class="input-focus-bg"></div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="input-group input-group-lg input-group-round mb-4">
-                                            <label class="text-uppercase px-3">Password</label>
-                                            <div class="input-group-inner">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text input-group-icon"><i
-                                                            class="far fa-user" aria-hidden="true"></i></span>
-                                                </div>
-                                                <input id="password" class="form-control form-control-lg" type="password" name="password"
-                                                    value="" placeholder="Password" >
-                    <span>
-                    @error('password')
-                        {{ $message }}
-                    @enderror
-                </span>
-                                                <div class="input-focus-bg"></div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="input-group input-group-lg input-group-round mb-4">
-                                            <label class="text-uppercase px-3">Confirm
-                    Password</label>
-                                            <div class="input-group-inner">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text input-group-icon"><i
-                                                            class="far fa-user" aria-hidden="true"></i></span>
-                                                </div>
-                                                <input id="confirm-password" class="form-control form-control-lg" type="password" name="password_confirmation"
-                                                    value="" placeholder="Confirm Password">
-                    <span>
-                    @error('password-confirmation')
-                        {{ $message }}
-                    @enderror
-                </span>
-                                                <div class="input-focus-bg"></div>
-                                            </div>
-                                        </div>
+<form method="post" action="{{ route('user.forgot-password.validate') }}" id="verifyForm" class="hidden form-signin1 full_side text-white">
+    @csrf
 
-                                        <div data-height="5px" style="height: 5px;"></div>
-                                        <button id="verifyBtn" type="submit" class="btn btn-lg btn-round btn-primary btn-block mb-0 bg-blue-500"><i
-                                                class="fas fa-sign-in-alt" aria-hidden="true"></i>Save</button>
-                                            
-                                            <div class="font-semibold mt-4 px-5 lg:px-10">
-                <a href="{{ route('user.login') }}" class="hover:text-blue-700">Back to login</a>
-            </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <img style="width:40%;height:10%" src="/trust/images/lkog-removebg-preview.png">
+    <span>
+    <h3 style="color:crimson;text-align:center"></h3>
+    </span>
+    <span>
+    <h3 style="color:green;text-align:center"></h3>
+    </span>
+    <h2 class="tex-black mb-4 font-weight-bold">Reset password</h2>
+    <label style="color:black" class="font-weight-bold">OTP</label>
+    <input type="number" name="otp" id="otp" value="" class="form-control" size="30" autofocus="autofocus" placeholder="OTP">
+    <span style="color:crimson">@error('otp')
+        {{ $message }}
+    @enderror</span>
+    <br>
+
+    <label style="color:black" class="font-weight-bold">Password</label>
+    <input type="password" name="password" id="password" value="" class="form-control" size="30" autofocus="autofocus" placeholder="Password">
+    <span style="color:crimson">@error('password')
+        {{ $message }}
+    @enderror</span>
+    <br>
+
+    <label style="color:black" class="font-weight-bold">Confirm password</label>
+    <input type="password" name="password_confirmation" id="confirm-password" value="" class="form-control" size="30" autofocus="autofocus" placeholder="Confirm password">
+
+    <span style="color:crimson">@error('password_confirmation')
+        {{ $message }}
+    @enderror</span>
+    <br>
+
+    <input type="submit" value="Save" id="verifyBtn" class="btn btn-lg btn-primary btn-round">
+    <br>
+    <p class="mt-3"><a href="/login" class="text-white" >Back to login</a>
+    </p>
+
+    </form>
+<br>
+</div>
+</div>
 @endsection
+
 
 @section('scripts')
     <script>

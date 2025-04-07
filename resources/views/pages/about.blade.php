@@ -1,15 +1,3 @@
-@php
-
-use App\Models\DepositCoin;
-
-$logos = DepositCoin::inRandomOrder()
-        ->take(20)
-        ->get('logo_url');
-
-    $page_title = 'About ' . site('name');
-    $short_description = site('name') . ' uses advanced Ai robots trained on extensive trading data and algorithms to analyze market trends and execute profitable trades with high precision.';
-
-@endphp
 
 {{-- layout --}}
 @extends('layouts.front')
@@ -29,9 +17,9 @@ $logos = DepositCoin::inRandomOrder()
                   <div class="container">
                       <div class="banner_text">
                           <h4>About US</h4>
-                          <a href="?a=home">Home</a>
+                          <a href="/">Home</a>
                           <span>/</span>
-                          <a class="active" href="?a=about">About us</a>
+                          <a class="active" href="/about">About us</a>
                       </div>
                   </div>
               </section>
@@ -42,7 +30,7 @@ $logos = DepositCoin::inRandomOrder()
                   <div class="container">
                       <div class="row">
                           <div class="col-lg-5">
-                              <div class="bitcoin_about_img" data-parallax="scroll" data-image-src="/img/WhatsApp.jpg">
+                              <div class="bitcoin_about_img" data-parallax="scroll" data-image-src="/trust/img/WhatsApp.jpg">
 
                               </div>
                           </div>
@@ -89,7 +77,7 @@ $logos = DepositCoin::inRandomOrder()
                       <div class="row choose_bit_inner">
                           <div class="col-lg-4 col-md-6">
                               <div class="choose_botcoin_item">
-                                  <img src="img/service1.jpg" />
+                                  <img src="/trust/img/service1.jpg" />
 
                                   <a href="#">
                                       <h4>Crypto Currency</h4>
@@ -102,7 +90,7 @@ $logos = DepositCoin::inRandomOrder()
                           </div>
                           <div class="col-lg-4 col-md-6">
                               <div class="choose_botcoin_item">
-                                  <img src="img/service2.jpg" />
+                                  <img src="/trust/img/service2.jpg" />
 
                                   <a href="#">
                                       <h4>Stock & Forex</h4>
@@ -115,7 +103,7 @@ $logos = DepositCoin::inRandomOrder()
                           </div>
                           <div class="col-lg-4 col-md-6">
                               <div class="choose_botcoin_item">
-                                  <img src="img/service3.jpg" />
+                                  <img src="/trust/img/service3.jpg" />
 
                                   <a href="#">
                                       <h4>Real estate </h4>
@@ -141,7 +129,7 @@ $logos = DepositCoin::inRandomOrder()
                           <div class="col-lg-6">
                               <div class="send_p_text">
 
-                                  <a href="https://find-and-update.company-information.service.gov.uk/company/13389710">Check company license</a>
+                                  <a href="/trust/license/ABNCurrentDetails_41542052010.pdf">Check company license</a>
                               </div>
                           </div>
 
@@ -156,7 +144,7 @@ $logos = DepositCoin::inRandomOrder()
               <section class="our_vision_area">
                   <div class="left_vision">
                       <div class="vision_text">
-                          <img class="img-fluid" src="img/vision.jpg" alt="">
+                          <img class="img-fluid" src="/trust/img/vision.jpg" alt="">
                       </div>
                   </div>
                   <div class="right_vision">
@@ -177,7 +165,7 @@ $logos = DepositCoin::inRandomOrder()
                           <div class="col-lg-3 col-6">
                               <div class="about_team_inner">
                                   <div class="about_team_img">
-                                      <img src="img/about-team-1.jpg" alt="">
+                                      <img src="/trust/img/about-team-1.jpg" alt="">
                                   </div>
                                   <div class="team_detail">
                                       <a href="#">
@@ -190,7 +178,7 @@ $logos = DepositCoin::inRandomOrder()
                           <div class="col-lg-3 col-6">
                               <div class="about_team_inner">
                                   <div class="about_team_img">
-                                      <img src="img/about-team-2.jpg" alt="">
+                                      <img src="/trust/img/about-team-2.jpg" alt="">
                                   </div>
                                   <div class="team_detail">
                                       <a href="#">
@@ -203,7 +191,7 @@ $logos = DepositCoin::inRandomOrder()
                           <div class="col-lg-3 col-6">
                               <div class="about_team_inner">
                                   <div class="about_team_img">
-                                      <img src="img/about-team-3.jpg" alt="">
+                                      <img src="/trust/img/about-team-3.jpg" alt="">
                                   </div>
                                   <div class="team_detail">
                                       <a href="#">
@@ -216,7 +204,7 @@ $logos = DepositCoin::inRandomOrder()
                           <div class="col-lg-3 col-6">
                               <div class="about_team_inner">
                                   <div class="about_team_img">
-                                      <img src="img/about-team-4.jpg" alt="">
+                                      <img src="/trust/img/about-team-4.jpg" alt="">
                                   </div>
                                   <div class="team_detail">
                                       <a href="#">

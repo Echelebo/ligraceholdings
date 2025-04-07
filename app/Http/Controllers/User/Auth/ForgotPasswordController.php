@@ -23,10 +23,10 @@ class ForgotPasswordController extends Controller
     public function forgotPassword(Request $request)
     {
         $request->validate([
-            'username' => 'required',
+            'email' => 'required',
         ]);
 
-        $user = User::where('username', $request->username)->first();
+        $user = User::where('email', $request->email)->first();
 
         $message = 'There is a recent password reset request on your account. Use the otp code below to confirm the reset';
         if ($user){
@@ -57,7 +57,7 @@ class ForgotPasswordController extends Controller
         if (!$user) {
             return response()->json(validationError('Username not correct'), 422);
         }
-        
+
         $update = User::find($user->id);
         $update->password = Hash::make($request->password);
         $update->save();

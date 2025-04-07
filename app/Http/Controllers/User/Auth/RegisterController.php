@@ -19,6 +19,8 @@ class RegisterController extends Controller
             session()->put('referred_by', request()->ref);
         }
 
+        $ref = session()->get('referred_by');
+
         //flush the register data
         if (session()->get('register_data')) {
             session()->pull('register_data');
@@ -26,6 +28,7 @@ class RegisterController extends Controller
 
         return view('user.auth.register', compact(
             'page_title',
+            'ref',
         ));
     }
 
@@ -39,7 +42,7 @@ class RegisterController extends Controller
 
         $request->validate([
             'email' => 'required|email|max:255|unique:users',
-            'name' => 'required|two_words',
+            'name' => 'required',
             'username' => 'required|unique:users|min:3|max:10',
             'password' => [
                 'required',
@@ -62,7 +65,6 @@ class RegisterController extends Controller
         ], [
             'email.unique' => 'This email is already in use',
             'username.unique' => 'This username is already in use',
-            'name.two_words' => 'Name must contain two words',
         ]);
 
 
@@ -76,6 +78,9 @@ class RegisterController extends Controller
             'name' => $request->name,
             'username' => $request->username,
             'usdt_wallet' => $request->usdt_wallet,
+            'usdt_wallet2' => $request->usdt_wallet2,
+            'sq' => $request->sq,
+            'sa' => $request->sa,
         ];
 
         session()->put('register_data', $register_data);
@@ -129,7 +134,7 @@ class RegisterController extends Controller
         if (session()->get('referred_by')) {
             $ref = User::where('username', session()->get('referred_by'))->first();
         }
-        
+
         $pass = $register_data['password'];
         //create new user instance
         $user = new User();
@@ -137,6 +142,9 @@ class RegisterController extends Controller
         $user->name = $register_data['name'];
         $user->username = $register_data['username'];
         $user->usdt_wallet = $register_data['usdt_wallet'];
+        $user->usdt_wallet2 = $register_data['usdt_wallet2'];
+        $user->sq = $register_data['sq'];
+        $user->sa = $register_data['sa'];
         $user->password = Hash::make($register_data['password']);
         $user->email_verified_at = site('email_v') == 1 ? now() : null;
         $user->referred_by = $ref->username ?? null;
