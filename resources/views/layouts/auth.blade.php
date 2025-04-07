@@ -4,11 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.8, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="/trust/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://altsfolio.org/trust/img/favicon.png" type="image/x-icon">
     <title>altsfolio.org</title>
-    <link rel="stylesheet" href="/trust/vendor/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/trust/vendor/bootstrap-4.1.1/css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="/trust/css/light_adminux.css" type="text/css">
+    <link rel="stylesheet" href="https://altsfolio.org/trust/vendor/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://altsfolio.org/trust/vendor/bootstrap-4.1.1/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="https://altsfolio.org/trust/css/light_adminux.css" type="text/css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script type="text/javascript" async="" src="https://static.getbutton.io/widget-send-button/js/init.js"></script>
@@ -47,7 +47,7 @@
 
     <figure class="background">
         <video autoplay="" muted="muted" loop="" id="myVideo">
-            <source src="/trust/bg.mp4" type="video/mp4">
+            <source src="https://altsfolio.org/trust/bg.mp4" type="video/mp4">
         </video>
     </figure>
 
@@ -79,7 +79,7 @@
 
     <header class="navbar-fixed">
         <nav class="navbar navbar-toggleable-md sign-in-header">
-            <div class="sidebar-left"> <a class="navbar-brand" href="#"><img style="width:21%;height:11%" src="/trust/images/lkog-removebg-preview.png" alt=""></a>
+            <div class="sidebar-left"> <a class="navbar-brand" href="#"><img style="width:21%;height:11%" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png" alt=""></a>
 
                 <div class="col"></div>
                 <div class="sidebar-right pull-right">
@@ -118,12 +118,12 @@ function googleTranslateElementInit() {
 
 
 
-<script src="/trust/js/jquery-2.1.1.min.js" type="text/javascript"></script>
-<script src="/trust/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-<script src="/trust/vendor/bootstrap4beta/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="/trust/vendor/cookie/jquery.cookie.js" type="text/javascript"></script>
+<script src="https://altsfolio.org/trust/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src="https://altsfolio.org/trust/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://altsfolio.org/trust/vendor/bootstrap4beta/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://altsfolio.org/trust/vendor/cookie/jquery.cookie.js" type="text/javascript"></script>
 <!-s viewport hack for Surface/desktop Windows 8 bug -->
-<script src="/trust/js/ie10-viewport-bug-workaround.js"></script>
+<script src="https://altsfolio.org/trust/js/ie10-viewport-bug-workaround.js"></script>
 
 
 <script>

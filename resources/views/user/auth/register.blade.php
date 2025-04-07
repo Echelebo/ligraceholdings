@@ -14,7 +14,7 @@
 
     @csrf
 
-<img style="width:40%;height:10%" src="/trust/images/lkog-removebg-preview.png">
+<img style="width:40%;height:10%" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png">
 <span>
  <h3 style="color:crimson;text-align:center"></h3>
 </span>

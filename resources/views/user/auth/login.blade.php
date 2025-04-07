@@ -9,7 +9,7 @@
 
 <form method="post" action="{{ route('user.login-validate') }}" class="form-signin1 full_side text-white " id="loginForm">
     @csrf
-<img style="width:40%;height:10%" src="/trust/images/lkog-removebg-preview.png">
+<img style="width:40%;height:10%" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png">
 <span>
 <h3 style="color:crimson;text-align:center"></h3>
 </span>
@@ -56,7 +56,7 @@ Remember me
 <form method="post" action="{{ route('user.login-verify') }}" class="@if (!user()) hidden @endif form-signin1 full_side text-white" id="verifyForm">
     @csrf
 
-    <img style="width:40%;height:10%" src="/trust/images/lkog-removebg-preview.png">
+    <img style="width:40%;height:10%" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png">
     <span>
     <h3 style="color:crimson;text-align:center"></h3>
     </span>
