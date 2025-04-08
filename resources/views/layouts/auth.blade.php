@@ -1,49 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" style="--vh: 9.53px; height: 100%;"><head>
+<html lang="en" >
+    <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.8, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="https://altsfolio.org/trust/img/favicon.png" type="image/x-icon">
-    <title>altsfolio.org</title>
+    <title>{{ $page_title }} | altsfolio.org</title>
     <link rel="stylesheet" href="https://altsfolio.org/trust/vendor/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="https://altsfolio.org/trust/vendor/bootstrap-4.1.1/css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="https://altsfolio.org/trust/css/light_adminux.css" type="text/css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <script type="text/javascript" async="" src="https://static.getbutton.io/widget-send-button/js/init.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
-    <!-- /GetButton.io widget-->
-    <script type="text/javascript">
-        (function() {
-            var options = {
-                whatsapp: "+", // WhatsApp number
-                call_to_action: "Contact us!", // Call to action
-                position: "left", // Position may be "right" or "left"
-            };
-            var proto = document.location.protocol,
-                host = "getbutton.io",
-                url = proto + "//static." + host;
-            var s = document.createElement("script");
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = url + "/widget-send-button/js/init.js";
-            s.onload = function() {
-                WhWidgetSendButton.init(host, proto, options);
-            };
-            var x = document.getElementsByTagName("script")[0];
-            x.parentNode.insertBefore(s, x);
-        })();
 
-    </script>
-    <!-- /GetButton.io widget -->
+{{-- sweet alert css --}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
 
-<link type="text/css" rel="stylesheet" charset="UTF-8" href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.NJgGN_yGIWM.L.W.O/am=AAY/d=0/rs=AN8SPfrTSMIvWAFISYN4u74dPJrX0HgUsw/m=el_main_css"><script type="text/javascript" charset="UTF-8" src="https://translate.googleapis.com/_/translate_http/_/js/k=translate_http.tr.en_GB.cE8Unu_HSqE.O/am=ACA/d=1/exm=el_conf/ed=1/rs=AN8SPfrYfjxpj7fTMNyxDDtorCibXGkrKA/m=el_main"></script><style data-styled="active" data-styled-version="5.3.11"></style></head>
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.NJgGN_yGIWM.L.W.O/am=AAY/d=0/rs=AN8SPfrTSMIvWAFISYN4u74dPJrX0HgUsw/m=el_main_css">
 
-<body oncut="return false" class="menuclose menuclose-right" style="background: gray; position: relative; min-height: 100%; top: 0px;" data-new-gr-c-s-check-loaded="14.1229.0" data-gr-ext-installed="">
-    <!-- <figure class="background"> <img src="img/login_bg.jpg" alt="evolutemining"> </figure> -->
+<script type="text/javascript" charset="UTF-8" src="https://translate.googleapis.com/_/translate_http/_/js/k=translate_http.tr.en_GB.cE8Unu_HSqE.O/am=ACA/d=1/exm=el_conf/ed=1/rs=AN8SPfrYfjxpj7fTMNyxDDtorCibXGkrKA/m=el_main"></script><style data-styled="active" data-styled-version="5.3.11"></style>
+
+</head>
+
+<body oncut="return false" class="menuclose menuclose-right" style="background: gray; position: relative; min-height: 100%; top: 0px;">
+
 
     <figure class="background">
         <video autoplay="" muted="muted" loop="" id="myVideo">
@@ -122,8 +104,8 @@ function googleTranslateElementInit() {
 <script src="https://altsfolio.org/trust/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://altsfolio.org/trust/vendor/bootstrap4beta/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="https://altsfolio.org/trust/vendor/cookie/jquery.cookie.js" type="text/javascript"></script>
-<!-s viewport hack for Surface/desktop Windows 8 bug -->
-<script src="https://altsfolio.org/trust/js/ie10-viewport-bug-workaround.js"></script>
+
+
 
 
 <script>
@@ -160,38 +142,19 @@ function googleTranslateElementInit() {
     }
 
 </script>
-<script>
-    // $(document).ready(function(){
-    // $("body").bind("cut copy paste",function(e){
-    //   e.preventDefault();
-    // })
-    // $("body").on("contextmenu",function(e){
-    //   return false;
-    // });
-    // })
-
-</script><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: 'Google Sans', Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class=" VIpgJd-yAWNEb-hvhgNd-l4eHX-i3jM8c"><img src="https://fonts.gstatic.com/s/i/productlogos/translate/v14/24px.svg" width="24" height="24" alt=""></div><div class=" VIpgJd-yAWNEb-hvhgNd-k77Iif-i3jM8c"><div class="VIpgJd-yAWNEb-hvhgNd-IuizWc" dir="ltr">Original text</div><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">Rate this translation</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">Your feedback will be used to help improve Google Translate</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Good translation" aria-label="Good translation" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Poor translation" aria-label="Poor translation" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="//translate.googleapis.com/translate_voting?client=te" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0"></iframe></div></div></div>
+{{-- all script placements --}}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {{-- Include SweetAlert2 JavaScript file --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+    <script src="{{ asset('assets/scripts/main.js') }}"></script>
+    @yield('scripts')
 
 
 
+    {{-- livechat --}}
+    {!! json_decode(site('livechat')) !!}
 
 
 
-
-
-
-<div class="VIpgJd-ZVi9od-aZ2wEe-wOHMyf"><div class="VIpgJd-ZVi9od-aZ2wEe-OiiCO"><svg xmlns="http://www.w3.org/2000/svg" class="VIpgJd-ZVi9od-aZ2wEe" width="96px" height="96px" viewBox="0 0 66 66"><circle class="VIpgJd-ZVi9od-aZ2wEe-Jt5cK" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><div id="gb-widget-2885" script-id="false" style="
-    bottom: 14px;
-    left: 16px;
-    // opacity: 0;
-    // transition: opacity 0.5s;
-    box-sizing: border-box;
-    position: fixed !important;
-    z-index: 16000160 !important;
-    direction: ltr;
-    text-align: left;
-    display: false;
-    align-items: false;
-    flex-direction: row-reverse;
-  "></div></body>
+  </body>
   </html>

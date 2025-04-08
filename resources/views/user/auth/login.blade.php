@@ -7,7 +7,7 @@
     <div class="col-md-8 offset-md-8 text-left side_signing_full">
 
 
-<form method="post" action="{{ route('user.login-validate') }}" class="form-signin1 full_side text-white " id="loginForm">
+<form method="post" action="{{ route('user.login-validate') }}" class="form-signin1 full_side text-white @if (user()) hidden @endif " id="loginForm">
     @csrf
 <img style="width:40%;height:10%" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png">
 <span>
@@ -48,12 +48,12 @@ Remember me
 <input type="submit" value="Login" id="loginBtn" class="btn btn-lg btn-primary btn-round">
 <br>
 <p class="mt-3"><a href="/register" class="text-white">Register here!</a> <br>
-<a style="color:#0080db" href="/forgot_password" class="">Forgot password?</a>
+<a style="color:#0080db" href="/forgot-password" class="">Forgot password?</a>
 </p>
 
 </form>
 
-<form method="post" action="{{ route('user.login-verify') }}" class="hidden form-signin1 full_side text-white" id="verifyForm">
+<form method="post" action="{{ route('user.login-verify') }}" class="@if (!user()) hidden @endif form-signin1 full_side text-white" id="verifyForm">
     @csrf
 
     <img style="width:40%;height:10%" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png">

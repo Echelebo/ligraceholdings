@@ -3,6 +3,8 @@ use App\Models\Bot;
 
 $bots = Bot::get();
 
+$page_title = 'Home';
+
 @endphp
 
 @extends('layouts.front')
@@ -14,7 +16,7 @@ $bots = Bot::get();
 
 
 
-        <div id="particles-js"><canvas class="particles-js-canvas-el" width="1267" height="900" style="width: 100%; height: 100%;"></canvas></div>
+       <!-- <div id="particles-js"><canvas class="particles-js-canvas-el" width="1267" height="900" style="width: 100%; height: 100%;"></canvas></div> -->
         <div class="inner-slider" id="slider-carousel">
             <div class="exp animate__animated animate__fadeInUp" style="display: none;">
                 <h1>Think Higher<span class="yellow-color"></span> <br></h1>

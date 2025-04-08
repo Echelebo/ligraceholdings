@@ -1,4 +1,9 @@
+@php
 
+
+$page_title = 'Terms of service';
+
+@endphp
 
 {{-- layout --}}
 @extends('layouts.front')

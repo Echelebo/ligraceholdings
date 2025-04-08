@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" style="--vh: 9.53px; --animate-duration: 4s; height: 100%;">
+<html lang="en">
     <head>
 
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
@@ -15,7 +15,7 @@
     <!----------------- www.designclubdev.com ----------->
     <meta name="designer" href="https://altsfolio.org/">
     <!----------------- www.designclubdev.com ----------->
-    <title>altsfolio.org</title>
+    <title>{{ $page_title }} | altsfolio.org</title>
 
     <!-- Icon css link -->
     <link href="/trust/css/font-awesome.min.css" rel="stylesheet">
@@ -48,40 +48,13 @@
 
 
 
-    <script type="text/javascript" async="" src="https://static.getbutton.io/widget-send-button/js/init.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
 
-    <!-- /GetButton.io widget-->
-    <script type="text/javascript">
-        (function() {
-            var options = {
-                whatsapp: "+", // WhatsApp number
-                call_to_action: "Contact us!", // Call to action
-                position: "left", // Position may be "right" or "left"
-            };
-            var proto = document.location.protocol,
-                host = "getbutton.io",
-                url = proto + "//static." + host;
-            var s = document.createElement("script");
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = url + "/widget-send-button/js/init.js";
-            s.onload = function() {
-                WhWidgetSendButton.init(host, proto, options);
-            };
-            var x = document.getElementsByTagName("script")[0];
-            x.parentNode.insertBefore(s, x);
-        })();
-
-    </script>
-    <!-- /GetButton.io widget -->
 
 </head>
 
-<body data-new-gr-c-s-check-loaded="14.1229.0" data-gr-ext-installed="" style="position: relative; min-height: 100%; top: 0px;">
+<body  style="position: relative; min-height: 100%; top: 0px;">
 
     <div class="main">
         <!--================Header Menu Area =================-->
@@ -369,20 +342,9 @@ $(document).ready(function() {
 <div class="txt" style="color:black;">Someone from <b>Portugal</b> has <b>withdrawn</b> <a href="javascript:void(0);" onclick="javascript:void(0);">$31,600</a></div>
 </div>
 
-<script data-cfasync="false" src="#"></script><div id="gb-widget-6430" script-id="false" style="
-bottom: 14px;
-left: 16px;
-// opacity: 0;
-// transition: opacity 0.5s;
-box-sizing: border-box;
-position: fixed !important;
-z-index: 16000160 !important;
-direction: ltr;
-text-align: left;
-display: false;
-align-items: false;
-flex-direction: row-reverse;
-"></div>
+<script data-cfasync="false" src="#"></script>
+
+
 <script type="text/javascript">
 var listCountries = ['South Africa', 'USA', 'Germany', 'France', 'Italy', 'South Africa', 'Australia', 'South Africa', 'Canada', 'Argentina', 'Saudi Arabia', 'Mexico', 'South Africa', 'South Africa', 'Venezuela', 'South Africa', 'Sweden', 'South Africa', 'South Africa', 'Italy', 'South Africa', 'United Kingdom', 'South Africa', 'Greece', 'Cuba', 'South Africa', 'Portugal', 'Austria', 'South Africa', 'Panama', 'South Africa', 'South Africa', 'Netherlands', 'Switzerland', 'Belgium', 'Israel', 'Cyprus'];
 var listPlans = ['$51,000', '$14,500', '$40,000', '$41,000', '$10,000', '$50,000', '$52,300', '$9,700', '$10,000', '$4,500', '$9,500', '$34,000', '$42,000', '$4,600', '$3,700', '$27,500', '$58,623', '$31,600'];
@@ -441,5 +403,10 @@ function request() {
         });
     });
 </script>
+
+{{-- livechat --}}
+{!! json_decode(site('livechat')) !!}
+
+</body>
 
 </html>

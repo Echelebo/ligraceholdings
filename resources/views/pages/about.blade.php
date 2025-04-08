@@ -1,4 +1,9 @@
+@php
 
+
+$page_title = 'About';
+
+@endphp
 {{-- layout --}}
 @extends('layouts.front')
 
@@ -232,7 +237,7 @@
                           <div class="col-lg-6">
                               <div class="project_text">
                                   <h4>Want to work with us?</h4>
-                                  <a href="?a=signup">kick start your project</a>
+                                  <a href="/register">kick start your project</a>
                               </div>
                           </div>
                       </div>

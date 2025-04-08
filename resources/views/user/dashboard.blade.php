@@ -1,202 +1,333 @@
 @extends('layouts.user')
 
 @section('contents')
-    
-<div class="container-fluid">
 
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Dashboard</h4>
-
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item">Home</li>
-                                        <li class="breadcrumb-item active">Dashboard</li>
-                                    </ol>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end page title -->
+<div class="row  align-items-center justify-content-between" style="margin-top:10px">
+  <div class="col-16 col-sm-16">
+    <p style="color:white"> <b>Username :</b> {{  user()->username }}  </p></div>
+</div>
 
 
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card stat-card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Total Balance</h5>
-                                    <div class="flex text-green-500  px-2 py-1 rounded-full hover:scale-110 transition-all">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                                <path fill-rule="evenodd"
-                                    d="M15.22 6.268a.75.75 0 01.968-.432l5.942 2.28a.75.75 0 01.431.97l-2.28 5.941a.75.75 0 11-1.4-.537l1.63-4.251-1.086.483a11.2 11.2 0 00-5.45 5.174.75.75 0 01-1.199.19L9 12.31l-6.22 6.22a.75.75 0 11-1.06-1.06l6.75-6.75a.75.75 0 011.06 0l3.606 3.605a12.694 12.694 0 015.68-4.973l1.086-.484-4.251-1.631a.75.75 0 01-.432-.97z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            @if ($percentage_deposit_increase > 0)
-                                <span>+ {{ round($percentage_deposit_increase, 2) }}%</span>
-                            @else
-                                <span>+0%</span>
-                            @endif
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container" style="width: 100%; height: 46px;">
+  <iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22FOREXCOM%3ASPXUSD%22%2C%22title%22%3A%22S%26P%20500%22%7D%2C%7B%22proName%22%3A%22FOREXCOM%3ANSXUSD%22%2C%22title%22%3A%22Nasdaq%20100%22%7D%2C%7B%22proName%22%3A%22FX_IDC%3AEURUSD%22%2C%22title%22%3A%22EUR%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22BTC%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22ETH%2FUSD%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22dark%22%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22relative%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A46%2C%22utm_source%22%3A%22altsfolio.org%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22ticker-tape%22%2C%22page-uri%22%3A%22altsfolio.org%2F%3Fa%3Daccount%22%7D" title="ticker tape TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 46px; width: 100%;"></iframe>
 
-                        </div><div class="w-full flex items-center justify-between">
-                    <div class="flex items-center space-x-2 font-mono">
-                        <div class=" text-blue-500 rounded-full p-2 w-8 h-8">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-                                <path d="M12 7.5a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
-                                <path fill-rule="evenodd"
-                                    d="M1.5 4.875C1.5 3.839 2.34 3 3.375 3h17.25c1.035 0 1.875.84 1.875 1.875v9.75c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 011.5 14.625v-9.75zM8.25 9.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zM18.75 9a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V9.75a.75.75 0 00-.75-.75h-.008zM4.5 9.75A.75.75 0 015.25 9h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H5.25a.75.75 0 01-.75-.75V9.75z"
-                                    clip-rule="evenodd" />
-                                <path
-                                    d="M2.25 18a.75.75 0 000 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 00-.75-.75H2.25z" />
-                            </svg>
-                        </div>
+<style>
+	.tradingview-widget-copyright {
+		font-size: 13px !important;
+		line-height: 32px !important;
+		text-align: center !important;
+		vertical-align: middle !important;
+		/* @mixin sf-pro-display-font; */
+		font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif !important;
+		color: #B2B5BE !important;
+	}
 
-                        <h2><font color="white">{{ formatAmount(user()->balance) }}</font></h2>
-                    </div>
-                    <div class="text-xs font-mono" style="color: #ffffff;">
-                        +{{ formatAmount($todays_deposits) }} today
-                    </div>
+	.tradingview-widget-copyright .blue-text {
+		color: #2962FF !important;
+	}
 
-                </div>
+	.tradingview-widget-copyright a {
+		text-decoration: none !important;
+		color: #B2B5BE !important;
+	}
 
+	.tradingview-widget-copyright a:visited {
+		color: #B2B5BE !important;
+	}
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card stat-card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Total Withdrawals</h5>
-                                    <br />
-                                   
-                                    <div class="w-full flex items-center justify-between">
-                    <div class="flex items-center space-x-2 font-mono">
-                        <div class=" text-blue-500 rounded-full p-2 w-8 h-8">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-                                <path d="M12 7.5a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
-                                <path fill-rule="evenodd"
-                                    d="M1.5 4.875C1.5 3.839 2.34 3 3.375 3h17.25c1.035 0 1.875.84 1.875 1.875v9.75c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 011.5 14.625v-9.75zM8.25 9.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zM18.75 9a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V9.75a.75.75 0 00-.75-.75h-.008zM4.5 9.75A.75.75 0 015.25 9h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H5.25a.75.75 0 01-.75-.75V9.75z"
-                                    clip-rule="evenodd" />
-                                <path
-                                    d="M2.25 18a.75.75 0 000 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 00-.75-.75H2.25z" />
-                            </svg>
-                        </div>
+	.tradingview-widget-copyright a:hover .blue-text {
+		color: #1E53E5 !important;
+	}
 
-                        <h2><font color="white">{{ formatAmount($total_withdrawals) }}</font></h2>
-                    </div>
-                    <div class="text-xs font-mono" style="color: #ffffff;">
-                       
-                    </div>
+	.tradingview-widget-copyright a:active .blue-text {
+		color: #1848CC !important;
+	}
 
-                </div>
+	.tradingview-widget-copyright a:visited .blue-text {
+		color: #2962FF !important;
+	}
+	</style></div>
+<!-- TradingView Widget END -->
 
 
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <div class="card stat-card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Pending Withdrawals</h5>
-                                    <br />
-                                   
-                                    <div class="w-full flex items-center justify-between">
-                    <div class="flex items-center space-x-2 font-mono">
-                        <div class=" text-blue-500 rounded-full p-2 w-8 h-8">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-                                <path d="M12 7.5a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" />
-                                <path fill-rule="evenodd"
-                                    d="M1.5 4.875C1.5 3.839 2.34 3 3.375 3h17.25c1.035 0 1.875.84 1.875 1.875v9.75c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 011.5 14.625v-9.75zM8.25 9.75a3.75 3.75 0 117.5 0 3.75 3.75 0 01-7.5 0zM18.75 9a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V9.75a.75.75 0 00-.75-.75h-.008zM4.5 9.75A.75.75 0 015.25 9h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H5.25a.75.75 0 01-.75-.75V9.75z"
-                                    clip-rule="evenodd" />
-                                <path
-                                    d="M2.25 18a.75.75 0 000 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 00-.75-.75H2.25z" />
-                            </svg>
-                        </div>
+<div class="row mgt5">
+  <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-4">
+    <div class="activity-block success">
+      <div class="media">
+        <div class="media-body">
+          <h5 class="font-weight-bold">$<span class="">0</span></h5>
+          <p>Investment</p>
+        </div>
+        <i class="fas fa-dollar-sign"></i>
+      </div>
+      <div class="row">
+        <div class="progress ">
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 86%;"><span class="trackerball"></span></div>
+        </div>
+      </div>
+      <i style="margin-top:-12px;" class="bg-icon text-center fas fa-dollar-sign"></i>
+    </div>
+  </div>
+  <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-4">
+    <div class="activity-block success">
+      <div class="media">
+        <div class="media-body">
+          <h5 class="font-weight-bold">$<span class="">0</span></h5>
+          <p>Total Balance</p>
+        </div>
+        <i class="fas fa-chart-bar"></i>
+      </div>
+      <div class="row">
+        <div class="progress ">
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"><span class="trackerball"></span></div>
+        </div>
+      </div>
+      <i style="margin-top:-12px;" class="bg-icon text-center fas fa-chart-bar"></i>
+    </div>
+  </div>
+  <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-4">
+    <div class="activity-block success">
+      <div class="media">
+        <div class="media-body">
+          <h5 class="font-weight-bold">$<span class="">0</span></h5>
+          <p>Referral Bonus</p>
+        </div>
+        <i class="fas fa-users"></i>
+      </div>
+      <div class="row">
+        <div class="progress ">
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 45%;"><span class="trackerball"></span></div>
+        </div>
+      </div>
+      <i style="margin-top:-12px;" class="bg-icon text-center fas fa-users"></i>
+    </div>
+  </div>
+  <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-4">
+    <div class="activity-block success">
+      <div class="media">
+        <div class="media-body">
+          <h5 class="font-weight-bold"><span class=""><i style="color:#0f0;font-size:20px" class="fas fa-check-circle blink_me"> Verified</i></span></h5>
+          <p>Account Status</p>
+        </div>
+        <i class="fas fa-address-card"></i>
+      </div>
+      <div class="row">
+        <div class="progress ">
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"><span class="trackerball"></span></div>
+        </div>
+      </div>
+      <i style="margin-top:-12px;" class="bg-icon text-center fas fa-address-card"></i>
+    </div>
+  </div>
+</div>
 
-                        <h2><font color="white">{{ formatAmount($pending_withdrawals) }}</font></h2>
-                    </div>
-                    <div class="text-xs font-mono" style="color: #ffffff;">
-                       
-                    </div>
-
-                </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row content">
+<div class="row  align-items-center justify-content-between" style="margin-top:10px">
+  <div class="col-16 col-sm-16">
+    <div class="btn-group pull-right">
+      <a href="{{ route('user.dashboard') }}"><button class="btn btn-success btn-outline-light"><span class="">Account</span> <span class="text"><i class="fas fa-tachometer-alt ml-2"></i></span></button></a>
+      <a href="{{ route('user.bots.index') }}"><button class="btn btn-success btn-outline-light"><span class="">Make Deposit</span> <span class="text"><i class="fas fa-coins ml-2"></i></span></button></a>
+      <a href="{{ route('user.withdrawals.index') }}"><button class="btn btn-success btn-outline-light"><span class="">Withdraw Funds</span> <span class="text"><i class="fas fa-wallet ml-2"></i></span></button></a>
+      <a href="{{ route('user.profile.edit') }}"><button class="btn btn-danger btn-outline-danger"><span class="">Settings</span> <i class="fa fa-cog fa-spin ml-2"></i></button></a>
+    </div>
+  </div>
+</div>
+<hr>
 
 
-                        <div class="col-sm-12 text-left">
-                            <div class="card my-4">
-                                <h5 class="card-header bg-primary text-white">Dashboard</h5>
-                                <div class="card-body">
-                                    <div class="row">
 
-                                <div class="table-responsive">
-              <table class="table">
-                <tbody>
 
-                  <tr>
-                    <td>Sponsor/Referral Name</td>
-                    <td>{{ user()->referred_by ?? 'Direct Signup' }}</td>
-                  </tr>
+<div class="row">
+  <div class="col-md-16 col-lg-16 col-xl-16">
+    <div class="card full-screen-container">
+      <div class="card-header align-items-start justify-content-between flex" style="">
+        <h5 class="card-title  pull-left" style="color:white"><b>Live Trading Chart</b></h5>
+        <ul class="nav nav-pills card-header-pills pull-right">
+          <!-- <li class="nav-item">
+            <button type="" class="btn btn-sm btn-outline-primary btn-round" id="livechart"><i class="fa fa-print"></i> <span class="">Get Pdf</span></button>
+          </li> -->
+          <li class="nav-item">
+            <button class="btn btn-sm btn-link btn-round fullscreen-btn"><i class="fa fa-arrows-alt"></i></button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-sm btn-link btn-round" data-toggle="collapse" data-target="#demo"><i class="fa fa-chevron-down"></i></button>
+          </li>
+        </ul>
+      </div>
+      <div id="tablelivechart">
+        <!-- chart -->
+        <div class="tradingview-widget-container" id="demo">
+          <div id="tradingview_e705a" style="height:550px"><div id="tradingview_246b2-wrapper" style="position: relative; box-sizing: content-box; font-family: -apple-system, BlinkMacSystemFont, &quot;Trebuchet MS&quot;, Roboto, Ubuntu, sans-serif; margin: 0px auto !important; padding: 0px !important; width: 100%; height: 100%;"><iframe title="advanced chart TradingView widget" lang="en" id="tradingview_246b2" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen="true" src="https://s.tradingview.com/widgetembed/?hideideas=1&amp;overrides=%7B%7D&amp;enabled_features=%5B%5D&amp;disabled_features=%5B%5D&amp;locale=en#%7B%22symbol%22%3A%22BINANCE%3ABTCUSDT%22%2C%22frameElementId%22%3A%22tradingview_246b2%22%2C%22interval%22%3A%221%22%2C%22hide_side_toolbar%22%3A%220%22%2C%22allow_symbol_change%22%3A%221%22%2C%22save_image%22%3A%221%22%2C%22details%22%3A%221%22%2C%22studies%22%3A%22AwesomeOscillator%40tv-basicstudies%5Cu001fMACD%40tv-basicstudies%22%2C%22theme%22%3A%22dark%22%2C%22style%22%3A%221%22%2C%22timezone%22%3A%22America%2FLos_Angeles%22%2C%22studies_overrides%22%3A%22%7B%7D%22%2C%22utm_source%22%3A%22altsfolio.org%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22chart%22%2C%22utm_term%22%3A%22BINANCE%3ABTCUSDT%22%2C%22page-uri%22%3A%22altsfolio.org%2F%3Fa%3Daccount%22%7D" style="width: 100%; height: 100%; margin: 0px !important; padding: 0px !important;"></iframe></div></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              "autosize": true,
+              // "width": 1200,
+              // "height": 610,
+              "symbol": "BINANCE:BTCUSDT",
+              "interval": "1",
+              "timezone": "America/Los_Angeles",
+              "theme": "dark",
+              "style": "1",
+              "locale": "en",
+              "toolbar_bg": "#f1f3f6",
+              "enable_publishing": false,
+              "hide_side_toolbar": false,
+              "allow_symbol_change": true,
+              "details": true,
+              "studies": [
+                "AwesomeOscillator@tv-basicstudies",
+                "MACD@tv-basicstudies"
+              ],
+              "container_id": "tradingview_e705a"
+            });
+          </script>
+        </div>
+        <!-- chart end -->
+      </div>
+    </div>
+  </div>
+</div>
 
-                  <tr>
-                    <td>Total Balance</td>
-                    <td>$<b>{{ number_format(user()->balance) }}</b><br>
-                      <small>
-                      </small>
-                    </td>
-                  </tr>
 
-                  <tr>
-                    <td>Total Earning</td>
-                    <td>${{ number_format($profit_fig + $capital) }}</td>
-                  </tr>
-                  <tr>
-                    <td>Active Deposit</td>
-                    <td>${{ number_format($capitalx) }}</td>
-                  </tr>
+<div class="row">
+  <div class="col-md-16 col-lg-8 col-xl-8">
+    <div class="card full-screen-container">
+      <div class="card-header align-items-start justify-content-between flex">
+        <h5 class="card-title  pull-left"><b>Cryptocurrency Market</b></h5>
+        <ul class="nav nav-pills card-header-pills pull-right">
+          <!-- <li class="nav-item">
+            <button type="" class="btn btn-sm btn-outline-primary btn-round" id="chart1"><i class="fa fa-print"></i> <span class="">Get Pdf</span></button>
+          </li> -->
+          <li class="nav-item">
+            <button class="btn btn-sm btn-link btn-round fullscreen-btn"><i class="fa fa-arrows-alt"></i></button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-sm btn-link btn-round" data-toggle="collapse" data-target="#demo3"><i class="fa fa-chevron-down"></i></button>
+          </li>
+        </ul>
+      </div>
+      <div id="tablechart1">
+        <div id="demo3" class="">
+          <!-- TradingView Widget BEGIN -->
+          <div class="tradingview-widget-container" style="width: 100%; height: 350px;">
+            <iframe allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/crypto-mkt-screener/?locale=en#%7B%22width%22%3A%22100%25%22%2C%22height%22%3A350%2C%22defaultColumn%22%3A%22overview%22%2C%22screener_type%22%3A%22crypto_mkt%22%2C%22displayCurrency%22%3A%22USD%22%2C%22colorTheme%22%3A%22dark%22%2C%22market%22%3A%22crypto%22%2C%22enableScrolling%22%3Atrue%2C%22utm_source%22%3A%22altsfolio.org%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22cryptomktscreener%22%2C%22page-uri%22%3A%22altsfolio.org%2F%3Fa%3Daccount%22%7D" title="crypto mkt-screener TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 100%; width: 100%;"></iframe>
+            <!-- <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener" target="_blank"><span class="blue-text">Cryptocurrency Markets</span></a> by TradingView</div> -->
 
-                  <tr>
-                    <td>Last Deposit:</td>
-                    <td>$<b>{{ $last_deposit->capital ?? '0' }}</b> &nbsp; <small>{{ $last_deposit->created_at ?? '' }}</small></td>
-                  </tr>
-                  <tr>
-                    <td>Total Deposit:</td>
-                    <td>$<b>{{ number_format($capital) }}</b></td>
-                  </tr>
-                  <tr>
-                    <td>Last Withdrawal:</td>
-                    <td>$<b>{{ $last_withdrawals->amount ?? '0' }}</b> &nbsp; <small>{{ $last_withdrawals->created_at ?? ''}}</small></td>
-                  </tr>
+          <style>
+	.tradingview-widget-copyright {
+		font-size: 13px !important;
+		line-height: 32px !important;
+		text-align: center !important;
+		vertical-align: middle !important;
+		/* @mixin sf-pro-display-font; */
+		font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif !important;
+		color: #B2B5BE !important;
+	}
 
-                  <!--<tr>
-                    <td>Last Access</td>
-                    <td>Mar-1-2024 05:10:19 AM&nbsp;</td>
-                  </tr>-->
-                  <tr>
-                    <td>Referral link:</td>
-                    <td>{{ route('user.register', ['ref' => user()->username ?? 'notset']) }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>        
-                                    </div>
+	.tradingview-widget-copyright .blue-text {
+		color: #2962FF !important;
+	}
 
-                                </div>
-                            </div>
-                        </div>
+	.tradingview-widget-copyright a {
+		text-decoration: none !important;
+		color: #B2B5BE !important;
+	}
 
-                    </div>
-                </div>
-    
+	.tradingview-widget-copyright a:visited {
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright a:hover .blue-text {
+		color: #1E53E5 !important;
+	}
+
+	.tradingview-widget-copyright a:active .blue-text {
+		color: #1848CC !important;
+	}
+
+	.tradingview-widget-copyright a:visited .blue-text {
+		color: #2962FF !important;
+	}
+	</style></div>
+          <!-- TradingView Widget END -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+
+
+  <!-- <div class="row"> -->
+  <div class="col-md-16 col-lg-8 col-xl-8">
+    <div class="card full-screen-container">
+      <div class="card-header align-items-start justify-content-between flex">
+        <h5 class="card-title  pull-left"><b>Stock Market Data</b></h5>
+        <ul class="nav nav-pills card-header-pills pull-right">
+          <!-- <li class="nav-item">
+            <button type="" class="btn btn-sm btn-outline-primary btn-round" id="chart2"><i class="fa fa-print"></i> <span class="">Get Pdf</span></button>
+          </li> -->
+          <li class="nav-item">
+            <button class="btn btn-sm btn-link btn-round fullscreen-btn"><i class="fa fa-arrows-alt"></i></button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-sm btn-link btn-round" data-toggle="collapse" data-target="#demo1"><i class="fa fa-chevron-down"></i></button>
+          </li>
+        </ul>
+      </div>
+      <div id="tablechart2">
+        <div id="demo1" class="">
+          <div class="tradingview-widget-container" style="width: 100%; height: 350px;">
+            <!-- TradingView Widget BEGIN -->
+            <!-- <div class="tradingview-widget-container"> -->
+            <iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/market-quotes/?locale=en#%7B%22width%22%3A%22100%25%22%2C%22height%22%3A350%2C%22symbolsGroups%22%3A%5B%7B%22name%22%3A%22stock%22%2C%22symbols%22%3A%5B%7B%22name%22%3A%22NASDAQ%3ANDAQ%22%2C%22displayName%22%3A%22NASDAQ%22%7D%2C%7B%22name%22%3A%22NASDAQ%3AAAPL%22%2C%22displayName%22%3A%22APPLE%20STOCK%22%7D%2C%7B%22name%22%3A%22NASDAQ%3AGOOGL%22%2C%22displayName%22%3A%22GOOGL%22%7D%2C%7B%22name%22%3A%22NASDAQ%3ANVAX%22%2C%22displayName%22%3A%22NVAX%20NA%22%7D%2C%7B%22name%22%3A%22NASDAQ%3AAMZN%22%2C%22displayName%22%3A%22AMZN%22%7D%2C%7B%22name%22%3A%22NASDAQ%3AFB%22%2C%22displayName%22%3A%22FACEB%22%7D%2C%7B%22name%22%3A%22NASDAQ%3ATLSA%22%2C%22displayName%22%3A%22TLSA%22%7D%5D%7D%2C%7B%22name%22%3A%22Indices%22%2C%22originalName%22%3A%22Indices%22%2C%22symbols%22%3A%5B%7B%22name%22%3A%22FOREXCOM%3ASPXUSD%22%2C%22displayName%22%3A%22S%26P%20500%22%7D%2C%7B%22name%22%3A%22FOREXCOM%3ANSXUSD%22%2C%22displayName%22%3A%22Nasdaq%20100%22%7D%2C%7B%22name%22%3A%22FOREXCOM%3ADJI%22%2C%22displayName%22%3A%22Dow%2030%22%7D%2C%7B%22name%22%3A%22INDEX%3ANKY%22%2C%22displayName%22%3A%22Nikkei%20225%22%7D%2C%7B%22name%22%3A%22INDEX%3ADEU30%22%2C%22displayName%22%3A%22DAX%20Index%22%7D%2C%7B%22name%22%3A%22FOREXCOM%3AUKXGBP%22%2C%22displayName%22%3A%22UK%20100%22%7D%5D%7D%2C%7B%22name%22%3A%22Commodities%22%2C%22originalName%22%3A%22Commodities%22%2C%22symbols%22%3A%5B%7B%22name%22%3A%22CME_MINI%3AES1!%22%2C%22displayName%22%3A%22S%26P%20500%22%7D%2C%7B%22name%22%3A%22CME%3A6E1!%22%2C%22displayName%22%3A%22Euro%22%7D%2C%7B%22name%22%3A%22COMEX%3AGC1!%22%2C%22displayName%22%3A%22Gold%22%7D%2C%7B%22name%22%3A%22NYMEX%3ACL1!%22%2C%22displayName%22%3A%22Crude%20Oil%22%7D%2C%7B%22name%22%3A%22NYMEX%3ANG1!%22%2C%22displayName%22%3A%22Natural%20Gas%22%7D%2C%7B%22name%22%3A%22CBOT%3AZC1!%22%2C%22displayName%22%3A%22Corn%22%7D%5D%7D%2C%7B%22name%22%3A%22Bonds%22%2C%22originalName%22%3A%22Bonds%22%2C%22symbols%22%3A%5B%7B%22name%22%3A%22CME%3AGE1!%22%2C%22displayName%22%3A%22Eurodollar%22%7D%2C%7B%22name%22%3A%22CBOT%3AZB1!%22%2C%22displayName%22%3A%22T-Bond%22%7D%2C%7B%22name%22%3A%22CBOT%3AUB1!%22%2C%22displayName%22%3A%22Ultra%20T-Bond%22%7D%2C%7B%22name%22%3A%22EUREX%3AFGBL1!%22%2C%22displayName%22%3A%22Euro%20Bund%22%7D%2C%7B%22name%22%3A%22EUREX%3AFBTP1!%22%2C%22displayName%22%3A%22Euro%20BTP%22%7D%2C%7B%22name%22%3A%22EUREX%3AFGBM1!%22%2C%22displayName%22%3A%22Euro%20BOBL%22%7D%5D%7D%2C%7B%22name%22%3A%22Forex%22%2C%22originalName%22%3A%22Forex%22%2C%22symbols%22%3A%5B%7B%22name%22%3A%22FX%3AEURUSD%22%7D%2C%7B%22name%22%3A%22FX%3AGBPUSD%22%7D%2C%7B%22name%22%3A%22FX%3AUSDJPY%22%7D%2C%7B%22name%22%3A%22FX%3AUSDCHF%22%7D%2C%7B%22name%22%3A%22FX%3AAUDUSD%22%7D%2C%7B%22name%22%3A%22FX%3AUSDCAD%22%7D%5D%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22dark%22%2C%22isTransparent%22%3Afalse%2C%22utm_source%22%3A%22altsfolio.org%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22market-quotes%22%2C%22page-uri%22%3A%22altsfolio.org%2F%3Fa%3Daccount%22%7D" title="market quotes TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 100%; width: 100%;"></iframe>
+            <!-- <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">stock</span></a> by TradingView</div> -->
+
+          <style>
+	.tradingview-widget-copyright {
+		font-size: 13px !important;
+		line-height: 32px !important;
+		text-align: center !important;
+		vertical-align: middle !important;
+		/* @mixin sf-pro-display-font; */
+		font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif !important;
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright .blue-text {
+		color: #2962FF !important;
+	}
+
+	.tradingview-widget-copyright a {
+		text-decoration: none !important;
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright a:visited {
+		color: #B2B5BE !important;
+	}
+
+	.tradingview-widget-copyright a:hover .blue-text {
+		color: #1E53E5 !important;
+	}
+
+	.tradingview-widget-copyright a:active .blue-text {
+		color: #1848CC !important;
+	}
+
+	.tradingview-widget-copyright a:visited .blue-text {
+		color: #2962FF !important;
+	}
+	</style></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br><br>
+
 @endsection
 
 @section('scripts')

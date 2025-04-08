@@ -26,6 +26,9 @@ use App\Http\Controllers\User\KycController;
 use App\Http\Controllers\User\P2pController;
 use App\Http\Controllers\User\ReferralController;
 use App\Http\Controllers\User\TransactionController;
+use App\Http\Controllers\User\ChartController;
+use App\Http\Controllers\User\TechnicalController;
+use App\Http\Controllers\User\CalendarController;
 use App\Http\Controllers\User\WithdrawalController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,7 +53,7 @@ Route::name('user.')->group(function () {
         });
     });
 
-    //dashboard 
+    //dashboard
     Route::middleware(['user.auth'])->prefix('user')->group(function () {
         Route::post('logout', [LoginController::class, 'logOut'])->name('logout');
         Route::post('resend-otp', [OtpController::class, 'resend'])->name('resend-otp');
@@ -62,7 +65,7 @@ Route::name('user.')->group(function () {
         // require g2fa
         Route::middleware(['user.g2fa'])->group(function () {
             Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
-            //user profile 
+            //user profile
             Route::name('profile.')->prefix('profile')->group(function () {
                 Route::get('/', [AccountController::class, 'profile'])->name('index');
                 Route::get('edit', [AccountController::class, 'editProfile'])->name('edit');
@@ -71,11 +74,11 @@ Route::name('user.')->group(function () {
                 Route::post('g2fa', [AccountController::class, 'g2FaUpdate'])->name('g2fa')->middleware('demo.mode');
                 Route::post('photo', [AccountController::class, 'updatePhoto'])->name('photo')->middleware('demo.mode');
             });
-            
+
             Route::name('security.')->prefix('security')->group(function () {
                 Route::get('/edit', [AccountController::class, 'editSecurity'])->name('edit');
                 Route::get('/edit', [AccountController::class, 'editSecurity'])->name('edit');
-                
+
             });
             //kyc routes
             Route::name('kyc.')->prefix('kyc')->group(function () {
@@ -122,7 +125,22 @@ Route::name('user.')->group(function () {
                 Route::prefix('transactions')->name('transactions.')->group(function () {
                     Route::get('/', [TransactionController::class, 'index'])->name('index');
                 });
-                
+
+                //transactions
+                Route::prefix('chart')->name('chart.')->group(function () {
+                    Route::get('/', [ChartController::class, 'index'])->name('index');
+                });
+
+                //transactions
+                Route::prefix('technical')->name('technical.')->group(function () {
+                    Route::get('/', [TechnicalController::class, 'index'])->name('index');
+                });
+
+                //transactions
+                Route::prefix('calendar')->name('calendar.')->group(function () {
+                    Route::get('/', [CalendarController::class, 'index'])->name('index');
+                });
+
                 //transactions
                 Route::prefix('earnings')->name('earnings.')->group(function () {
                     Route::get('/history', [TransactionController::class, 'history'])->name('history');
@@ -138,12 +156,12 @@ Route::name('user.')->group(function () {
 
                 // referral
                 Route::get('referrals', [ReferralController::class, 'index'])->name('referrals');
-                
+
                  Route::prefix('referralslink')->name('referralslink.')->group(function () {
                     Route::get('/linkindex', [ReferralController::class, 'linkindex'])->name('linkindex');
 
                 });
-                
+
             });
         });
     });

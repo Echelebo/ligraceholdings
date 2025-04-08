@@ -1,3 +1,9 @@
+@php
+
+
+$page_title = 'Stock';
+
+@endphp
 @extends('layouts.front')
 
 

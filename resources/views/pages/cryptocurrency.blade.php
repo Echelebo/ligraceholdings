@@ -1,8 +1,10 @@
+@php
+
+$page_title = 'Cryptocurreny';
+
+@endphp
+
 @extends('layouts.front')
-
-
-
-
 
 @section('contents')
 

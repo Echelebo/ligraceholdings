@@ -1,3 +1,10 @@
+@php
+
+
+$page_title = 'Real Estate';
+
+@endphp
+
 @extends('layouts.front')
 
 
