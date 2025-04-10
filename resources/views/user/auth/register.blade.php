@@ -73,14 +73,6 @@
                 @enderror
             </span>
             <br>
-            <label style="color:black" class="font-weight-bold">Retype Your E-mail</label>
-            <input type="text" name="email_confirmation" value="" style="color:black" class="form-control" size="30" placeholder="Retype E-mail">
-            <span style="color:crimson">
-                @error('email_confirmation')
-                {{ $message }}
-                @enderror
-            </span>
-            <br>
             <label style="color:black" class="font-weight-bold">Secret question</label>
             <input type="text" name="sq" value="" style="color:black" class="form-control" size="30" placeholder="Secret question">
             <span style="color:crimson"></span>
