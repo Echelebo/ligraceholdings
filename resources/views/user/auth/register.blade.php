@@ -10,104 +10,14 @@
 
 
 
-        <script language=javascript>
-            function checkform() {
-                if (document.regform.fullname.value == '') {
-                    alert("Please enter your full name!");
-                    document.regform.fullname.focus();
-                    return false;
-                }
-
-
-                if (document.regform.username.value == '') {
-                    alert("Please enter your username!");
-                    document.regform.username.focus();
-                    return false;
-                }
-                if (!document.regform.username.value.match(/^[A-Za-z0-9_\-]+$/)) {
-                    alert("For username you should use English letters and digits only!");
-                    document.regform.username.focus();
-                    return false;
-                }
-                if (document.regform.password.value == '') {
-                    alert("Please enter your password!");
-                    document.regform.password.focus();
-                    return false;
-                }
-                if (document.regform.password.value != document.regform.password2.value) {
-                    alert("Please check your password!");
-                    document.regform.password2.focus();
-                    return false;
-                }
-
-
-                if (document.regform.email.value == '') {
-                    alert("Please enter your e-mail address!");
-                    document.regform.email.focus();
-                    return false;
-                }
-                if (document.regform.email.value != document.regform.email1.value) {
-                    alert("Please retype your e-mail!");
-                    document.regform.email.focus();
-                    return false;
-                }
-
-                for (i in document.regform.elements) {
-                    f = document.regform.elements[i];
-                    if (f.name && f.name.match(/^pay_account/)) {
-                        if (f.value == '') continue;
-                        var notice = f.getAttribute('data-validate-notice');
-                        var invalid = 0;
-                        if (f.getAttribute('data-validate') == 'regexp') {
-                            var re = new RegExp(f.getAttribute('data-validate-regexp'));
-                            if (!f.value.match(re)) {
-                                invalid = 1;
-                            }
-                        } else if (f.getAttribute('data-validate') == 'email') {
-                            var re = /^[^\@]+\@[^\@]+\.\w{2,4}$/;
-                            if (!f.value.match(re)) {
-                                invalid = 1;
-                            }
-                        }
-                        if (invalid) {
-                            alert('Invalid account format. Expected ' + notice);
-                            f.focus();
-                            return false;
-                        }
-                    }
-                }
-
-                if (document.regform.agree.checked == false) {
-                    alert("You have to agree with the Terms and Conditions!");
-                    return false;
-                }
-
-                return true;
-            }
-
-            function IsNumeric(sText) {
-                var ValidChars = "0123456789";
-                var IsNumber = true;
-                var Char;
-                if (sText == '') return false;
-                for (i = 0; i < sText.length && IsNumber == true; i++) {
-                    Char = sText.charAt(i);
-                    if (ValidChars.indexOf(Char) == -1) {
-                        IsNumber = false;
-                    }
-                }
-                return IsNumber;
-            }
-        </script>
 
 
 
 
-        <form method="post" action="{{ route('user.register-validate') }}" id="registerForm" class="form-signin1 full_side text-white">
-
-            @csrf
-
-            <img style="width:40%;height:10%" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png">
+        <form method=post onsubmit="return checkform()" name="regform" class="form-signin1 full_side text-white"><input type="hidden" name="form_id" value="17442237502276"><input type="hidden" name="form_token" value="082f1bb1868568f0538a0599f6a40f14">
+            <input type=hidden name=a value="signup">
+            <input type=hidden name=action value="signup">
+            <img style="width:40%;height:10%" src="altlog-removebg-preview.png">
             <span>
                 <h3 style="color:crimson;text-align:center"></h3>
             </span>
@@ -117,74 +27,59 @@
             <h2 class="tex-black mb-4">Register</h2>
 
             <label style="color:black" class="font-weight-bold">Your Full Name</label>
-            <input type="text" name="name" value="" style="color:black" class="form-control" size="30" placeholder="Full Name">
-            <span style="color:crimson">@error('name')
-                {{ $message }}
-                @enderror</span>
+            <input type=text name=fullname value="" style="color:black" class="form-control" size=30 placeholder="Full Name">
+            <span style="color:crimson"></span>
             <br>
             <label style="color:black" class="font-weight-bold">Your Username</label>
-            <input type="text" name="username" value="" style="color:black" class="form-control" size="30" placeholder="Username">
-            <span style="color:crimson">
-                @error('username')
-                {{ $message }}
-                @enderror
-            </span>
+            <input type=text name=username value="" style="color:black" class="form-control" size=30 placeholder="Username">
+            <span style="color:crimson"></span>
             <br>
             <label style="color:black" class="font-weight-bold">Define Password</label>
-            <input type="password" name="password" value="" style="color:black" class="form-control" size="30" placeholder="Define Password">
-            <span style="color:crimson">
-                @error('password')
-                {{ $message }}
-                @enderror
-            </span>
+            <input type=password name=password value="" style="color:black" class="form-control" size=30 placeholder="Define Password">
+            <span style="color:crimson"></span>
             <br>
             <label style="color:black" class="font-weight-bold">Retype Password</label>
-            <input type="password" name="password_confirmation" value="" style="color:black" class="form-control" size="30" placeholder="Retype Password">
-            <span style="color:crimson" @error('password_confirmation')
-                {{ $message }}
-                @enderror></span>
+            <input type=password name=password2 value="" style="color:black" class="form-control" size=30 placeholder="Retype Password">
+            <span style="color:crimson"></span>
             <br>
 
 
             <label style="color:black" class="font-weight-bold">Account ID</label>
-            <input type="text" style="color:black" class="form-control" name="usdt_wallet" value="">
+            <input type=text style="color:black" class="form-control" name="pay_account[1000][Account ID]" value="">
             <span style="color:crimson"></span>
             <br>
             <label style="color:black" class="font-weight-bold">Account ID</label>
-            <input type="text" style="color:black" class="form-control" name="usdt_wallet2" value="">
+            <input type=text style="color:black" class="form-control" name="pay_account[1001][Account ID]" value="">
+            <span style="color:crimson"></span>
+            <br>
+            <label style="color:black" class="font-weight-bold">Account ID</label>
+            <input type=text style="color:black" class="form-control" name="pay_account[1002][Account ID]" value="">
             <span style="color:crimson"></span>
             <br>
             <label style="color:black" class="font-weight-bold">Your E-mail Address</label>
-            <input type="text" name="email" value="" style="color:black" class="form-control" size="30" placeholder="E-mail Address">
-            <span style="color:crimson">
-                @error('email')
-                {{ $message }}
-                @enderror
-            </span>
+            <input type=text name=email value="" style="color:black" class="form-control" size=30 placeholder="E-mail Address">
+            <span style="color:crimson"></span>
             <br>
             <label style="color:black" class="font-weight-bold">Retype Your E-mail</label>
-            <input type="text" name="email_confirmation" value="" style="color:black" class="form-control" size="30" placeholder="Retype E-mail">
-            <span style="color:crimson">
-                @error('email_confirmation')
-                {{ $message }}
-                @enderror
-            </span>
+            <input type=text name=email1 value="" style="color:black" class="form-control" size=30 placeholder="Retype E-mail">
+            <span style="color:crimson"></span>
             <br>
             <label style="color:black" class="font-weight-bold">Secret question</label>
-            <input type="text" name="sq" value="" style="color:black" class="form-control" size="30" placeholder="Secret question">
+            <input type=text name=sq value="" style="color:black" class="form-control" size=30 placeholder="Secret question">
             <span style="color:crimson"></span>
             <br>
             <label style="color:black" class="font-weight-bold">Secret answer</label>
-            <input type="text" name="sa" value="" style="color:black" class="form-control" size="30" placeholder="Secret answer">
+            <input type=text name=sa value="" style="color:black" class="form-control" size=30 placeholder="Secret answer">
             <span style="color:crimson"></span>
             <br>
 
-            <p>Your Upline: @if ($ref == NULL) n/a @else {{ $ref }} @endif</p>
+            <p>Your Upline:(n/a)</p>
 
 
-            <input type="checkbox" id="agreeTerms" name="agree" value="1"> I agree with <a href="/tos">Terms and conditions</a>
-            <input type="submit" value="Register" class="btn btn-lg btn-primary btn-round" style="background:#0080DB;color:white">
 
+            <input type=checkbox name=agree value=1> I agree with <a href="?a=rules">Terms and conditions</a>
+            <input type=submit value="Register" class="btn btn-lg btn-primary btn-round" style="background:#0080DB;color:white">
+            </table>
         </form>
     </div>
 </div>
