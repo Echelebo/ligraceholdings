@@ -1,208 +1,319 @@
 @extends('layouts.user')
 
 @section('contents')
-    <div class="w-full p-3">
+<div class="row  align-items-center justify-content-between" style="margin-top:10px">
+    <div class="col-16 col-sm-16" class="btn-group pull-right">
+        <p style="color:white"><b>TRANSACTIONS</b></p>
+    </div>
+</div>
 
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+        {
+            "symbols": [{
+                    "proName": "FOREXCOM:SPXUSD",
+                    "title": "S&P 500"
+                },
+                {
+                    "proName": "FOREXCOM:NSXUSD",
+                    "title": "Nasdaq 100"
+                },
+                {
+                    "proName": "FX_IDC:EURUSD",
+                    "title": "EUR/USD"
+                },
+                {
+                    "proName": "BITSTAMP:BTCUSD",
+                    "title": "BTC/USD"
+                },
+                {
+                    "proName": "BITSTAMP:ETHUSD",
+                    "title": "ETH/USD"
+                }
+            ],
+            "showSymbolLogo": true,
+            "colorTheme": "dark",
+            "isTransparent": false,
+            "displayMode": "relative",
+            "locale": "en"
+        }
+    </script>
+</div>
+<!-- TradingView Widget END -->
 
-        <div class="w-full lg:flex lg:gap-3">
-            <div class="w-full lg:w-2/3-x">
-                
+<style>
+    th {
+        background: -webkit-linear-gradient(left, #2ec7cb 0%, #6c8bef 100%);
+        background: linear-gradient(to right, #2ec7cb 0%, #6c8bef 100%);
+    }
+</style>
 
-                
-
-                <div class="w-full p-5 mb-5 ts-gray-2-x rounded-lg transition-all rescron-card " id="bot-history">
-                    <h3 class="capitalize  font-extrabold "><span class="border-b-2">Trading
-                            History</span>
-                    </h3>
-
-                    <div class="w-full">
-
-                        <div class="w-full ts-gray-3-x p-2 rounded-lg border border-slate-800 hover:border-slate-600">
-                            <div id="profitChart"></div>
-                        </div>
-
-                        <div class="w-full" id="bot-history-grid">
-                            <div class="grid grid-cols-1 gap-3 mt-5">
-
-                                @forelse ($histories as $history)
-                                    <div
-                                        class="w-full ts-gray-3-x p-2 rounded-lg border border-slate-800 hover:border-slate-600 cursor-pointer">
-                                        <div class="flex px-2 justify-between">
-                                            <p class="flex space-x-1 p-3"><img class="w-8 h-8 bg-white rounded-full"
-                                                    src="{{ asset('storage/bots/' . $history->botActivation->bot->logo) }}"
-                                                    alt="">
-                                                <span>{{ $history->botActivation->bot->name }}</span>
-
-                                            </p>
-                                            <p>
-                                                <span
-                                                    class="view-chart cursor-pointer flex items-center bg-blue-500 px-2 py-1 rounded-lg hover:scale-110 text-white transition-all "
-                                                    data-pair="{{ $history->pair }}">View Chart</span>
-                                            </p>
-                                        </div>
-                                        <div class="w-full flex justify-between items-center p-2">
-
-
-                                            <div class="">
-                                                <div class="grid grid-cols-2 gap-1">
-                                                    <p class="text-xs">Exit Time (UTC)</p>
-                                                    <p class="text-purple-500 font-mono local-time">
-                                                        {{ date('d-m-y H:i:s', $history->timestamp) }}
-                                                    </p>
-
-                                                    <p class="text-xs">Trading Pair</p>
-                                                    <p class="text-purple-500 font-mono">{{ $history->pair }}</p>
-
-                                                    <p class="text-xs">Entry Price</p>
-                                                    <p class="text-purple-500 font-mono">{{ $history->entry_price }}</p>
-
-                                                    <p class="text-xs">Exit Price</p>
-                                                    <p class="text-purple-500 font-mono">{{ $history->exit_price }}</p>
-                                                </div>
-
-                                            </div>
-                                            <div class="">
-                                                <p class="flex justify-end items-center space-x-1">
-
-                                                </p>
-                                                @if ($history->profit < 0)
-                                                    <p class="flex justify-end items-center text-red-500">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-6 h-6">
-                                                            <path fill-rule="evenodd"
-                                                                d="M1.72 5.47a.75.75 0 011.06 0L9 11.69l3.756-3.756a.75.75 0 01.985-.066 12.698 12.698 0 014.575 6.832l.308 1.149 2.277-3.943a.75.75 0 111.299.75l-3.182 5.51a.75.75 0 01-1.025.275l-5.511-3.181a.75.75 0 01.75-1.3l3.943 2.277-.308-1.149a11.194 11.194 0 00-3.528-5.617l-3.809 3.81a.75.75 0 01-1.06 0L1.72 6.53a.75.75 0 010-1.061z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>
-                                                    </p>
-                                                    <p class="flex justify-end items-center text-red-500">
-                                                        -{{ formatAmount(str_replace('-', '', $history->profit)) }}
-                                                    </p>
-                                                    <p class="flex justify-end items-center text-red-500">
-                                                        {{ number_format((($history->exit_price - $history->entry_price) / $history->entry_price) * 100, 2) }}%
-                                                    </p>
-                                                @else
-                                                    <p class="flex justify-end items-center text-green-500">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                            fill="currentColor" class="w-6 h-6">
-                                                            <path fill-rule="evenodd"
-                                                                d="M15.22 6.268a.75.75 0 01.968-.432l5.942 2.28a.75.75 0 01.431.97l-2.28 5.941a.75.75 0 11-1.4-.537l1.63-4.251-1.086.483a11.2 11.2 0 00-5.45 5.174.75.75 0 01-1.199.19L9 12.31l-6.22 6.22a.75.75 0 11-1.06-1.06l6.75-6.75a.75.75 0 011.06 0l3.606 3.605a12.694 12.694 0 015.68-4.973l1.086-.484-4.251-1.631a.75.75 0 01-.432-.97z"
-                                                                clip-rule="evenodd" />
-                                                        </svg>
-                                                    </p>
-                                                    <p class="flex justify-end items-center text-green-500">
-                                                        +{{ formatAmount($history->profit) }}</p>
-                                                    <p class="flex justify-end items-center text-green-500">
-                                                        +{{ number_format((($history->exit_price - $history->entry_price) / $history->entry_price) * 100, 2) }}%
-                                                    </p>
-                                                @endif
-
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-
-                                @empty
-                                    <div
-                                        class="w-full flex justify-center items-center ts-gray-3-x p-2 rounded-lg border border-slate-800 hover:border-slate-600 cursor-pointer">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-orange-500"
-                                            fill="currentColor" class="bi bi-exclamation-triangle-fill"
-                                            viewBox="0 0 16 16">
-                                            <path
-                                                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                                        </svg>
-                                        <span>Empty Record. No trading history found!</span>
-                                    </div>
-                                @endforelse
-
-
-
-
-
-
-                            </div>
-
-                            <div class="w-full mt-5 flex items-center ts-gray-3-x p-2 rounded-lg border border-slate-800 hover:border-slate-600 cursor-pointer simple-pagination"
-                                data-paginator="bot-history-grid">
-                                {{ $histories->links('paginations.simple') }}
-                            </div>
-
-                        </div>
-
-
-
-                    </div>
-
-                </div>
-
-
-                
-
-
-
-
-            </div>
-
+<div class="row  align-items-center justify-content-between" style="margin-top:10px">
+    <div class="col-16 col-sm-16">
+        <div class="btn-group pull-right">
+            <a href="{{ route('user.dashboard') }}"><button class="btn btn-success btn-outline-light"><span class="">Account</span> <span class="text"><i class="fas fa-tachometer-alt ml-2"></i></span></button></a>
+            <a href="{{ route('user.bots.index') }}"><button class="btn btn-success btn-outline-light"><span class="">Make Deposit</span> <span class="text"><i class="fas fa-coins ml-2"></i></span></button></a>
+            <a href="{{ route('user.withdrawals.index') }}"><button class="btn btn-success btn-outline-light"><span class="">Withdraw Funds</span> <span class="text"><i class="fas fa-wallet ml-2"></i></span></button></a>
+            <a href="{{ route('user.profile.edit') }}"><button class="btn btn-danger btn-outline-danger"><span class="">Settings</span> <i class="fa fa-cog fa-spin ml-2"></i></button></a>
         </div>
     </div>
+</div>
+<hr>
+
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="font-weight-bold">
+            <span style="float:left">Transactions</span>
+        </h5>
+    </div>
+    <div class="card-body">
+        <div class="container_wizard wizard-bordered">
+
+            <div class="table-responsive">
+
+                <script language=javascript>
+                    function go(p) {
+                        document.opts.page.value = p;
+                        document.opts.submit();
+                    }
+                </script>
+
+
+                <table cellspacing=0 cellpadding=0 border=0 width=100% class="table table-striped table-bordered">
+                    <tr>
+                        <form method=post name=opts><input type="hidden" name="form_id" value="17442223954244"><input type="hidden" name="form_token" value="50df3156bd47ca3e6c9abcc90f1df55c">
+                            <input type=hidden name=a value=history>
+                            <input type=hidden name=page value=1>
+                            <td>
+                                <select name=type class="form-control" onchange="document.opts.submit();" style=" width: 90%;  display: inline-block;">
+                                    <option value="">All transactions</option>
+                                    <option value="deposit">Deposit</option>
+                                    <option value="withdrawal">Withdrawal</option>
+                                    <option value="earning">Earning</option>
+                                    <option value="commissions">Referral commission</option>
+                                </select>
+                                <br><img src=images/q.gif width=1 height=4><br>
+                                <select name=ec class="form-control" style=" width: 90%;  display: inline-block;">
+                                    <option value=-1>All eCurrencies</option>
+                                    <option value=1000>Bitcoin</option>
+                                    <option value=1001>Ethereum</option>
+                                    <option value=1002>USDT TRC20</option>
+                                </select>
+                            </td>
+                            <td align=right>
+                                From: <select name=month_from class="form-control" style=" width: 27%;  display: inline-block;">
+                                    <option value=1>Jan
+                                    <option value=2>Feb
+                                    <option value=3>Mar
+                                    <option value=4 selected>Apr
+                                    <option value=5>May
+                                    <option value=6>Jun
+                                    <option value=7>Jul
+                                    <option value=8>Aug
+                                    <option value=9>Sep
+                                    <option value=10>Oct
+                                    <option value=11>Nov
+                                    <option value=12>Dec
+                                </select> &nbsp;
+                                <select name=day_from class="form-control" style=" width: 27%;  display: inline-block;">
+                                    <option value=1>1
+                                    <option value=2>2
+                                    <option value=3>3
+                                    <option value=4>4
+                                    <option value=5>5
+                                    <option value=6>6
+                                    <option value=7>7
+                                    <option value=8>8
+                                    <option value=9 selected>9
+                                    <option value=10>10
+                                    <option value=11>11
+                                    <option value=12>12
+                                    <option value=13>13
+                                    <option value=14>14
+                                    <option value=15>15
+                                    <option value=16>16
+                                    <option value=17>17
+                                    <option value=18>18
+                                    <option value=19>19
+                                    <option value=20>20
+                                    <option value=21>21
+                                    <option value=22>22
+                                    <option value=23>23
+                                    <option value=24>24
+                                    <option value=25>25
+                                    <option value=26>26
+                                    <option value=27>27
+                                    <option value=28>28
+                                    <option value=29>29
+                                    <option value=30>30
+                                    <option value=31>31
+                                </select> &nbsp;
+
+                                <select name=year_from class="form-control" style=" width: 27%;  display: inline-block;">
+                                    <option value=2021>2021
+                                    <option value=2022>2022
+                                    <option value=2023>2023
+                                    <option value=2024>2024
+                                    <option value=2025 selected>2025
+                                </select><br><img src=images/q.gif width=1 height=4><br>
+
+                                To: <select name=month_to class="form-control" style=" width: 27%;  display: inline-block;">
+                                    <option value=1>Jan
+                                    <option value=2>Feb
+                                    <option value=3>Mar
+                                    <option value=4 selected>Apr
+                                    <option value=5>May
+                                    <option value=6>Jun
+                                    <option value=7>Jul
+                                    <option value=8>Aug
+                                    <option value=9>Sep
+                                    <option value=10>Oct
+                                    <option value=11>Nov
+                                    <option value=12>Dec
+                                </select> &nbsp;
+                                <select name=day_to class="form-control" style=" width: 27%;  display: inline-block;">
+                                    <option value=1>1
+                                    <option value=2>2
+                                    <option value=3>3
+                                    <option value=4>4
+                                    <option value=5>5
+                                    <option value=6>6
+                                    <option value=7>7
+                                    <option value=8>8
+                                    <option value=9>9
+                                    <option value=10 selected>10
+                                    <option value=11>11
+                                    <option value=12>12
+                                    <option value=13>13
+                                    <option value=14>14
+                                    <option value=15>15
+                                    <option value=16>16
+                                    <option value=17>17
+                                    <option value=18>18
+                                    <option value=19>19
+                                    <option value=20>20
+                                    <option value=21>21
+                                    <option value=22>22
+                                    <option value=23>23
+                                    <option value=24>24
+                                    <option value=25>25
+                                    <option value=26>26
+                                    <option value=27>27
+                                    <option value=28>28
+                                    <option value=29>29
+                                    <option value=30>30
+                                    <option value=31>31
+                                </select> &nbsp;
+
+                                <select name=year_to class="form-control" style=" width: 27%;  display: inline-block;">
+                                    <option value=2021>2021
+                                    <option value=2022>2022
+                                    <option value=2023>2023
+                                    <option value=2024>2024
+                                    <option value=2025 selected>2025
+                                </select>
+
+                            </td>
+                            <td>
+                                &nbsp; <input type=submit value="Go" class="btn btn-primary">
+                            </td>
+                    </tr>
+                </table>
+                </form>
+                <br><br>
+
+
+                <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
+                    <tr>
+                        <th class=inheader><b>Type</b></th>
+                        <th class=inheader width=200><b>Amount</b></th>
+                        <th class=inheader width=170><b>Date</b></th>
+                    </tr>
+                    <tr>
+                        <td colspan=3 align=center>No transactions found</td>
+                    </tr>
+                    <tr>
+                        <td colspan=3>&nbsp;</td>
+
+
+
+                </table>
+
+                <ul class="pagination">
+                    <li class="page-item"><a class="prev page-link disabled">&lt;&lt;</a></li>
+                    <li class="page-item active"><a class="page-link">1</a></li>
+                    <li class="page-item"><a class="next page-link disabled">&gt;&gt;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
 @endsection
 
 @section('scripts')
-    @foreach ($activations as $item)
-        <script>
-            $(document).ready(function() {
-                var target = "{{ 'bot_timer_' . $item->id }}";
-                var expires_in = {{ $item->expires_in }};
+@foreach ($activations as $item)
+<script>
+    $(document).ready(function() {
+        var target = "{{ 'bot_timer_' . $item->id }}";
+        var expires_in = {
+            {
+                $item - > expires_in
+            }
+        };
 
-                // Get the current time in milliseconds
-                var currentTime = new Date().getTime();
+        // Get the current time in milliseconds
+        var currentTime = new Date().getTime();
 
-                // Calculate the remaining time in milliseconds
-                var remainingTime = expires_in * 1000 - currentTime;
+        // Calculate the remaining time in milliseconds
+        var remainingTime = expires_in * 1000 - currentTime;
 
-                // Calculate days, hours, minutes, and seconds
-                var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+        // Calculate days, hours, minutes, and seconds
+        var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-                // Display the countdown
-                var countdownElement = document.getElementById(target);
-                countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+        // Display the countdown
+        var countdownElement = document.getElementById(target);
+        countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
 
-                // Update the countdown every second
-                var countdownInterval = setInterval(function() {
-                    if (remainingTime > 0) {
-                        remainingTime -= 1000;
+        // Update the countdown every second
+        var countdownInterval = setInterval(function() {
+            if (remainingTime > 0) {
+                remainingTime -= 1000;
 
-                        days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-                        hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                        minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-                        seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+                days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+                hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+                seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
-                        countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds +
-                            "s";
-                    } else {
-                        clearInterval(countdownInterval);
-                        countdownElement.innerHTML = "Expired";
-                    }
-                }, 1000);
-            });
-        </script>
-    @endforeach
-    <script>
-        let interval;
-
-
-        // select the bot bot
-        $(document).on('click', ".bot", function(e) {
+                countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds +
+                    "s";
+            } else {
+                clearInterval(countdownInterval);
+                countdownElement.innerHTML = "Expired";
+            }
+        }, 1000);
+    });
+</script>
+@endforeach
+<script>
+    let interval;
 
 
-            var bot_id = $(this).data('bot_id');
-            var bot_name = $(this).data('bot_name');
+    // select the bot bot
+    $(document).on('click', ".bot", function(e) {
 
-            Swal.fire({
-                html: `
+
+        var bot_id = $(this).data('bot_id');
+        var bot_name = $(this).data('bot_name');
+
+        Swal.fire({
+            html: `
                     <div class="mt-5">
                         <div>
                             <div class="ts-gray-1-x text-white px-2 py-5 w-full rounded-lg border border-slate-800 hover:border-slate-600">
@@ -242,203 +353,210 @@
                         </div>
                     </div>
                 `,
-                toast: false,
-                background: 'rgb(34, 37, 47, 0)',
-                showConfirmButton: false,
-                showCancelButton: false,
-                showCloseButton: true,
-                allowEscapeKey: false,
-                allowOutsideClick: false,
-
-
-
-            });
-
-            $('#dispay_bot_name').html(bot_name);
-            $("#bot_id").val(bot_id);
-
+            toast: false,
+            background: 'rgb(34, 37, 47, 0)',
+            showConfirmButton: false,
+            showCancelButton: false,
+            showCloseButton: true,
+            allowEscapeKey: false,
+            allowOutsideClick: false,
 
 
 
         });
 
-        // handle deposit form
-        $(document).on('submit', '#botForm', function(e) {
-            e.preventDefault();
-
-            var form = $(this);
-            var formData = new FormData(this);
-
-            var submitButton = $(this).find('button[type="submit"]');
-            submitButton.addClass('relative disabled');
-            submitButton.append('<span class="button-spinner"></span>');
-            submitButton.prop('disabled', true);
-            $.ajax({
-                url: form.attr('action'),
-                method: 'POST',
-                data: formData,
-                dataType: 'json',
-                contentType: false,
-                processData: false,
-                success: function(response) {
-                    var link = window.location.href;
-                    var targetDiv = '#bots';
-                    $.ajax({
-                        url: link,
-                        method: 'GET',
-                        success: function(response) {
-                            $(targetDiv).html($(response).find(targetDiv).html());
-                            var scrollTo = $(targetDiv).offset().top - 100;
-                            $('.rescron-card').addClass('hidden');
-                            $(targetDiv).removeClass('hidden');
-                            $('html, body').animate({
-                                scrollTop: scrollTo
-                            }, 800);
-                        }
-                    });
-                    toastNotify('success', 'Bot activated successfully');
+        $('#dispay_bot_name').html(bot_name);
+        $("#bot_id").val(bot_id);
 
 
-                },
-                error: function(xhr, status, error) {
-                    var errors = xhr.responseJSON.errors;
 
-                    if (errors) {
-                        $.each(errors, function(field, messages) {
-                            var fieldErrors = '';
-                            $.each(messages, function(index, message) {
-                                fieldErrors += message + '<br>';
-                            });
-                            $('#errorMessage').html(fieldErrors);
+
+    });
+
+    // handle deposit form
+    $(document).on('submit', '#botForm', function(e) {
+        e.preventDefault();
+
+        var form = $(this);
+        var formData = new FormData(this);
+
+        var submitButton = $(this).find('button[type="submit"]');
+        submitButton.addClass('relative disabled');
+        submitButton.append('<span class="button-spinner"></span>');
+        submitButton.prop('disabled', true);
+        $.ajax({
+            url: form.attr('action'),
+            method: 'POST',
+            data: formData,
+            dataType: 'json',
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                var link = window.location.href;
+                var targetDiv = '#bots';
+                $.ajax({
+                    url: link,
+                    method: 'GET',
+                    success: function(response) {
+                        $(targetDiv).html($(response).find(targetDiv).html());
+                        var scrollTo = $(targetDiv).offset().top - 100;
+                        $('.rescron-card').addClass('hidden');
+                        $(targetDiv).removeClass('hidden');
+                        $('html, body').animate({
+                            scrollTop: scrollTo
+                        }, 800);
+                    }
+                });
+                toastNotify('success', 'Bot activated successfully');
+
+
+            },
+            error: function(xhr, status, error) {
+                var errors = xhr.responseJSON.errors;
+
+                if (errors) {
+                    $.each(errors, function(field, messages) {
+                        var fieldErrors = '';
+                        $.each(messages, function(index, message) {
+                            fieldErrors += message + '<br>';
                         });
-                    } else {
-                        $('#errorMessage').html('error', 'An Error occured, try again later');
-                    }
-
-
-                },
-                complete: function() {
-                    submitButton.removeClass('disabled');
-                    submitButton.find('.button-spinner').remove();
-                    submitButton.prop('disabled', false);
-
+                        $('#errorMessage').html(fieldErrors);
+                    });
+                } else {
+                    $('#errorMessage').html('error', 'An Error occured, try again later');
                 }
-            });
 
+
+            },
+            complete: function() {
+                submitButton.removeClass('disabled');
+                submitButton.find('.button-spinner').remove();
+                submitButton.prop('disabled', false);
+
+            }
         });
-    </script>
+
+    });
+</script>
 
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-    <script>
-        var profits = {!! json_encode($profits) !!};
-        var profitInt = profits.map(value => parseFloat((value * 1).toFixed(2)));
+<script>
+    var profits = {
+        !!json_encode($profits) !!
+    };
+    var profitInt = profits.map(value => parseFloat((value * 1).toFixed(2)));
 
-        Highcharts.chart('profitChart', {
-            chart: {
-                type: 'spline',
-                backgroundColor: '#22252F', // Set background color here
+    Highcharts.chart('profitChart', {
+        chart: {
+            type: 'spline',
+            backgroundColor: '#22252F', // Set background color here
 
-                plotBackgroundColor: '#22252F',
-                plotBorderWidth: 1,
-                plotBorderColor: 'rgb(85, 147, 247)',
+            plotBackgroundColor: '#22252F',
+            plotBorderWidth: 1,
+            plotBorderColor: 'rgb(85, 147, 247)',
 
-                borderWidth: 0,
-                borderColor: 'rgb(85, 147, 247)',
-                borderRadius: 10,
-                style: {
-                    fontFamily: 'Arial, sans-serif',
-                    fontSize: '14px',
-                    color: '#fff'
+            borderWidth: 0,
+            borderColor: 'rgb(85, 147, 247)',
+            borderRadius: 10,
+            style: {
+                fontFamily: 'Arial, sans-serif',
+                fontSize: '14px',
+                color: '#fff'
+            }
+        },
+        accessibility: {
+            point: {
+                descriptionFormatter: function(p) {
+                    return p.series.name + ', ' + p.category + ', ' + p.y + '{{ site('
+                    currency ') }}.';
                 }
+            }
+        },
+        title: {
+            text: '<span style="color: white">30 Days PNL</span>'
+        },
+        subtitle: {
+            text: 'PNL Chart history for the last 30 days'
+        },
+        xAxis: {
+            categories: {
+                !!json_encode($days) !!
             },
-            accessibility: {
-                point: {
-                    descriptionFormatter: function(p) {
-                        return p.series.name + ', ' + p.category + ', ' + p.y + '{{ site('currency') }}.';
-                    }
-                }
-            },
+            crosshair: true
+        },
+        yAxis: {
+            // min: 0,
             title: {
-                text: '<span style="color: white">30 Days PNL</span>'
-            },
-            subtitle: {
-                text: 'PNL Chart history for the last 30 days'
-            },
-            xAxis: {
-                categories: {!! json_encode($days) !!},
-                crosshair: true
-            },
-            yAxis: {
-                // min: 0,
-                title: {
-                    text: '<span style="color: white">PNL ({{ site('currency') }})</span>'
-                }
-            },
-            tooltip: {
-                headerFormat: '<span style="font-size: 10px">{point.key} PNL</span><br/>',
-                valuePrefix: '{{ site('currency') }}'
-            },
-            plotOptions: {
-                column: {
-                    pointPadding: 0.2,
-                    borderWidth: 0
-                }
-            },
-            series: [{
-                name: '<span style="color: white">PNL</span>',
-                data: profitInt
-            }]
-        });
-    </script>
+                text: '<span style="color: white">PNL ({{ site('
+                currency ') }})</span>'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size: 10px">{point.key} PNL</span><br/>',
+            valuePrefix: '{{ site('
+            currency ') }}'
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: '<span style="color: white">PNL</span>',
+            data: profitInt
+        }]
+    });
+</script>
 
-    {{-- view trading history chart --}}
-    <script src="https://s3.tradingview.com/tv.js"></script>
-    <script>
-        $(document).on('click', '.view-chart', function(e) {
-            var pair = $(this).data('pair'); // BTCUSDT
+{{-- view trading history chart --}}
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script>
+    $(document).on('click', '.view-chart', function(e) {
+        var pair = $(this).data('pair'); // BTCUSDT
 
-            //fetch trading view chart for the pair
-            Swal.fire({
-                html: `
+        //fetch trading view chart for the pair
+        Swal.fire({
+            html: `
                         <div class="mt-5 sm:overflow-x-scroll">
                             <div id="chart-container"></div>
                         </div>
                         `,
-                toast: false,
-                background: 'rgb(34, 37, 47, 0)',
-                showConfirmButton: false,
-                showCloseButton: true,
-                position: 'top-left',
-                allowEscapeKey: false, // Prevent closing by escape key
-                allowOutsideClick: false, // Prevent closing by clicking backdrop
-                willClose: () => {
-                    //delete the previously generated qrcode
-                    // $('#single_wallet_qrcode').html('');
-                }
-            });
+            toast: false,
+            background: 'rgb(34, 37, 47, 0)',
+            showConfirmButton: false,
+            showCloseButton: true,
+            position: 'top-left',
+            allowEscapeKey: false, // Prevent closing by escape key
+            allowOutsideClick: false, // Prevent closing by clicking backdrop
+            willClose: () => {
+                //delete the previously generated qrcode
+                // $('#single_wallet_qrcode').html('');
+            }
+        });
 
-            new TradingView.widget({
-                // Define the container element for the widget
-                container_id: 'chart-container', // Replace 'chart-container' with your actual container ID
+        new TradingView.widget({
+            // Define the container element for the widget
+            container_id: 'chart-container', // Replace 'chart-container' with your actual container ID
 
-                // Specify the symbol (pair) you want to display
-                symbol: pair,
+            // Specify the symbol (pair) you want to display
+            symbol: pair,
 
-                // Specify the interval for the chart (e.g., '1D' for 1 day)
-                interval: '1D',
+            // Specify the interval for the chart (e.g., '1D' for 1 day)
+            interval: '1D',
 
-                // Choose the style of the chart (e.g., 'Line' or 'Candles')
-                style: 'Candles',
+            // Choose the style of the chart (e.g., 'Line' or 'Candles')
+            style: 'Candles',
 
-                // Specify the timezone for the chart
-                timezone: 'Etc/UTC',
-                theme: 'Dark'
-
-            });
+            // Specify the timezone for the chart
+            timezone: 'Etc/UTC',
+            theme: 'Dark'
 
         });
-    </script>
+
+    });
+</script>
 @endsection
