@@ -14,7 +14,7 @@
 
 
 
-        <form method="post" action="{{ route('user.register-validate') }}" id="registerForm" class="form-signin1 full_side text-white">
+        <form method="post" action="{{ route('user.register-validate') }}" id="registerForm-x" class="form-signin1 full_side text-white">
 
             @csrf
 
@@ -69,6 +69,14 @@
             <input type="text" name="email" value="" style="color:black" class="form-control" size="30" placeholder="E-mail Address">
             <span style="color:crimson">
                 @error('email')
+                {{ $message }}
+                @enderror
+            </span>
+            <br>
+            <label style="color:black" class="font-weight-bold">Retype Your E-mail</label>
+            <input type="text" name="email_confirmation" value="" style="color:black" class="form-control" size="30" placeholder="Retype E-mail">
+            <span style="color:crimson">
+                @error('email_confirmation')
                 {{ $message }}
                 @enderror
             </span>
