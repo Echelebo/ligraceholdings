@@ -71,7 +71,7 @@
 
         </form>
 
-        <form method="post" action="{{ route('user.login-verify') }}" class="@if (!user()) hidden @endif form-signin1 full_side text-white" id="verifyForm">
+        <!-- <form method="post" action="{{ route('user.login-verify') }}" class="@if (!user()) hidden @endif form-signin1 full_side text-white" id="verifyForm">
             @csrf
 
             <img style="width:40%;height:10%" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png">
@@ -92,7 +92,7 @@
             <p class="mt-3"><button type="button" class="text-white" id="resendBtn">Resend OTP</button>
             </p>
 
-        </form>
+        </form> -->
         <br>
     </div>
 </div>
