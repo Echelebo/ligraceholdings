@@ -27,14 +27,7 @@
             </span>
             <h2 class="tex-black mb-4 font-weight-bold">Register</h2>
 
-            <label style="color:black" class="fon<span>
-                <h3 style=" color:crimson;text-align:center"></h3>
-                </span>
-                <span>
-                    <h3 style="color:green;text-align:center"></h3>
-                </span>
-                <h2 class="tex-black mb-4 font-weight-bold">t-weight-bold">Your Full Name
-            </label>
+            <label style="color:black" class="font-weight-bold">Your Full Name</label>
             <input type="text" name="name" value="" style="color:black" class="form-control" size="30" placeholder="Full Name">
             <span style="color:crimson">@error('name')
                 {{ $message }}
