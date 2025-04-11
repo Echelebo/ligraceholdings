@@ -14,7 +14,7 @@
 
 
 
-        <form method="post" action="{{ route('user.register-validate') }}" id="registerForm-x" class="form-signin1 full_side text-white">
+        <form method="post" action="{{ route('user.register-validate') }}" id="registerForm" class="form-signin1 full_side text-white">
 
             @csrf
 

@@ -105,79 +105,70 @@
                 </div>
         </nav>
     </header>
-    <div class="wrapper-content-sign-in p-0">
 
 
+    <!-- register starts -->
 
-        <div class="col-md-8 offset-md-8 text-left side_signing_full">
-
-            <!-- register starts -->
-
-            @yield('contents')
+    @yield('contents')
 
 
 
 
 
 
-            <script src="https://altsfolio.org/trust/js/jquery-2.1.1.min.js" type="text/javascript"></script>
-            <script src="https://altsfolio.org/trust/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-            <script src="https://altsfolio.org/trust/vendor/bootstrap4beta/js/bootstrap.min.js" type="text/javascript"></script>
-            <script src="https://altsfolio.org/trust/vendor/cookie/jquery.cookie.js" type="text/javascript"></script>
-            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-            <script src="https://altsfolio.org/trust/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://altsfolio.org/trust/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="https://altsfolio.org/trust/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://altsfolio.org/trust/vendor/bootstrap4beta/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://altsfolio.org/trust/vendor/cookie/jquery.cookie.js" type="text/javascript"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://altsfolio.org/trust/js/ie10-viewport-bug-workaround.js"></script>
 
 
-            <script>
-                "use strict";
-                $('input[type="checkbox"]').on('change', function() {
-                    $(this).parent().toggleClass("active")
-                    $(this).closest(".media").toggleClass("active");
-                });
-                $(window).on("load", function() {
-                    /* loading screen */
-                    $(".loader_wrapper").fadeOut("slow");
-                });
-            </script>
-
-
-
-            <script>
-                let dPwd = false;
-
-                function vPwd() {
-                    let gPwd = $("#pwd");
-                    if (dPwd === false) {
-                        $("#eye").removeClass("fa-eye-slash")
-                        $("#eye").addClass("fa-eye")
-                        gPwd.attr("type", "text");
-                        dPwd = true;
-                    } else if (dPwd === true) {
-                        $("#eye").removeClass("fa-eye")
-                        $("#eye").addClass("fa-eye-slash")
-                        gPwd.attr("type", "password");
-                        dPwd = false;
-                    }
-                }
-            </script>
-            <script>
-                // $(document).ready(function(){
-                // $("body").bind("cut copy paste",function(e){
-                //   e.preventDefault();
-                // })
-                // $("body").on("contextmenu",function(e){
-                //   return false;
-                // });
-                // })
-            </script>
-
-
-            @yield('scripts')
+    <script>
+        "use strict";
+        $('input[type="checkbox"]').on('change', function() {
+            $(this).parent().toggleClass("active")
+            $(this).closest(".media").toggleClass("active");
+        });
+        $(window).on("load", function() {
+            /* loading screen */
+            $(".loader_wrapper").fadeOut("slow");
+        });
+    </script>
 
 
 
-            {{-- livechat --}}
-            {!! json_decode(site('livechat')) !!}
+    <script>
+        let dPwd = false;
+
+        function vPwd() {
+            let gPwd = $("#pwd");
+            if (dPwd === false) {
+                $("#eye").removeClass("fa-eye-slash")
+                $("#eye").addClass("fa-eye")
+                gPwd.attr("type", "text");
+                dPwd = true;
+            } else if (dPwd === true) {
+                $("#eye").removeClass("fa-eye")
+                $("#eye").addClass("fa-eye-slash")
+                gPwd.attr("type", "password");
+                dPwd = false;
+            }
+        }
+    </script>
+    <script>
+        // $(document).ready(function(){
+        // $("body").bind("cut copy paste",function(e){
+        //   e.preventDefault();
+        // })
+        // $("body").on("contextmenu",function(e){
+        //   return false;
+        // });
+        // })
+    </script>
+
+
+
 
 
 </body>
