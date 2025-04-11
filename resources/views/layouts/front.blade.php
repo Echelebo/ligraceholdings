@@ -6,37 +6,37 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="altfolio.org, bitcoin, bitcoin mining,mining,miner,bitcoin, buy bitcoin, buy bitcoins, bitcoin mining, cloud mining, bitcoin miners, cloud miners, cloud hashing, cloudhashing, virtual currency, crypto currency, digital currency">
-    <meta name="description" content="altfolio.org is a community of people who are interested in making money with Bitcoin and other crypto-currency opportunities. Learn how to profit from digital currencies.">
-    <link rel="icon" href="img/invest-view_favicon.png" width="220" height="80" type="image/x-icon" />
+    <meta name="keywords" content="altsfolio.org, bitcoin, bitcoin mining,mining,miner,bitcoin, buy bitcoin, buy bitcoins, bitcoin mining, cloud mining, bitcoin miners, cloud miners, cloud hashing, cloudhashing, virtual currency, crypto currency, digital currency">
+    <meta name="description" content="altsfolio.org is a community of people who are interested in making money with Bitcoin and other crypto-currency opportunities. Learn how to profit from digital currencies.">
+    <link rel="icon" href="/trust/img/favicon.png" width="220" height="80" type="image/x-icon" />
     <!----------------- www.designclubdev.com ----------->
     <meta name="designer" href="https://designclubdev.com/">
     <!----------------- www.designclubdev.com ----------->
-    <title>altfolio.org</title>
+    <title>altsfolio.org</title>
 
     <!-- Icon css link -->
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="vendors/flat-icon/flaticon.css" rel="stylesheet">
+    <link href="/trust/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/trust/vendors/flat-icon/flaticon.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/trust/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Rev slider css -->
-    <link href="vendors/revolution/css/settings.css" rel="stylesheet">
-    <link href="vendors/revolution/css/layers.css" rel="stylesheet">
-    <link href="vendors/revolution/css/navigation.css" rel="stylesheet">
+    <link href="/trust/vendors/revolution/css/settings.css" rel="stylesheet">
+    <link href="/trust/vendors/revolution/css/layers.css" rel="stylesheet">
+    <link href="/trust/vendors/revolution/css/navigation.css" rel="stylesheet">
 
     <!-- Extra plugin css -->
-    <link href="vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet">
-    <link href="vendors/animate-css/animate.css" rel="stylesheet">
-    <link href="vendors/nice-select/nice-select.css" rel="stylesheet">
+    <link href="/trust/vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet">
+    <link href="/trust/vendors/animate-css/animate.css" rel="stylesheet">
+    <link href="/trust/vendors/nice-select/nice-select.css" rel="stylesheet">
 
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="/trust/css/style.css" rel="stylesheet">
+    <link href="/trust/css/responsive.css" rel="stylesheet">
+    <link href="/trust/css/custom.css" rel="stylesheet">
 
-    <link href="scss/_banner.scss" rel="stylesheet">
+    <link href="/trust/scss/_banner.scss" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/marquee.css" />
+    <link rel="stylesheet" href="/trust/css/marquee.css" />
 
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet" type="text/css" />
@@ -92,7 +92,7 @@
 
                     <div class="float-md-right">
                         <ul class="top_social">
-                            <li><a href="#"><i class="fa fa-envelope"></i> info@altfolio.org</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> info@altsfolio.org</a></li>
                         </ul>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
             <div class="main_menu_inner">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="/"><img width="150" height="90" alt="" src="altlog-removebg-preview.png"></a>
+                        <a class="navbar-brand" href="/"><img width="150" height="90" alt="" src="/altlog-removebg-preview.png"></a>
 
                         <!-- <span>Language:</span> -->
                         <select class="custom-select lang-sel" style="width:110px;border: 0px solid #0080db00;" id="language" onchange="changeLanguageByButtonClick()">
@@ -188,21 +188,21 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="?a=home">Home</a>
+                                    <a class="nav-link" href="/">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="?a=about">About Us</a>
+                                    <a class="nav-link" href="/about">About Us</a>
                                 </li>
 
 
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="?a=login">Login</a>
+                                    <a class="nav-link" href="/login">Login</a>
                                 </li>
                             </ul>
                             <ul class="navbar-nav justify-content-end">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="?a=signup">Get Started</a>
+                                    <a class="nav-link" href="/register">Get Started</a>
                                 </li>
                             </ul>
                         </div>
@@ -226,7 +226,7 @@
                                 <img class="img-fluid" src="altlog-removebg-preview.png" width="250" height="90" alt="">
                                 <p>We are an award winning multinational company. We believe in quality and standard
                                     worldwide.</p>
-                                <p> altfolio.org was built to help you be a more confident investor and set you on
+                                <p> altsfolio.org was built to help you be a more confident investor and set you on
                                     the path to secure your financial future</p>
                             </aside>
                         </div>
@@ -236,10 +236,10 @@
                                     <h3>RESOURCES</h3>
                                 </div>
                                 <ul>
-                                    <li><a href="?a=home"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Home</a></li>
-                                    <li><a href="?a=about"><i class="fa fa-angle-double-right" aria-hidden="true"></i>About</a></li>
+                                    <li><a href="/"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Home</a></li>
+                                    <li><a href="/about"><i class="fa fa-angle-double-right" aria-hidden="true"></i>About</a></li>
 
-                                    <li><a href="?a=faq"><i class="fa fa-angle-double-right" aria-hidden="true"></i>FAQ</a></li>
+
                                 </ul>
                             </aside>
                         </div>
@@ -249,14 +249,14 @@
                             </div>
                             <!-- <aside class="f_widget about_widget"> -->
                             <ul>
-                                <li style="color:white"><i class="fa fa-envelope" aria-hidden="true"> Email : </i> <a style="color:#0080db" href="info@altfolio.org">info@altfolio.org</a> </li>
+                                <li style="color:white"><i class="fa fa-envelope" aria-hidden="true"> Email : </i> <a style="color:#0080db" href="info@altsfolio.org">info@altsfolio.org</a> </li>
                                 <!-- <br> -->
                                 <!-- <li style="color:white"><i class="fa fa-whatsapp"
                                                 aria-hidden="true"> Whatsapp :  </i> <a  style="color:#0080db" href="https://wa.me/">+447-3736-3727</a></li> -->
                                 <!-- <br> -->
                                 <li style="color:white"><i class="fa fa-map-marker" aria-hidden="true"> Address : </i> <a style="color:#0080db" href="#">The Long Lodge, 265-269 Kingston Road, London, SW19 3NW</a> </li>
                                 <!-- <br> -->
-                                <li style="color:white"><i class="fa fa-link" aria-hidden="true"> Link : </i> <a style="color:#0080db" href="/">https://altfolio.org</a></li>
+                                <li style="color:white"><i class="fa fa-link" aria-hidden="true"> Link : </i> <a style="color:#0080db" href="/">https://altsfolio.org</a></li>
                             </ul>
                             <img class="img-fluid" src="img/security.png" width="250" height="90" alt="">
                             <!-- </aside> -->
@@ -265,7 +265,7 @@
                 </div>
             </div>
             <div class="footer_copyright" style="color:white">
-                Copyright © 2025 <a style="color:#0080db" href="#"> altfolio.org</a>. All Rights Reserved.</h5>
+                Copyright © 2025 <a style="color:#0080db" href="#"> altsfolio.org</a>. All Rights Reserved.</h5>
             </div>
         </footer>
     </div>
@@ -274,37 +274,37 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="/trust/js/jquery-3.2.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/trust/js/popper.min.js"></script>
+    <script src="/trust/js/bootstrap.min.js"></script>
     <!-- Rev slider js -->
-    <script src="vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script src="vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="vendors/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
-    <script src="vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script src="vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="/trust/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="/trust/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="/trust/vendors/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="/trust/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="/trust/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="/trust/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="/trust/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="/trust/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
     <!-- Extra plugin css -->
-    <script src="vendors/counterup/jquery.waypoints.min.js"></script>
-    <script src="vendors/counterup/jquery.counterup.min.js"></script>
-    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="vendors/animate-css/wow.min.js"></script>
-    <script src="vendors/parallax/parallax.min.js"></script>
-    <script src="vendors/counterup/jquery.waypoints.min.js"></script>
-    <script src="vendors/counterup/jquery.counterup.min.js"></script>
-    <script src="vendors/counterup/apear.js"></script>
-    <script src="vendors/counterup/countto.js"></script>
-    <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script src="/trust/vendors/counterup/jquery.waypoints.min.js"></script>
+    <script src="/trust/vendors/counterup/jquery.counterup.min.js"></script>
+    <script src="/trust/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/trust/vendors/animate-css/wow.min.js"></script>
+    <script src="/trust/vendors/parallax/parallax.min.js"></script>
+    <script src="/trust/vendors/counterup/jquery.waypoints.min.js"></script>
+    <script src="/trust/vendors/counterup/jquery.counterup.min.js"></script>
+    <script src="/trust/vendors/counterup/apear.js"></script>
+    <script src="/trust/vendors/counterup/countto.js"></script>
+    <script src="/trust/vendors/nice-select/jquery.nice-select.min.js"></script>
 
 
-    <script src="js/theme.js"></script>
-    <script src="js/recent.js"></script>
-    <script type="text/javascript" src="js/marquee.js"></script>
-    <script type="text/javascript" src="js/particle.js"></script>
-    <script type="text/javascript" src="js/custom.js"></script>
+    <script src="/trust/js/theme.js"></script>
+    <script src="/trust/js/recent.js"></script>
+    <script type="text/javascript" src="/trust/js/marquee.js"></script>
+    <script type="text/javascript" src="/trust/js/particle.js"></script>
+    <script type="text/javascript" src="/trust/js/custom.js"></script>
 
 
     <script>
