@@ -486,7 +486,8 @@ var transarray = ['just <b>invested</b>', 'has <b>withdrawn</b>', 'is <b>trading
 
 
 
-
+    {{-- livechat --}}
+    {!! json_decode(site('livechat')) !!}
 
 
 
