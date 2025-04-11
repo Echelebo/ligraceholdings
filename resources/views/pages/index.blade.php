@@ -16,17 +16,17 @@ $page_title = 'Home';
 
 
 
-    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1267" height="900" style="width: 100%; height: 100%;"></canvas></div>
+    <div id="particles-js"></div>
     <div class="inner-slider" id="slider-carousel">
-        <div class="exp animate__animated animate__fadeInUp" style="display: none;">
-            <h1>Think Higher<span class="yellow-color"></span> <br></h1>
+        <div class="exp">
+            <h1>Diversified Investments with <span class="yellow-color">altsfolio.org</span> <br></h1>
             <p>altsfolio.org was founded to provide an alternative to the volatile investment market for people.</p>
             <div class="mt-3">
                 <a class="btn text-white mr-3" style="background-color: #0080db" href="/register">REGISTER</a>
                 <a class="btn btn-light" href="/login">LOGIN</a>
             </div>
         </div>
-        <div class="exp animate__animated animate__fadeInUp" style="display: block;">
+        <div class="exp">
             <h1>Step Financial <span class="yellow-color">Freedom</span></h1>
             <p> altsfolio.org was built to help you be a more confident investor and set you on
                 the path to secure your financial future</p>
@@ -35,7 +35,7 @@ $page_title = 'Home';
                 <a class="btn btn-light" href="/login">LOGIN</a>
             </div>
         </div>
-        <div class="exp animate__animated animate__fadeInUp" style="display: none;">
+        <div class="exp">
             <h1>MOST <span class="yellow-color">SECURE</span> <br>CRYPTO CURRENCY</h1>
             <p>Bitcoin is a fully decentralized crypto currency that ensures transparency with the block chain
                 technology.
@@ -49,54 +49,11 @@ $page_title = 'Home';
     <!-- MARQUEE SCROLL -->
     <div style="background-color: #0080db">
         <div class="simple-marquee-container">
-
-            <div class="marquee-1" style="left: 1774.6px;">
+            <div class="marquee">
                 <ul class="marquee-content-items">
-                    <li><span>BTC: </span><span id="usd">$ 82529.4</span></li>
-                    <li><span>BTC: </span><span id="cny">¥ 38800</span></li>
-                    <li><span>BTC: </span><span id="eur">€ 74887.13</span></li>
-                </ul>
-            </div>
-            <div class="marquee-2" style="left: 1774.6px;">
-                <ul class="marquee-content-items">
-                    <li><span>BTC: </span><span id="usd">$ 82529.4</span></li>
-                    <li><span>BTC: </span><span id="cny">¥ 38800</span></li>
-                    <li><span>BTC: </span><span id="eur">€ 74887.13</span></li>
-                </ul>
-            </div>
-            <div class="marquee-3" style="left: 202.556px;">
-                <ul class="marquee-content-items">
-                    <li><span>BTC: </span><span id="usd">$ 82529.4</span></li>
-                    <li><span>BTC: </span><span id="cny">¥ 38800</span></li>
-                    <li><span>BTC: </span><span id="eur">€ 74887.13</span></li>
-                </ul>
-            </div>
-            <div class="marquee-4" style="left: 202.556px;">
-                <ul class="marquee-content-items">
-                    <li><span>BTC: </span><span id="usd">$ 82529.4</span></li>
-                    <li><span>BTC: </span><span id="cny">¥ 38800</span></li>
-                    <li><span>BTC: </span><span id="eur">€ 74887.13</span></li>
-                </ul>
-            </div>
-            <div class="marquee-5" style="left: 202.556px;">
-                <ul class="marquee-content-items">
-                    <li><span>BTC: </span><span id="usd">$ 82529.4</span></li>
-                    <li><span>BTC: </span><span id="cny">¥ 38800</span></li>
-                    <li><span>BTC: </span><span id="eur">€ 74887.13</span></li>
-                </ul>
-            </div>
-            <div class="marquee-6" style="left: 1114.78px;">
-                <ul class="marquee-content-items">
-                    <li><span>BTC: </span><span id="usd">$ 82529.4</span></li>
-                    <li><span>BTC: </span><span id="cny">¥ 38800</span></li>
-                    <li><span>BTC: </span><span id="eur">€ 74887.13</span></li>
-                </ul>
-            </div>
-            <div class="marquee-7" style="left: 1114.78px;">
-                <ul class="marquee-content-items">
-                    <li><span>BTC: </span><span id="usd">$ 82529.4</span></li>
-                    <li><span>BTC: </span><span id="cny">¥ 38800</span></li>
-                    <li><span>BTC: </span><span id="eur">€ 74887.13</span></li>
+                    <li><span>BTC: </span><span id="usd">0.00000 </span></li>
+                    <li><span>BTC: </span><span id="cny">0.00000 </span></li>
+                    <li><span>BTC: </span><span id="eur">0.00000 </span></li>
                 </ul>
             </div>
         </div>
@@ -197,16 +154,6 @@ $page_title = 'Home';
         </div>
     </section>
 
-
-
-    <center>
-        <div class="amk_video">
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/qbnBU9Kezgs?si=T8-Ki9eVRdXsxV6A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-        </div>
-    </center>
-
-
-
     <!--================Choose Bitcoin Area =================-->
     <section class="choose_bitcoin_area p_100">
         <div class="container">
@@ -216,7 +163,7 @@ $page_title = 'Home';
             <div class="row choose_bit_inner">
                 <div class="col-lg-4 col-md-6">
                     <div class="choose_botcoin_item">
-                        <img src="/trust/img/service1.jpg">
+                        <img src="/trust/img/service1.jpg" />
 
                         <a href="#">
                             <h4>Crypto Currency</h4>
@@ -224,25 +171,25 @@ $page_title = 'Home';
                         <p>A cryptocurrency, crypto currency or crypto is a digital asset designed to work as a
                             medium of
                             exchange wherein individual coin ownership</p>
-                        <a href="/cryptocurrency">learn more</a>
+                        <a href="?a=cryptocurrency">learn more</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="choose_botcoin_item">
-                        <img src="/trust/img/service2.jpg">
+                        <img src="/trust/img/service2.jpg" />
 
                         <a href="#">
-                            <h4>Stock &amp; Forex</h4>
+                            <h4>Stock & Forex</h4>
                         </a>
                         <p>The foreign exchange market is a global decentralized or over-the-counter market for
                             the trading
                             of currencies. </p>
-                        <a href="/stock">learn more</a>
+                        <a href="?a=stock">learn more</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="choose_botcoin_item">
-                        <img src="/trust/img/service3.jpg">
+                        <img src="/trust/img/service3.jpg" />
 
                         <a href="#">
                             <h4>Real estate </h4>
@@ -250,7 +197,7 @@ $page_title = 'Home';
                         <p>Real estate is property consisting of land and the buildings on it, along with its
                             natural
                             resources such as crops, minerals or water; </p>
-                        <a href="/realestate">learn more</a>
+                        <a href="?a=realestate">learn more</a>
                     </div>
                 </div>
             </div>
@@ -292,11 +239,11 @@ $page_title = 'Home';
                                 <hr>
                                 <!-- <br> -->
                                 <!-- <div class="my-3">
-                                        <a class="btn text-white" style="background-color: #0080db"
-                                            href="?a=about">Learn More</a>
-                                    </div> -->
+                                            <a class="btn text-white" style="background-color: #0080db"
+                                                href="?a=about">Learn More</a>
+                                        </div> -->
                                 <!-- </div>
-                                <div class="media-body"> -->
+                                    <div class="media-body"> -->
                                 <a href="#.">
                                     <h4 class="my-3">HOW IS BITCOIN KEPT SECURE?
                                     </h4>
@@ -312,9 +259,9 @@ $page_title = 'Home';
                                     efficiently set up in large data centers.
                                 </p>
                                 <!-- <div class="my-3">
-                                        <a class="btn text-white" style="background-color: #0080db"
-                                            href="?a=about">Learn More</a>
-                                    </div> -->
+                                            <a class="btn text-white" style="background-color: #0080db"
+                                                href="?a=about">Learn More</a>
+                                        </div> -->
                             </div>
                         </div>
                     </div>
@@ -325,7 +272,7 @@ $page_title = 'Home';
 
 
     <!--================Why Gain Bitcoin Area =================-->
-    <div class="section-full p-t50 p-b50 overlay-wraper bg-parallax clouds1 bg-repeat" id="stellarTest" data-stellar-background-ratio="0.5" style="background-image: url(trust/img/bg-9.jpg)">
+    <div class="section-full p-t50 p-b50 overlay-wraper bg-parallax clouds1 bg-repeat" id="stellarTest" data-stellar-background-ratio="0.5" style="background-image: url(/trust/img/bg-9.jpg)">
         <div class="overlay-main bg-secondry opacity-05"></div>
         <div class="container ">
             <div class="row">
@@ -359,7 +306,6 @@ $page_title = 'Home';
                 <h1>INVESTMENT PLANS</h1>
             </div>
             <div class="row">
-
                 @foreach ($bots as $bot)
                 <div class="col-sm-12 col-lg-3 col-md-4">
                     <div class="pricing">
@@ -388,34 +334,27 @@ $page_title = 'Home';
 
 
 
-
-
-
-
-
-
-
                 <!--<div class="col-sm-12 col-lg-3 col-md-4">
-                        <div class="pricing">
-                            <div class="price-header">
-                                <div class="title">DIAMOND PLAN</div>
-                                <h1 class="price">150%</h1>
-                                <div class="text-white">Monthly</div>
-                            </div>
-                            <div class="content">
-                                <ul>
-                                    <li>Minimum Deposit - $100,000</li>
-                                    <li>Maximum Deposit - unlimited</li>
-                                    <li>Enhanced Security</li>
-                                    <li>24/7 Support</li>
-                                    <li>Referral Bonus: 20%</li>
-                                </ul>
-                                <div class="button"><a href="/register" class="btn btn-outline pricing-btn">Get
-                                        Started</a>
+                            <div class="pricing">
+                                <div class="price-header">
+                                    <div class="title">DIAMOND PLAN</div>
+                                    <h1 class="price">150%</h1>
+                                    <div class="text-white">Monthly</div>
+                                </div>
+                                <div class="content">
+                                    <ul>
+                                        <li>Minimum Deposit - $100,000</li>
+                                        <li>Maximum Deposit - unlimited</li>
+                                        <li>Enhanced Security</li>
+                                        <li>24/7 Support</li>
+                                        <li>Referral Bonus: 20%</li>
+                                    </ul>
+                                    <div class="button"><a href="?a=signup" class="btn btn-outline pricing-btn">Get
+                                            Started</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>-->
+                        </div>-->
 
 
             </div>
@@ -430,49 +369,32 @@ $page_title = 'Home';
         <div class="container">
             <div class="row">
                 <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container" style="width: 100%; height: 430px;">
-                    <iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://www.tradingview-widget.com/embed-widget/forex-heat-map/?locale=en#%7B%22width%22%3A%22100%25%22%2C%22height%22%3A430%2C%22currencies%22%3A%5B%22EUR%22%2C%22USD%22%2C%22JPY%22%2C%22GBP%22%2C%22CHF%22%2C%22AUD%22%2C%22CAD%22%2C%22NZD%22%2C%22CNY%22%5D%2C%22isTransparent%22%3Afalse%2C%22colorTheme%22%3A%22dark%22%2C%22utm_source%22%3A%22altsfolio.org%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22forex-heat-map%22%2C%22page-uri%22%3A%22altsfolio.org%2F%22%7D" title="forex heat-map TradingView widget" lang="en" style="user-select: none; box-sizing: border-box; display: block; height: 100%; width: 100%;"></iframe>
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
                     <!-- <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/forex-heat-map/" rel="noopener" target="_blank"><span class="blue-text">Forex Heat Map</span></a> by TradingView</div> -->
 
 
-
-
-                    <style>
-                        .tradingview-widget-copyright {
-                            font-size: 13px !important;
-                            line-height: 32px !important;
-                            text-align: center !important;
-                            vertical-align: middle !important;
-                            /* @mixin sf-pro-display-font; */
-                            font-family: -apple-system, BlinkMacSystemFont, 'Trebuchet MS', Roboto, Ubuntu, sans-serif !important;
-                            color: #B2B5BE !important;
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-heat-map.js" async>
+                        {
+                            "width": "100%",
+                            "height": "430",
+                            "currencies": [
+                                "EUR",
+                                "USD",
+                                "JPY",
+                                "GBP",
+                                "CHF",
+                                "AUD",
+                                "CAD",
+                                "NZD",
+                                "CNY"
+                            ],
+                            "isTransparent": false,
+                            "colorTheme": "dark",
+                            "locale": "en"
                         }
+                    </script>
 
-                        .tradingview-widget-copyright .blue-text {
-                            color: #2962FF !important;
-                        }
-
-                        .tradingview-widget-copyright a {
-                            text-decoration: none !important;
-                            color: #B2B5BE !important;
-                        }
-
-                        .tradingview-widget-copyright a:visited {
-                            color: #B2B5BE !important;
-                        }
-
-                        .tradingview-widget-copyright a:hover .blue-text {
-                            color: #1E53E5 !important;
-                        }
-
-                        .tradingview-widget-copyright a:active .blue-text {
-                            color: #1848CC !important;
-                        }
-
-                        .tradingview-widget-copyright a:visited .blue-text {
-                            color: #2962FF !important;
-                        }
-                    </style>
                 </div>
                 <!-- TradingView Widget END -->
             </div>
@@ -603,8 +525,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$10,000.00</td>
                         <td class="text-center"> 3a17c5984af22cd7a443f14457841b3b19a51ea75a30e18bc6a82e4f8732dbca </td>
@@ -619,8 +541,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$24,100.00</td>
                         <td class="text-center"> f007e92cc9f82ba9c8c40c481eec7315fa9abcd85e7249a6cb57e38a2cf22d3e </td>
@@ -628,7 +550,7 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$4,000.00</td>
                         <td class="text-center"> 8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2 </td>
@@ -636,8 +558,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$500</td>
                         <td class="text-center"> 00db85ef40da34f3ea76aa60f0b2053eec2d90121e450791c18d8edbfedde6f1 </td>
@@ -645,8 +567,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$240,000</td>
                         <td class="text-center"> b21a418a44ed8b56118facefe7aa8d26541dff811b8a8ca65cfa1346d62c5c48 </td>
@@ -654,8 +576,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$17,000</td>
                         <td class="text-center"> 1e652d2899a1d058a20041a9faaeb5dc009101ca412ff09c387e6b281bd1db8b </td>
@@ -670,8 +592,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$21,000</td>
                         <td class="text-center"> 8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2 </td>
@@ -686,8 +608,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$9,000</td>
                         <td class="text-center"> f0b66ce7a33bbc63bf50050beaf52be71709c359aa1d344bb90f943690485661 </td>
@@ -695,8 +617,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$23,000</td>
                         <td class="text-center"> 2083e95ada3c584471ba5982e16c5dc2a6e464d3c170555ea8c708668be9383b </td>
@@ -704,8 +626,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$51,000</td>
                         <td class="text-center"> 8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2 </td>
@@ -713,8 +635,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$5,000</td>
                         <td class="text-center"> 8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2 </td>
@@ -722,8 +644,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">5,000</td>
                         <td class="text-center"> 15c3a97edbd606bd1e455aa2875677f5c6cd2b804e9054e898f640d313e39781 </td>
@@ -738,8 +660,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$2,500</td>
                         <td class="text-center"> ce972a6b82135fcba0890ea0c8668bdddf782fd580672daa6616c3b1af40ca9f </td>
@@ -747,8 +669,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$9,000</td>
                         <td class="text-center"> 376e809b02e6ef044f6d5cf5b72111f25f3c3e16a93dce865a178e2e0f5c484c </td>
@@ -763,8 +685,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$10,000.00</td>
                         <td class="text-center"> 3a17c5984af22cd7a443f14457841b3b19a51ea75a30e18bc6a82e4f8732dbca </td>
@@ -779,8 +701,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$24,100.00</td>
                         <td class="text-center"> f007e92cc9f82ba9c8c40c481eec7315fa9abcd85e7249a6cb57e38a2cf22d3e </td>
@@ -788,7 +710,7 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$4,000.00</td>
                         <td class="text-center"> 8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2 </td>
@@ -796,8 +718,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$500</td>
                         <td class="text-center"> 00db85ef40da34f3ea76aa60f0b2053eec2d90121e450791c18d8edbfedde6f1 </td>
@@ -805,8 +727,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$240,000</td>
                         <td class="text-center"> b21a418a44ed8b56118facefe7aa8d26541dff811b8a8ca65cfa1346d62c5c48 </td>
@@ -814,8 +736,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$17,000</td>
                         <td class="text-center"> 1e652d2899a1d058a20041a9faaeb5dc009101ca412ff09c387e6b281bd1db8b </td>
@@ -830,8 +752,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$21,000</td>
                         <td class="text-center"> 8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2 </td>
@@ -846,8 +768,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$9,000</td>
                         <td class="text-center"> f0b66ce7a33bbc63bf50050beaf52be71709c359aa1d344bb90f943690485661 </td>
@@ -855,8 +777,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$23,000</td>
                         <td class="text-center"> 2083e95ada3c584471ba5982e16c5dc2a6e464d3c170555ea8c708668be9383b </td>
@@ -864,8 +786,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$51,000</td>
                         <td class="text-center"> 8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2 </td>
@@ -873,8 +795,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$5,000</td>
                         <td class="text-center"> 8a2b9781aa4995625af7d2b008f020ac74e7e0d2a599e93ed995f7c3bc2be9f2 </td>
@@ -882,8 +804,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">5,000</td>
                         <td class="text-center"> 15c3a97edbd606bd1e455aa2875677f5c6cd2b804e9054e898f640d313e39781 </td>
@@ -898,8 +820,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$2,500</td>
                         <td class="text-center"> ce972a6b82135fcba0890ea0c8668bdddf782fd580672daa6616c3b1af40ca9f </td>
@@ -907,8 +829,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$9,000</td>
                         <td class="text-center"> 376e809b02e6ef044f6d5cf5b72111f25f3c3e16a93dce865a178e2e0f5c484c </td>
@@ -923,8 +845,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$10,000.00</td>
                         <td class="text-center"> 3a17c5984af22cd7a443f14457841b3b19a51ea75a30e18bc6a82e4f8732dbca </td>
@@ -932,8 +854,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$10,000.00</td>
                         <td class="text-center"> 3a17c5984af22cd7a443f14457841b3b19a51ea75a30e18bc6a82e4f8732dbca </td>
@@ -941,8 +863,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$10,000.00</td>
                         <td class="text-center"> 3a17c5984af22cd7a443f14457841b3b19a51ea75a30e18bc6a82e4f8732dbca </td>
@@ -950,8 +872,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$10,000.00</td>
                         <td class="text-center"> 3a17c5984af22cd7a443f14457841b3b19a51ea75a30e18bc6a82e4f8732dbca </td>
@@ -959,8 +881,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$10,000.00</td>
                         <td class="text-center"> 3a17c5984af22cd7a443f14457841b3b19a51ea75a30e18bc6a82e4f8732dbca </td>
@@ -968,8 +890,8 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$10,000.00</td>
                         <td class="text-center"> 3a17c5984af22cd7a443f14457841b3b19a51ea75a30e18bc6a82e4f8732dbca </td>
@@ -977,26 +899,25 @@ $page_title = 'Home';
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$1000.00</td>
                         <td class="text-center"> 3a17c5984af22cd7a443f14457841b3b19a51ea75a30e18bc6a82e4f8732dbca </td>
                     </tr>
-                    <tr>
-                        <td class="text-center">
-                            <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
-                        </td>
-                        <td class="text-center">$123,000.00</td>
-                        <td class="text-center"> 3a17c5984af22cd7a443f14457841b3b19a51ea75a30e18bc6a82e4f8732dbca </td>
+                    <td class="text-center">
+                        <button class="btn
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
+                    </td>
+                    <td class="text-center">$123,000.00</td>
+                    <td class="text-center"> 3a17c5984af22cd7a443f14457841b3b19a51ea75a30e18bc6a82e4f8732dbca </td>
                     </tr>
                     <tr>
                         <td class="text-center">
                             <button class="btn
-                                        btn-info btn-sm"><span class="btn-label"><i class="fa
-                                        fa-check"></i></span>Confirmed</button>
+                                            btn-info btn-sm"><span class="btn-label"><i class="fa
+                                            fa-check"></i></span>Confirmed</button>
                         </td>
                         <td class="text-center">$10,000.00</td>
                         <td class="text-center"> 3a17c5984af22cd7a443f14457841b3b19a51ea75a30e18bc6a82e4f8732dbca </td>
@@ -1026,10 +947,8 @@ $page_title = 'Home';
                         </ul>
 
                         <div class="coin_calculator">
-
-                            <script type="text/javascript" src="https://fx-rate.net/converter.php?layout=horizontal&amount=1&tcolor=000000&currency=BTC&default_pair=BTC/GBP"></script>
-
-
+                            <script type="text/javascript" src="https://fx-rate.net/converter.php?layout=horizontal&amp;amount=1&amp;tcolor=000000&amp;currency=BTC&amp;default_pair=BTC/GBP">
+                            </script>
                         </div>
 
                     </div>
