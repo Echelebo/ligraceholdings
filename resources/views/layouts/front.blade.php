@@ -98,7 +98,7 @@
             <div class="main_menu_inner">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="/"><img width="150" height="90" alt="" src="/trust/altlog-removebg-preview.png"></a>
+                        <a class="navbar-brand" href="/"><img width="150" height="90" alt="" src="/trust/images/lkog-removebg-preview.png"></a>
 
                         <!-- <span>Language:</span> -->
                         <select class="custom-select lang-sel" style="width:110px;border: 0px solid #0080db00;" id="language" onchange="changeLanguageByButtonClick()">
