@@ -9,9 +9,7 @@
     <meta name="keywords" content="altsfolio.org, bitcoin, bitcoin mining,mining,miner,bitcoin, buy bitcoin, buy bitcoins, bitcoin mining, cloud mining, bitcoin miners, cloud miners, cloud hashing, cloudhashing, virtual currency, crypto currency, digital currency">
     <meta name="description" content="altsfolio.org is a community of people who are interested in making money with Bitcoin and other crypto-currency opportunities. Learn how to profit from digital currencies.">
     <link rel="icon" href="/trust/img/favicon.png" width="220" height="80" type="image/x-icon" />
-    <!----------------- www.designclubdev.com ----------->
-    <meta name="designer" href="https://designclubdev.com/">
-    <!----------------- www.designclubdev.com ----------->
+
     <title>altsfolio.org</title>
 
     <!-- Icon css link -->
@@ -100,7 +98,7 @@
             <div class="main_menu_inner">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="/"><img width="150" height="90" alt="" src="/altlog-removebg-preview.png"></a>
+                        <a class="navbar-brand" href="/"><img width="150" height="90" alt="" src="/trust/altlog-removebg-preview.png"></a>
 
                         <!-- <span>Language:</span> -->
                         <select class="custom-select lang-sel" style="width:110px;border: 0px solid #0080db00;" id="language" onchange="changeLanguageByButtonClick()">
