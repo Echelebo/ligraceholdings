@@ -1,53 +1,88 @@
 <!DOCTYPE html>
-
 <html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="altsfolio.org">
-    <meta name="description" content="altsfolio.org">
-    <link rel="icon" href="/trust/img/favicon.png" type="image/x-icon">
-
-    <title>{{ $page_title }} | altsfolio.org</title>
+    <meta name="keywords" content="altfolio.org, bitcoin, bitcoin mining,mining,miner,bitcoin, buy bitcoin, buy bitcoins, bitcoin mining, cloud mining, bitcoin miners, cloud miners, cloud hashing, cloudhashing, virtual currency, crypto currency, digital currency">
+    <meta name="description" content="altfolio.org is a community of people who are interested in making money with Bitcoin and other crypto-currency opportunities. Learn how to profit from digital currencies.">
+    <link rel="icon" href="img/invest-view_favicon.png" width="220" height="80" type="image/x-icon" />
+    <!----------------- www.designclubdev.com ----------->
+    <meta name="designer" href="https://designclubdev.com/">
+    <!----------------- www.designclubdev.com ----------->
+    <title>altfolio.org</title>
 
     <!-- Icon css link -->
-    <link href="/trust/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/trust/vendors/flat-icon/flaticon.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/flat-icon/flaticon.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="/trust/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Rev slider css -->
-    <link href="/trust/vendors/revolution/css/settings.css" rel="stylesheet">
-    <link href="/trust/vendors/revolution/css/layers.css" rel="stylesheet">
-    <link href="/trust/vendors/revolution/css/navigation.css" rel="stylesheet">
+    <link href="vendors/revolution/css/settings.css" rel="stylesheet">
+    <link href="vendors/revolution/css/layers.css" rel="stylesheet">
+    <link href="vendors/revolution/css/navigation.css" rel="stylesheet">
 
     <!-- Extra plugin css -->
-    <link href="/trust/vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet">
-    <link href="/trust/vendors/animate-css/animate.css" rel="stylesheet">
-    <link href="/trust/vendors/nice-select/nice-select.css" rel="stylesheet">
+    <link href="vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet">
+    <link href="vendors/animate-css/animate.css" rel="stylesheet">
+    <link href="vendors/nice-select/nice-select.css" rel="stylesheet">
 
-    <link href="/trust/css/style.css" rel="stylesheet">
-    <link href="/trust/css/responsive.css" rel="stylesheet">
-    <link href="/trust/css/custom.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 
-    <link href="/trust/scss/_banner.scss" rel="stylesheet">
+    <link href="scss/_banner.scss" rel="stylesheet">
 
-    <link rel="stylesheet" href="/trust/css/marquee.css">
+    <link rel="stylesheet" href="css/marquee.css" />
 
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- g-hide -->
+    <style type="text/css">
+        iframe.goog-te-banner-frame {
+            display: none !important;
+        }
+    </style>
+    <style type="text/css">
+        body {
+            position: static !important;
+            top: 0px !important;
+        }
+    </style>
+    <!-- end-g-hide -->
+    <!-- /GetButton.io widget-->
+    <script type="text/javascript">
+        (function() {
+            var options = {
+                whatsapp: "+", // WhatsApp number
+                call_to_action: "Contact us!", // Call to action
+                position: "left", // Position may be "right" or "left"
+            };
+            var proto = document.location.protocol,
+                host = "getbutton.io",
+                url = proto + "//static." + host;
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = url + "/widget-send-button/js/init.js";
+            s.onload = function() {
+                WhWidgetSendButton.init(host, proto, options);
+            };
+            var x = document.getElementsByTagName("script")[0];
+            x.parentNode.insertBefore(s, x);
+        })();
+    </script>
+    <!-- /GetButton.io widget -->
 </head>
 
-<body style="position: relative; min-height: 100%; top: 0px;">
+<body>
 
     <div class="main">
         <!--================Header Menu Area =================-->
@@ -57,7 +92,7 @@
 
                     <div class="float-md-right">
                         <ul class="top_social">
-                            <li><a href="mailto: info@altsfolio.org"><i class="fa fa-envelope"></i> info@altsfolio.org</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> info@altfolio.org</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,147 +100,83 @@
             <div class="main_menu_inner">
                 <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <a class="navbar-brand" href="/"><img width="150" height="90" alt="" src="/trust/images/lkog-removebg-preview.png"></a>
+                        <a class="navbar-brand" href="/"><img width="150" height="90" alt="" src="altlog-removebg-preview.png"></a>
 
-
-                        <style type="text/css">
-                            a.gflag {
-                                vertical-align: middle;
-                                font-size: 16px;
-                                padding: 1px 0;
-                                background-repeat: no-repeat;
-                                background-image: url(//gtranslate.net/flags/16.png);
-                            }
-
-                            a.gflag img {
-                                border: 0;
-                            }
-
-                            a.gflag:hover {
-                                background-image: url(//gtranslate.net/flags/16a.png);
-                            }
-
-                            #goog-gt-tt {
-                                display: none !important;
-                            }
-
-                            .goog-te-banner-frame {
-                                display: none !important;
-                            }
-
-                            .goog-te-menu-value:hover {
-                                text-decoration: none !important;
-                            }
-
-                            body {
-                                top: 0 !important;
-                            }
-
-                            #google_translate_element2 {
-                                display: none !important;
-                            }
-                        </style>
-
-                        <select class="custom-select lang-sel" style="width:110px;border: 0px solid #0080db00;" onchange="doGTranslate(this);">
-                            <option value="">Language</option>
-                            <option value="en|af">Afrikaans</option>
-                            <option value="en|sq">Albanian</option>
-                            <option value="en|ar">Arabic</option>
-                            <option value="en|hy">Armenian</option>
-                            <option value="en|az">Azerbaijani</option>
-                            <option value="en|eu">Basque</option>
-                            <option value="en|be">Belarusian</option>
-                            <option value="en|bg">Bulgarian</option>
-                            <option value="en|ca">Catalan</option>
-                            <option value="en|zh-CN">Chinese (Simplified)</option>
-                            <option value="en|zh-TW">Chinese (Traditional)</option>
-                            <option value="en|hr">Croatian</option>
-                            <option value="en|cs">Czech</option>
-                            <option value="en|da">Danish</option>
-                            <option value="en|nl">Dutch</option>
-                            <option value="en|en">English</option>
-                            <option value="en|et">Estonian</option>
-                            <option value="en|tl">Filipino</option>
-                            <option value="en|fi">Finnish</option>
-                            <option value="en|fr">French</option>
-                            <option value="en|gl">Galician</option>
-                            <option value="en|ka">Georgian</option>
-                            <option value="en|de">German</option>
-                            <option value="en|el">Greek</option>
-                            <option value="en|ht">Haitian Creole</option>
-                            <option value="en|iw">Hebrew</option>
-                            <option value="en|hi">Hindi</option>
-                            <option value="en|hu">Hungarian</option>
-                            <option value="en|is">Icelandic</option>
-                            <option value="en|id">Indonesian</option>
-                            <option value="en|ga">Irish</option>
-                            <option value="en|it">Italian</option>
-                            <option value="en|ja">Japanese</option>
-                            <option value="en|ko">Korean</option>
-                            <option value="en|lv">Latvian</option>
-                            <option value="en|lt">Lithuanian</option>
-                            <option value="en|mk">Macedonian</option>
-                            <option value="en|ms">Malay</option>
-                            <option value="en|mt">Maltese</option>
-                            <option value="en|no">Norwegian</option>
-                            <option value="en|fa">Persian</option>
-                            <option value="en|pl">Polish</option>
-                            <option value="en|pt">Portuguese</option>
-                            <option value="en|ro">Romanian</option>
-                            <option value="en|ru">Russian</option>
-                            <option value="en|sr">Serbian</option>
-                            <option value="en|sk">Slovak</option>
-                            <option value="en|sl">Slovenian</option>
-                            <option value="en|es">Spanish</option>
-                            <option value="en|sw">Swahili</option>
-                            <option value="en|sv">Swedish</option>
-                            <option value="en|th">Thai</option>
-                            <option value="en|tr">Turkish</option>
-                            <option value="en|uk">Ukrainian</option>
-                            <option value="en|ur">Urdu</option>
-                            <option value="en|vi">Vietnamese</option>
-                            <option value="en|cy">Welsh</option>
-                            <option value="en|yi">Yiddish</option>
+                        <!-- <span>Language:</span> -->
+                        <select class="custom-select lang-sel" style="width:110px;border: 0px solid #0080db00;" id="language" onchange="changeLanguageByButtonClick()">
+                            <option value="en" selected>English</option>
+                            <option value="af">Afrikanns</option>
+                            <option value="sq">Albanian</option>
+                            <option value="ar">Arabic</option>
+                            <option value="hy">Armenian</option>
+                            <option value="eu">Basque</option>
+                            <option value="bn">Bengali</option>
+                            <option value="bg">Bulgarian</option>
+                            <option value="ca">Catalan</option>
+                            <option value="km">Cambodian</option>
+                            <option value="zh-CN">Chinese (Mandarin)</option>
+                            <option value="hr">Croation</option>
+                            <option value="cs">Czech</option>
+                            <option value="da">Danish</option>
+                            <option value="nl">Dutch</option>
+                            <option value="et">Estonian</option>
+                            <option value="fj">Fiji</option>
+                            <option value="fi">Finnish</option>
+                            <option value="fr">French</option>
+                            <option value="ka">Georgian</option>
+                            <option value="de">German</option>
+                            <option value="el">Greek</option>
+                            <option value="gu">Gujarati</option>
+                            <option value="he">Hebrew</option>
+                            <option value="hi">Hindi</option>
+                            <option value="hu">Hungarian</option>
+                            <option value="is">Icelandic</option>
+                            <option value="id">Indonesian</option>
+                            <option value="ga">Irish</option>
+                            <option value="it">Italian</option>
+                            <option value="ja">Japanese</option>
+                            <option value="jw">Javanese</option>
+                            <option value="ko">Korean</option>
+                            <option value="la">Latin</option>
+                            <option value="lv">Latvian</option>
+                            <option value="lt">Lithuanian</option>
+                            <option value="mk">Macedonian</option>
+                            <option value="ms">Malay</option>
+                            <option value="ml">Malayalam</option>
+                            <option value="mt">Maltese</option>
+                            <option value="mi">Maori</option>
+                            <option value="mr">Marathi</option>
+                            <option value="mn">Mongolian</option>
+                            <option value="ne">Nepali</option>
+                            <option value="no">Norwegian</option>
+                            <option value="fa">Persian</option>
+                            <option value="pl">Polish</option>
+                            <option value="pt">Portuguese</option>
+                            <option value="pa">Punjabi</option>
+                            <option value="qu">Quechua</option>
+                            <option value="ro">Romanian</option>
+                            <option value="ru">Russian</option>
+                            <option value="sm">Samoan</option>
+                            <option value="sr">Serbian</option>
+                            <option value="sk">Slovak</option>
+                            <option value="sl">Slovenian</option>
+                            <option value="es">Spanish</option>
+                            <option value="sw">Swahili</option>
+                            <option value="sv">Swedish </option>
+                            <option value="ta">Tamil</option>
+                            <option value="tt">Tatar</option>
+                            <option value="te">Telugu</option>
+                            <option value="th">Thai</option>
+                            <option value="bo">Tibetan</option>
+                            <option value="to">Tonga</option>
+                            <option value="tr">Turkish</option>
+                            <option value="uk">Ukranian</option>
+                            <option value="ur">Urdu</option>
+                            <option value="uz">Uzbek</option>
+                            <option value="vi">Vietnamese</option>
+                            <option value="cy">Welsh</option>
+                            <option value="xh">Xhosa</option>
                         </select>
-                        <div id="google_translate_element2"></div>
-
-                        <script type="text/javascript">
-                            function googleTranslateElementInit2() {
-                                new google.translate.TranslateElement({
-                                    pageLanguage: 'en',
-                                    autoDisplay: false
-                                }, 'google_translate_element2');
-                            }
-                        </script>
-
-                        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
-
-
-                        <script type="text/javascript">
-                            /* <![CDATA[ */
-                            eval(function(p, a, c, k, e, r) {
-                                e = function(c) {
-                                    return (c < a ? '' : e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36))
-                                };
-                                if (!''.replace(/^/, String)) {
-                                    while (c--) r[e(c)] = k[c] || e(c);
-                                    k = [function(e) {
-                                        return r[e]
-                                    }];
-                                    e = function() {
-                                        return '\\w+'
-                                    };
-                                    c = 1
-                                };
-                                while (c--)
-                                    if (k[c]) p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c]);
-                                return p
-                            }('6 7(a,b){n{4(2.9){3 c=2.9("o");c.p(b,f,f);a.q(c)}g{3 c=2.r();a.s(\'t\'+b,c)}}u(e){}}6 h(a){4(a.8)a=a.8;4(a==\'\')v;3 b=a.w(\'|\')[1];3 c;3 d=2.x(\'y\');z(3 i=0;i<d.5;i++)4(d[i].A==\'B-C-D\')c=d[i];4(2.j(\'k\')==E||2.j(\'k\').l.5==0||c.5==0||c.l.5==0){F(6(){h(a)},G)}g{c.8=b;7(c,\'m\');7(c,\'m\')}}', 43, 43, '||document|var|if|length|function|GTranslateFireEvent|value|createEvent||||||true|else|doGTranslate||getElementById|google_translate_element2|innerHTML|change|try|HTMLEvents|initEvent|dispatchEvent|createEventObject|fireEvent|on|catch|return|split|getElementsByTagName|select|for|className|goog|te|combo|null|setTimeout|500'.split('|'), 0, {}))
-                            /* ]]> */
-                        </script>
-
-
-
                         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="my_toggle_menu">
                                 <span></span>
@@ -217,55 +188,34 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/">Home</a>
+                                    <a class="nav-link" href="?a=home">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/about">About Us</a>
+                                    <a class="nav-link" href="?a=about">About Us</a>
                                 </li>
-
-                                @auth
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('user.dashboard') }}">Dashboard</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a role="button" class="nav-link logout">Logout</a>
-                                </li>
-                                @else
-
 
 
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/login">Login</a>
+                                    <a class="nav-link" href="?a=login">Login</a>
                                 </li>
-
-                                @endauth
-
                             </ul>
                             <ul class="navbar-nav justify-content-end">
-                                @auth
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('user.dashboard') }}">Account</a>
+                                    <a class="nav-link" href="?a=signup">Get Started</a>
                                 </li>
-                                @else
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/register">Get Started</a>
-                                </li>
-                                @endauth
-
                             </ul>
                         </div>
                     </nav>
                 </div>
             </div>
         </header>
-        <!--================End Footer Area =================-->
 
 
 
         @yield('contents')
 
+        <!--================Footer Area =================-->
         <!--================Footer Area =================-->
         <footer class="footer_area">
             <div class="footer_widgets_area p_100">
@@ -273,10 +223,10 @@
                     <div class="row">
                         <div class="col-lg-5 col-sm-6">
                             <aside class="f_widget about_widget">
-                                <img class="img-fluid" src="/trust/img/logo2.png" width="250" height="90" alt="">
+                                <img class="img-fluid" src="altlog-removebg-preview.png" width="250" height="90" alt="">
                                 <p>We are an award winning multinational company. We believe in quality and standard
                                     worldwide.</p>
-                                <p> altsfolio.org was built to help you be a more confident investor and set you on
+                                <p> altfolio.org was built to help you be a more confident investor and set you on
                                     the path to secure your financial future</p>
                             </aside>
                         </div>
@@ -286,9 +236,10 @@
                                     <h3>RESOURCES</h3>
                                 </div>
                                 <ul>
-                                    <li><a href="/"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Home</a></li>
-                                    <li><a href="/about"><i class="fa fa-angle-double-right" aria-hidden="true"></i>About</a></li>
+                                    <li><a href="?a=home"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Home</a></li>
+                                    <li><a href="?a=about"><i class="fa fa-angle-double-right" aria-hidden="true"></i>About</a></li>
 
+                                    <li><a href="?a=faq"><i class="fa fa-angle-double-right" aria-hidden="true"></i>FAQ</a></li>
                                 </ul>
                             </aside>
                         </div>
@@ -298,23 +249,23 @@
                             </div>
                             <!-- <aside class="f_widget about_widget"> -->
                             <ul>
-                                <li style="color:white"><i class="fa fa-envelope" aria-hidden="true"> Email : </i> <a style="color:#0080db" href="mailto: info@altsfolio.org">info@altsfolio.org</a> </li>
+                                <li style="color:white"><i class="fa fa-envelope" aria-hidden="true"> Email : </i> <a style="color:#0080db" href="info@altfolio.org">info@altfolio.org</a> </li>
                                 <!-- <br> -->
                                 <!-- <li style="color:white"><i class="fa fa-whatsapp"
-                                        aria-hidden="true"> Whatsapp :  </i> <a  style="color:#0080db" href="https://wa.me/">+447-3736-3727</a></li> -->
+                                                aria-hidden="true"> Whatsapp :  </i> <a  style="color:#0080db" href="https://wa.me/">+447-3736-3727</a></li> -->
                                 <!-- <br> -->
-                                <li style="color:white"><i class="fa fa-map-marker" aria-hidden="true"> Address : </i> <a style="color:#0080db" href="#">3/46 Governor Macquarie Dr, Sydney, New South Wales, 2170, Australia </a> </li>
+                                <li style="color:white"><i class="fa fa-map-marker" aria-hidden="true"> Address : </i> <a style="color:#0080db" href="#">The Long Lodge, 265-269 Kingston Road, London, SW19 3NW</a> </li>
                                 <!-- <br> -->
-                                <li style="color:white"><i class="fa fa-link" aria-hidden="true"> Link : </i> <a style="color:#0080db" href="/">https://altsfolio.org</a></li>
+                                <li style="color:white"><i class="fa fa-link" aria-hidden="true"> Link : </i> <a style="color:#0080db" href="/">https://altfolio.org</a></li>
                             </ul>
-                            <img class="img-fluid" src="/trust/img/security.png" width="250" height="90" alt="">
+                            <img class="img-fluid" src="img/security.png" width="250" height="90" alt="">
                             <!-- </aside> -->
                         </div>
                     </div>
                 </div>
             </div>
             <div class="footer_copyright" style="color:white">
-                Copyright © 2025 <a style="color:#0080db" href="/"> altsfolio.org</a>. All Rights Reserved.
+                Copyright © 2025 <a style="color:#0080db" href="#"> altfolio.org</a>. All Rights Reserved.</h5>
             </div>
         </footer>
     </div>
@@ -322,39 +273,39 @@
 
 
 
-
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/trust/js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/trust/js/popper.min.js"></script>
-    <script src="/trust/js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- Rev slider js -->
-    <script src="/trust/vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script src="/trust/vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="/trust/vendors/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="/trust/vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
-    <script src="/trust/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="/trust/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="/trust/vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="vendors/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="vendors/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="vendors/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="vendors/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="vendors/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
     <!-- Extra plugin css -->
-    <script src="/trust/vendors/counterup/jquery.waypoints.min.js"></script>
-    <script src="/trust/vendors/counterup/jquery.counterup.min.js"></script>
-    <script src="/trust/vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="/trust/vendors/animate-css/wow.min.js"></script>
-    <script src="/trust/vendors/parallax/parallax.min.js"></script>
-    <script src="/trust/vendors/counterup/jquery.waypoints.min.js"></script>
-    <script src="/trust/vendors/counterup/jquery.counterup.min.js"></script>
-    <script src="/trust/vendors/counterup/apear.js"></script>
-    <script src="/trust/vendors/counterup/countto.js"></script>
-    <script src="/trust/vendors/nice-select/jquery.nice-select.min.js"></script>
+    <script src="vendors/counterup/jquery.waypoints.min.js"></script>
+    <script src="vendors/counterup/jquery.counterup.min.js"></script>
+    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="vendors/animate-css/wow.min.js"></script>
+    <script src="vendors/parallax/parallax.min.js"></script>
+    <script src="vendors/counterup/jquery.waypoints.min.js"></script>
+    <script src="vendors/counterup/jquery.counterup.min.js"></script>
+    <script src="vendors/counterup/apear.js"></script>
+    <script src="vendors/counterup/countto.js"></script>
+    <script src="vendors/nice-select/jquery.nice-select.min.js"></script>
 
 
-    <script src="/trust/js/theme.js"></script>
-    <script src="/trust/js/recent.js"></script>
-    <script type="text/javascript" src="/trust/js/marquee.js"></script>
-    <script type="text/javascript" src="/trust/js/particle.js"></script>
-    <script type="text/javascript" src="/trust/js/custom.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/recent.js"></script>
+    <script type="text/javascript" src="js/marquee.js"></script>
+    <script type="text/javascript" src="js/particle.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+
 
     <script>
         $.ajax({
@@ -384,6 +335,7 @@
     </script>
 
 
+
     <script>
         $(document).ready(function() {
 
@@ -411,6 +363,37 @@
 
 
 
+    <div id="google_translate_element" style="visibility:visible;display:none"></div>
+
+
+    <script type="text/javascript">
+        document.getElementsByClassName('skiptranslate')[0].style.visibility = 'hidden';
+        document.getElementsByClassName('goog-te-banner-frame')[0].style.visibility = 'hidden';
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: "en"
+            }, 'google_translate_element');
+        }
+
+        function changeLanguageByButtonClick() {
+
+
+            var language = document.getElementById("language").value;
+            var selectField = document.querySelector("#google_translate_element select");
+            for (var i = 0; i < selectField.children.length; i++) {
+                var option = selectField.children[i];
+                // find desired langauge and change the former language of the hidden selection-field
+                if (option.value == language) {
+                    selectField.selectedIndex = i;
+                    // trigger change event afterwards to make google-lib translate this side
+                    selectField.dispatchEvent(new Event('change'));
+                    break;
+                }
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
 
@@ -439,8 +422,9 @@
             color: #0080db;
         }
     </style>
+
     <div class="mgm" style="display: none;">
-        <div class="txt" style="color:black;">Someone from <b>Portugal</b> has <b>withdrawn</b> <a href="javascript:void(0);" onclick="javascript:void(0);">$31,600</a></div>
+        <div class="txt" style="color:black;"></div>
     </div>
 
     <script data-cfasync="false" src="#"></script>
@@ -473,39 +457,8 @@
         }
     </script>
 
-    {{-- logout --}}
-    <script>
-        $(document).on('click', '.logout', function(e) {
-            html = `
-            <div class="mt-5 h-72 ts-gray-3 p-2 rounded-lg flex justify-center items-center">
-                <div>
-                    <h2 class="text-white text-center">Do you really want to Logout?</h2>
-                    <form action="{{ route('user.logout') }}" class="mt-5 gen-form" data-action="redirect" data-url="{{ url('/') }}">
-                        @csrf
-                        <button type="submit" class="mt-5 bg-red-500 text-white px-2 py-1 rounded-full text-xs hover:scale-110 transition-all uppercase" type="submit">Yes,  Logout</button>
-                    </form>
 
-                </div>
-            </div>
-            `;
-            Swal.fire({
-                html: html,
-                toast: false,
-                background: 'rgb(7, 3, 12, 0)',
-                showConfirmButton: false,
-                showCloseButton: true,
-                allowEscapeKey: false, // Prevent closing by escape key
-                allowOutsideClick: false, // Prevent closing by clicking backdrop
-                willClose: () => {
-                    //delete the previously generated qrcode
-                    // $('#single_wallet_qrcode').html('');
-                }
-            });
-        });
-    </script>
 
-    {{-- livechat --}}
-    {!! json_decode(site('livechat')) !!}
 
 </body>
 
