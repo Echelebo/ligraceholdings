@@ -108,7 +108,6 @@
     <div class="wrapper-content-sign-in p-0">
 
 
-
         <div class="col-md-8 offset-md-8 text-left side_signing_full">
 
             <!-- register starts -->
