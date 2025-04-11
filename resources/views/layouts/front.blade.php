@@ -256,7 +256,7 @@
                                 <!-- <br> -->
                                 <li style="color:white"><i class="fa fa-link" aria-hidden="true"> Link : </i> <a style="color:#0080db" href="/">https://altsfolio.org</a></li>
                             </ul>
-                            <img class="img-fluid" src="img/security.png" width="250" height="90" alt="">
+                            <img class="img-fluid" src="/trust/img/security.png" width="250" height="90" alt="">
                             <!-- </aside> -->
                         </div>
                     </div>
