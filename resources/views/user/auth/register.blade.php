@@ -113,4 +113,142 @@
 </script>
 
 
+<script>
+    $(document).ready(function() {
+        $('#registerForm').submit(function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            var form = $(this);
+            var formData = form.serialize(); // Serialize form data as JSON
+
+            var clicked = $('#registerBtn');
+
+            //disable the submit button
+            clicked.addClass('relative disabled');
+            clicked.append('<span class="button-spinner"></span>');
+            clicked.prop('disabled', true);
+
+            $.ajax({
+                url: form.attr('action'),
+                type: 'POST',
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    var verifyText = response.message;
+                    var verify = response.verify;
+                    $('#noticeMsg').html(verifyText).show();
+                    toastNotify('success', verifyText);
+
+                    if (verify == 1) {
+                        //hide register form and display verification form
+                        $('#registerForm').hide();
+                        $('#verifyForm').show();
+
+                        //update page title
+                        $('#page-title').html('Verify Email');
+                    } else {
+                        var url = '{{ route('
+                        user.dashboard ') }}';
+                        window.location.href = url;
+                    }
+
+
+
+
+                },
+                error: function(xhr, status, error) {
+                    $('#registerBtn').show();
+                    var errors = xhr.responseJSON.errors;
+
+                    if (errors) {
+                        $.each(errors, function(field, messages) {
+                            var fieldErrors = '';
+                            $.each(messages, function(index, message) {
+                                fieldErrors += message + '<br>';
+                            });
+
+
+                            toastNotify('error', fieldErrors);
+                        });
+                    } else {
+                        toastNotify('error', 'An error occured, please try again later');
+
+                    }
+
+
+                },
+                complete: function() {
+                    clicked.removeClass('disabled');
+                    clicked.find('.button-spinner').remove();
+                    clicked.prop('disabled', false);
+
+                }
+
+            });
+        });
+
+
+        //otp form
+        $('#verifyForm').submit(function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            var form = $(this);
+            var formData = form.serialize(); // Serialize form data as JSON
+
+            var clicked = $('#verifyBtn');
+
+            //disable the submit button
+            clicked.addClass('relative disabled');
+            clicked.append('<span class="button-spinner"></span>');
+            clicked.prop('disabled', true);
+
+            $.ajax({
+                url: form.attr('action'),
+                type: 'POST',
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    var verifyText = response.message;
+                    $('#noticeMsg').html(verifyText).show();
+                    toastNotify('success', verifyText);
+                    var url = '{{ route('
+                    user.dashboard ') }}';
+                    window.location.href = url;
+
+                },
+                error: function(xhr, status, error) {
+                    $('#registerBtn').show();
+                    var errors = xhr.responseJSON.errors;
+
+                    if (errors) {
+                        $.each(errors, function(field, messages) {
+                            var fieldErrors = '';
+                            $.each(messages, function(index, message) {
+                                fieldErrors += message + '<br>';
+                            });
+
+                            toastNotify('error', fieldErrors);
+
+                        });
+                    } else {
+                        toastNotify('error', 'An error occured, please try again later');
+
+                    }
+
+
+                },
+
+                complete: function() {
+                    clicked.removeClass('disabled');
+                    clicked.find('.button-spinner').remove();
+                    clicked.prop('disabled', false);
+
+                }
+
+            });
+        });
+    });
+</script>
+
+
 @endsection
