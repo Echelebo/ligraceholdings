@@ -221,7 +221,7 @@
                     <div class="row">
                         <div class="col-lg-5 col-sm-6">
                             <aside class="f_widget about_widget">
-                                <img class="img-fluid" src="/trust/altlog-removebg-preview.png" width="250" height="90" alt="">
+                                <img class="img-fluid" src="/trust/images/lkog-removebg-preview.png" width="250" height="90" alt="">
                                 <p>We are an award winning multinational company. We believe in quality and standard
                                     worldwide.</p>
                                 <p> altsfolio.org was built to help you be a more confident investor and set you on
