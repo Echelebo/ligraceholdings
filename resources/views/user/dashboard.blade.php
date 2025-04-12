@@ -68,7 +68,7 @@
         <div class="activity-block success">
             <div class="media">
                 <div class="media-body">
-                    <h5 class="font-weight-bold">$<span class="">0</span></h5>
+                    <h5 class="font-weight-bold">$<span class="">{{ formatAmount(user()->balance) }}</span></h5>
                     <p>Total Balance</p>
                 </div>
                 <i class="fas fa-chart-bar"></i>
