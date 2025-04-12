@@ -68,7 +68,7 @@
 
                     <div class="float-md-right">
                         <ul class="top_social">
-                            <li><a href="#"><i class="fa fa-envelope"></i> info@altsfolio.org</a></li>
+                            <li><a href="mailto: info@altsfolio.org"><i class="fa fa-envelope"></i> info@altsfolio.org</a></li>
                         </ul>
                     </div>
                 </div>
