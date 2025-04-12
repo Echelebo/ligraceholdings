@@ -171,39 +171,39 @@ $page_title = 'Home';
                     <div class="choose_botcoin_item">
                         <img src="/trust/img/service1.jpg" />
 
-                        <a href="#">
+                        <a href="/cryptocurrency">
                             <h4>Crypto Currency</h4>
                         </a>
                         <p>A cryptocurrency, crypto currency or crypto is a digital asset designed to work as a
                             medium of
                             exchange wherein individual coin ownership</p>
-                        <a href="?a=cryptocurrency">learn more</a>
+                        <a href="/cryptocurrency">learn more</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="choose_botcoin_item">
                         <img src="/trust/img/service2.jpg" />
 
-                        <a href="#">
+                        <a href="/stock">
                             <h4>Stock & Forex</h4>
                         </a>
                         <p>The foreign exchange market is a global decentralized or over-the-counter market for
                             the trading
                             of currencies. </p>
-                        <a href="?a=stock">learn more</a>
+                        <a href="/stock">learn more</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="choose_botcoin_item">
                         <img src="/trust/img/service3.jpg" />
 
-                        <a href="#">
+                        <a href="/realestate">
                             <h4>Real estate </h4>
                         </a>
                         <p>Real estate is property consisting of land and the buildings on it, along with its
                             natural
                             resources such as crops, minerals or water; </p>
-                        <a href="?a=realestate">learn more</a>
+                        <a href="/realestate">learn more</a>
                     </div>
                 </div>
             </div>
@@ -246,7 +246,7 @@ $page_title = 'Home';
                                 <!-- <br> -->
                                 <!-- <div class="my-3">
                                             <a class="btn text-white" style="background-color: #0080db"
-                                                href="?a=about">Learn More</a>
+                                                href="/about">Learn More</a>
                                         </div> -->
                                 <!-- </div>
                                     <div class="media-body"> -->
@@ -266,7 +266,7 @@ $page_title = 'Home';
                                 </p>
                                 <!-- <div class="my-3">
                                             <a class="btn text-white" style="background-color: #0080db"
-                                                href="?a=about">Learn More</a>
+                                                href="/about">Learn More</a>
                                         </div> -->
                             </div>
                         </div>
@@ -355,7 +355,7 @@ $page_title = 'Home';
                                         <li>24/7 Support</li>
                                         <li>Referral Bonus: 20%</li>
                                     </ul>
-                                    <div class="button"><a href="?a=signup" class="btn btn-outline pricing-btn">Get
+                                    <div class="button"><a href="/signup" class="btn btn-outline pricing-btn">Get
                                             Started</a>
                                     </div>
                                 </div>

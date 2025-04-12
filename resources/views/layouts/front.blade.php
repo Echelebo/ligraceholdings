@@ -10,7 +10,7 @@
     <meta name="description" content="altsfolio.org is a community of people who are interested in making money with Bitcoin and other crypto-currency opportunities. Learn how to profit from digital currencies.">
     <link rel="icon" href="/trust/img/favicon.png" width="220" height="80" type="image/x-icon" />
 
-    <title>altsfolio.org</title>
+    <title> {{ $page_title }} | altsfolio.org</title>
 
     <!-- Icon css link -->
     <link href="/trust/css/font-awesome.min.css" rel="stylesheet">
@@ -225,7 +225,7 @@
                             </div>
                             <!-- <aside class="f_widget about_widget"> -->
                             <ul>
-                                <li style="color:white"><i class="fa fa-envelope" aria-hidden="true"> Email : </i> <a style="color:#0080db" href="info@altsfolio.org">info@altsfolio.org</a> </li>
+                                <li style="color:white"><i class="fa fa-envelope" aria-hidden="true"> Email : </i> <a style="color:#0080db" href="mailto: info@altsfolio.org">info@altsfolio.org</a> </li>
                                 <!-- <br> -->
                                 <!-- <li style="color:white"><i class="fa fa-whatsapp"
                                                 aria-hidden="true"> Whatsapp :  </i> <a  style="color:#0080db" href="https://wa.me/">+447-3736-3727</a></li> -->
@@ -241,7 +241,7 @@
                 </div>
             </div>
             <div class="footer_copyright" style="color:white">
-                Copyright © 2025 <a style="color:#0080db" href="#"> altsfolio.org</a>. All Rights Reserved.</h5>
+                Copyright © 2025 <a style="color:#0080db" href="/"> altsfolio.org</a>. All Rights Reserved.</h5>
             </div>
         </footer>
     </div>
