@@ -55,29 +55,7 @@
         }
     </style>
     <!-- end-g-hide -->
-    <!-- /GetButton.io widget-->
-    <script type="text/javascript">
-        (function() {
-            var options = {
-                whatsapp: "+", // WhatsApp number
-                call_to_action: "Contact us!", // Call to action
-                position: "left", // Position may be "right" or "left"
-            };
-            var proto = document.location.protocol,
-                host = "getbutton.io",
-                url = proto + "//static." + host;
-            var s = document.createElement("script");
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = url + "/widget-send-button/js/init.js";
-            s.onload = function() {
-                WhWidgetSendButton.init(host, proto, options);
-            };
-            var x = document.getElementsByTagName("script")[0];
-            x.parentNode.insertBefore(s, x);
-        })();
-    </script>
-    <!-- /GetButton.io widget -->
+
 </head>
 
 <body>
@@ -252,7 +230,7 @@
                                 <!-- <li style="color:white"><i class="fa fa-whatsapp"
                                                 aria-hidden="true"> Whatsapp :  </i> <a  style="color:#0080db" href="https://wa.me/">+447-3736-3727</a></li> -->
                                 <!-- <br> -->
-                                <li style="color:white"><i class="fa fa-map-marker" aria-hidden="true"> Address : </i> <a style="color:#0080db" href="#">The Long Lodge, 265-269 Kingston Road, London, SW19 3NW</a> </li>
+                                <li style="color:white"><i class="fa fa-map-marker" aria-hidden="true"> Address : </i> <a style="color:#0080db" href="#">3/46 Governor Macquarie Dr, Sydney, New South Wales, 2170, Australia</a> </li>
                                 <!-- <br> -->
                                 <li style="color:white"><i class="fa fa-link" aria-hidden="true"> Link : </i> <a style="color:#0080db" href="/">https://altsfolio.org</a></li>
                             </ul>
@@ -268,7 +246,29 @@
         </footer>
     </div>
     <!--================End Footer Area =================-->
-
+    <!-- whatsapp widget -->
+    <script type="text/javascript">
+        (function() {
+            var options = {
+                whatsapp: "+447523794154", // WhatsApp number
+                call_to_action: "Message Us", // Call to action
+                position: "left", // Position may be 'right' or 'left'
+            };
+            var proto = document.location.protocol,
+                host = "getbutton.io",
+                url = proto + "//static." + host;
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function() {
+                WhWidgetSendButton.init(host, proto, options);
+            };
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        })();
+    </script>
+    <!-- /whatsapp widget -->
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

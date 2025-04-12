@@ -154,6 +154,12 @@ $page_title = 'Home';
         </div>
     </section>
 
+    <center>
+        <div class="amk_video">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/qbnBU9Kezgs?si=T8-Ki9eVRdXsxV6A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        </div>
+    </center>
+
     <!--================Choose Bitcoin Area =================-->
     <section class="choose_bitcoin_area p_100">
         <div class="container">
