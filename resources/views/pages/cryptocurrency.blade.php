@@ -1,5 +1,9 @@
 @php
 
+use App\Models\Bot;
+
+$bots = Bot::get();
+
 $page_title = 'Cryptocurreny';
 
 @endphp
@@ -29,83 +33,42 @@ $page_title = 'Cryptocurreny';
     <!--================Blog Area =================-->
 
 
-<section class="pricing-tables content-area">
-               <div class="container">
-                   <!-- Main title -->
-                   <div class="main-title text-center" style="margin: 35px 0;">
-                       <h1>CRYPTO CURRENCY</h1>
-                   </div>
-                   <div class="row">
-                      <div class="col-sm-12 col-lg-3 col-md-4">
-                           <div class="pricing">
-                               <div class="price-header">
-                                   <div class="title">BRONZE PLAN</div>
-                                   <h1 class="price">10%</h1>
-                                   <div class="text-white">After 7 Days</div>
-                               </div>
-                               <div class="content">
-                                   <ul>
-                                       <li>Minimum Deposit - $100</li>
-                                       <li>Maximum Deposit - $4,999</li>
-                                       <li>Enhanced Security</li>
-                                       <li>24/7 Support</li>
-                                       <li>Referral Bonus: 5%</li>
-                                   </ul>
-                                   <div class="button"><a href="/register" class="btn btn-outline pricing-btn">Get
-                                           Started</a>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                      <div class="col-sm-12 col-lg-3 col-md-4">
-                           <div class="pricing">
-                               <div class="price-header">
-                                   <div class="title">SILVER PLAN</div>
-                                   <h1 class="price">20%</h1>
-                                   <div class="text-white">Weekly for 1 Month</div>
-                               </div>
-                               <div class="content">
-                                   <ul>
-                                       <li>Minimum Deposit - $5,000</li>
-                                       <li>Maximum Deposit - $24,999</li>
-                                       <li>Enhanced Security</li>
-                                       <li>24/7 Support</li>
-                                        <li>Referral Bonus: 5%</li>
-                                   </ul>
-                                   <div class="button"><a href="/register" class="btn btn-outline pricing-btn">Get
-                                           Started</a>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-
-
-                        <div class="col-sm-12 col-lg-3 col-md-4">
-                           <div class="pricing">
-                               <div class="price-header">
-                                   <div class="title">GOLD PLAN</div>
-                                   <h1 class="price">60%</h1>
-                                   <div class="text-white">After 1 Month</div>
-                               </div>
-                               <div class="content">
-                                   <ul>
-                                       <li>Minimum Deposit - $25,000</li>
-                                       <li>Maximum Deposit - $No Limit</li>
-                                       <li>Enhanced Security</li>
-                                       <li>24/7 Support</li>
-                                       <li>Referral Bonus: 5%</li>
-                                   </ul>
-                                   <div class="button"><a href="/register" class="btn btn-outline pricing-btn">Get
-                                           Started</a>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
+    <section class="pricing-tables content-area">
+        <div class="container">
+            <!-- Main title -->
+            <div class="main-title text-center" style="margin: 35px 0;">
+                <h1>CRYPTO CURRENCY</h1>
+            </div>
+            <div class="row">
+                @foreach ($bots as $bot)
+                <div class="col-sm-12 col-lg-3 col-md-4">
+                    <div class="pricing">
+                        <div class="price-header">
+                            <div class="title">{{ $bot->name }}</div>
+                            <h1 class="price">{{ $bot->daily_min }}%</h1>
+                            <div class="text-white">{{ $bot->duration }} {{ $bot->duration_type }}</div>
+                        </div>
+                        <div class="content">
+                            <ul>
+                                <li>Minimum Deposit - ${{ number_format($bot->min) }}</li>
+                                <li>Maximum Deposit - @if($bot->max >= 100000000) UNLIMITED @else ${{ number_format($bot->max) }}@endif</li>
+                                <li>Enhanced Security</li>
+                                <li>24/7 Support</li>
+                                <li>Direct Referral: Yes</li>
+                                <li>Binary Referral: Yes</li>
+                            </ul>
+                            <div class="button"><a href="/register" class="btn btn-outline pricing-btn">Get
+                                    Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
 
 
 
 
-<!--<div class="col-sm-12 col-lg-3 col-md-4">
+                <!--<div class="col-sm-12 col-lg-3 col-md-4">
                            <div class="pricing">
                                <div class="price-header">
                                    <div class="title">DIAMOND PLAN</div>
@@ -120,7 +83,7 @@ $page_title = 'Cryptocurreny';
                                        <li>24/7 Support</li>
                                        <li>Referral Bonus: 20%</li>
                                    </ul>
-                                   <div class="button"><a href="/register" class="btn btn-outline pricing-btn">Get
+                                <div class="button"><a href="/register" class="btn btn-outline pricing-btn">Get
                                            Started</a>
                                    </div>
                                </div>
@@ -128,9 +91,9 @@ $page_title = 'Cryptocurreny';
                        </div>-->
 
 
-                   </div>
-               </div>
-           </section>
+            </div>
+        </div>
+    </section>
 
 
 
