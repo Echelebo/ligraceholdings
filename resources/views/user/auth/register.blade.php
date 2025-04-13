@@ -12,7 +12,7 @@
 
             @csrf
 
-            <img width="120" height="70" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png">
+            
             <span>
                 <h3 style="color:crimson;text-align:center"></h3>
             </span>

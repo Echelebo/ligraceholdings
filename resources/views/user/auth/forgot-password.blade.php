@@ -4,7 +4,7 @@
 <div class="wrapper-content-sign-in p-0">
 
 
-    <div class="container text-center">
+    <div class="col-md-8 offset-md-8 text-left side_signing_full">
 
         <h3>Forgot your password:</h3><br>
 
@@ -13,7 +13,7 @@
 
         <form method="post" action="{{ route('user.forgot-password.send') }}" id="registerForm" class="form-signin1 full_side text-white ">
             @csrf
-            <img style="width:40%;height:10%" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png">
+
             <span>
                 <h3 style="color:crimson;text-align:center"></h3>
             </span>
