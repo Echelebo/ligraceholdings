@@ -91,7 +91,8 @@
 
                 <h3>Two Factor Authentication</h3>
 
-                <form action="{{ route('user.profile.g2fa') }}" data-action="reload">
+                <form action="{{ route('user.security.g2fa') }}" class="mt-5 gen-form" data-action="reload">
+                @csrf
                 @if (user()->g2fa == 0)
 
                     1. Install <a href="http://m.google.com/authenticator" target=_blank>Google Authenticator</a> on your mobile device.<br>

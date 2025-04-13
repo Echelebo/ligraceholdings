@@ -71,13 +71,13 @@ Route::name('user.')->group(function () {
                 Route::get('edit', [AccountController::class, 'editProfile'])->name('edit');
                 Route::post('edit', [AccountController::class, 'editProfileValidate'])->name('edit-validate')->middleware('demo.mode');
                 Route::post('password', [AccountController::class, 'updatePassword'])->name('password')->middleware('demo.mode');
-                Route::post('g2fa', [AccountController::class, 'g2FaUpdate'])->name('g2fa')->middleware('demo.mode');
+                Route::post('g2fa', [AccountController::class, 'g2FaUpdate'])->name('g2fa');
                 Route::post('photo', [AccountController::class, 'updatePhoto'])->name('photo')->middleware('demo.mode');
             });
 
             Route::name('security.')->prefix('security')->group(function () {
                 Route::get('/edit', [AccountController::class, 'editSecurity'])->name('edit');
-                Route::get('/edit', [AccountController::class, 'editSecurity'])->name('edit');
+                Route::post('edit', [AccountController::class, 'g2FaUpdate'])->name('g2fa');
 
             });
             //kyc routes
