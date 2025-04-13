@@ -87,12 +87,33 @@ class AccountController extends Controller
 
         ]);
 
+if($request->password != null) {
+    $request->validate([
+        'password' => [
+            'required',
+            'confirmed',
+            'min:3',
+            function ($attribute, $value, $fail) {
+                if (!preg_match('/\d/', $value)) {
+                    $fail('The password must contain a number');
+                } elseif (!preg_match('/[a-z]/', $value)) {
+                    $fail('The password must contain a lowercase');
+                } elseif (!preg_match('/[A-Z]/', $value)) {
+                    $fail('The password must contain an uppercase');
+                } elseif (!preg_match('/[\W_]/', $value)) {
+                    $fail('The password must contain a symbol');
+                }
+            }
+        ],
+    ]);
+
+    //check to see if the password was used previously
+    if (Hash::check($request->password, user()->password)) {
+        return response()->json(validationError('You have used this password before'), 422);
+    }
+}
 
 
-        //check to see if the password was used previously
-        if (Hash::check($request->password, user()->password)) {
-            return response()->json(validationError('You have used this password before'), 422);
-        }
 
         //update the user
         $user = User::find(user()->id);
@@ -101,7 +122,10 @@ class AccountController extends Controller
         $user->usdt_wallet = $request->usdt_wallet;
         $user->usdt_wallet2 = $request->usdt_wallet2;
         $user->usdt_wallet3 = $request->usdt_wallet3;
-        $user->password = Hash::make($request->password);
+        if($request->password != null) {
+            $user->password = Hash::make($request->password);
+        }
+
         $user->save();
 
         return response()->json(['message' => 'Account updated successfully']);
