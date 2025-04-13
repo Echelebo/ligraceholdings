@@ -192,12 +192,12 @@
                         <tr>
                        <td><img src="/trust/images/1001.gif" width="44" height="17" align="absmiddle"> Ethereum:</td>
                             <td><input type=radio name=type value="2" data-fiat=""></td>
-                            <td><input type=radio name=type value="0" data-fiat="" disabled> ${{ number_format(user()->balance) }}</td>
+                            <td><input type=radio name=type value="4" data-fiat="" disabled> ${{ number_format(user()->balance) }}</td>
                         </tr>
                         <tr>
                             <td><img src="/trust/images/1002.gif" width="44" height="17" align="absmiddle"> USDT TRC20:</td>
                             <td><input type=radio name=type value="3" data-fiat=""></td>
-                            <td><input type=radio name=type value="0" data-fiat="" disabled> ${{ number_format(user()->balance) }}</td>
+                            <td><input type=radio name=type value="5" data-fiat="" disabled> ${{ number_format(user()->balance) }}</td>
                         </tr>
                         <p class="mb-3 text-red-500 " id="errorMessage"></p>
                     </table>
