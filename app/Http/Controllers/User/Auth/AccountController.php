@@ -81,26 +81,10 @@ class AccountController extends Controller
     public function editProfileValidate(Request $request)
     {
 
-        $require_strong_password = site('strong_password');
+
         $request->validate([
             'name' => 'required',
-            'password' => [
-                'confirmed',
-                ($require_strong_password == 1 ? 'min:8' : 'min:5'),
-                function ($attribute, $value, $fail) use ($require_strong_password) {
-                    if ($require_strong_password == 1) {
-                        if (!preg_match('/\d/', $value)) {
-                            $fail('The password must contain a number');
-                        } elseif (!preg_match('/[a-z]/', $value)) {
-                            $fail('The password must contain a lowercase');
-                        } elseif (!preg_match('/[A-Z]/', $value)) {
-                            $fail('The password must contain an uppercase');
-                        } elseif (!preg_match('/[\W_]/', $value)) {
-                            $fail('The password must contain a symbol');
-                        }
-                    }
-                }
-            ],
+
         ]);
 
 
