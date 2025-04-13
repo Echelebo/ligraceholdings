@@ -170,7 +170,7 @@
                                     <a class="nav-link" href="/about">About Us</a>
                                 </li>
 
-                                @auth
+                                @if (user())
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('user.dashboard') }}">Dashboard</a>
                                 </li>
@@ -182,10 +182,10 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="/login">Login</a>
                                 </li>
-                                @endauth
+                                @endif
                             </ul>
                             <ul class="navbar-nav justify-content-end">
-                                @auth
+                            @if (user())
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('user.dashboard') }}">Account</a>
                                 </li>
@@ -193,7 +193,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="/register">Get Started</a>
                                 </li>
-                                @endauth
+                                @endif
                             </ul>
                         </div>
                     </nav>
