@@ -76,7 +76,7 @@
 
 
                 <script language="javascript">
-                    <!--
+
                     function openCalculator(id) {
 
                         w = 225;
@@ -128,7 +128,7 @@
                         }
                     }
                     var cps = {};
-                    -->
+
                 </script>
 
 
@@ -163,10 +163,10 @@
                             <td class="item" align="right">{{ $bot->daily_min . '%' }}</td>
                         </tr>
                         <tr>
-                            <td colspan=3 align=right><a href="javascript:openCalculator('$bot->id')">Calculate your profit &gt;&gt;</a></td>
+                            <td colspan=3 align=right><a href="javascript:openCalculator($bot->id)">Calculate your profit &gt;&gt;</a></td>
                         </tr>
                     </table><br><br>
-                    <script>cps[{{$bot->id}}] =[];
+                    <script>cps[$bot->id] =[];
                 </script>
 
                     @endforeach
