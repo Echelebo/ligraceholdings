@@ -51,7 +51,7 @@
         <div class="activity-block success">
             <div class="media">
                 <div class="media-body">
-                    <h5 class="font-weight-bold">$<span class="">0</span></h5>
+                    <h5 class="font-weight-bold">$<span class="">{{ number_format($capital) }}</span></h5>
                     <p>Investment</p>
                 </div>
                 <i class="fas fa-dollar-sign"></i>
@@ -85,7 +85,7 @@
         <div class="activity-block success">
             <div class="media">
                 <div class="media-body">
-                    <h5 class="font-weight-bold">$<span class="">0</span></h5>
+                    <h5 class="font-weight-bold">$<span class="">{{ number_format($referralsx) }}</span></h5>
                     <p>Referral Bonus</p>
                 </div>
                 <i class="fas fa-users"></i>

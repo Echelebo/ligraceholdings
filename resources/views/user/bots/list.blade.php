@@ -74,99 +74,39 @@
 
             <b>Total: $0.00</b><br><br>
             <div class="table-responsive">
+            @foreach ($bots as $bot)
+                <table cellspacing=1 cellpadding=2 border=0 width=100% class=line>
+                    <tr>
+                        <td class=item>
+                            <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
+                                <tr>
+                                    <td colspan=3 align=center><b>{{ $bot->name }}</b></td>
+                                </tr>
+                                <tr>
+                                    <th class=inheader>Plan</th>
+                                    <th class=inheader width=200>Deposit Amount</th>
+                                    <th class=inheader width=100 nowrap>
+                                        <nobr>Daily Profit (%)</nobr>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td class=item>{{ $bot->name }}</td>
+                                    <td class=item align=right>@if ($bot->max >= 100000000) ${{number_format($bot->min). ' and more'}} @else {{number_format($bot->min). ' - $' .number_format($bot->max)}} @endif</td>
+                                    <td class=item align=right>{{ $bot->daily_min . '%' }}</td>
+                                </tr>
+                            </table>
+                            <br>
+                            <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
+                                <tr>
+                                    <td colspan=4><b>No deposits for this plan</b></td>
+                                </tr>
+                            </table>
+                            <br>
+                        </td>
+                    </tr>
+                </table>
+                @endforeach
 
-                <table cellspacing=1 cellpadding=2 border=0 width=100% class=line>
-                    <tr>
-                        <td class=item>
-                            <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
-                                <tr>
-                                    <td colspan=3 align=center><b>STARTER</b></td>
-                                </tr>
-                                <tr>
-                                    <th class=inheader>Plan</th>
-                                    <th class=inheader width=200>Deposit Amount</th>
-                                    <th class=inheader width=100 nowrap>
-                                        <nobr>Daily Profit (%)</nobr>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td class=item>Plan 1</td>
-                                    <td class=item align=right>$100.00 - $59999.00</td>
-                                    <td class=item align=right>2.00</td>
-                                </tr>
-                            </table>
-                            <br>
-                            <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
-                                <tr>
-                                    <td colspan=4><b>No deposits for this plan</b></td>
-                                </tr>
-                            </table>
-                            <br>
-                        </td>
-                    </tr>
-                </table>
-                <br>
-                <table cellspacing=1 cellpadding=2 border=0 width=100% class=line>
-                    <tr>
-                        <td class=item>
-                            <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
-                                <tr>
-                                    <td colspan=3 align=center><b>SILVER</b></td>
-                                </tr>
-                                <tr>
-                                    <th class=inheader>Plan</th>
-                                    <th class=inheader width=200>Deposit Amount</th>
-                                    <th class=inheader width=100 nowrap>
-                                        <nobr>Daily Profit (%)</nobr>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td class=item>Plan 2</td>
-                                    <td class=item align=right>$60000.00 - $99999.00</td>
-                                    <td class=item align=right>6.00</td>
-                                </tr>
-                            </table>
-                            <br>
-                            <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
-                                <tr>
-                                    <td colspan=4><b>No deposits for this plan</b></td>
-                                </tr>
-                            </table>
-                            <br>
-                        </td>
-                    </tr>
-                </table>
-                <br>
-                <table cellspacing=1 cellpadding=2 border=0 width=100% class=line>
-                    <tr>
-                        <td class=item>
-                            <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
-                                <tr>
-                                    <td colspan=3 align=center><b>GOLD</b></td>
-                                </tr>
-                                <tr>
-                                    <th class=inheader>Plan</th>
-                                    <th class=inheader width=200>Deposit Amount</th>
-                                    <th class=inheader width=100 nowrap>
-                                        <nobr> Profit (%)</nobr>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td class=item>Plan 3</td>
-                                    <td class=item align=right>$100000.00 and more</td>
-                                    <td class=item align=right>10.00</td>
-                                </tr>
-                            </table>
-                            <br>
-                            <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
-                                <tr>
-                                    <td colspan=4><b>No deposits for this plan</b></td>
-                                </tr>
-                            </table>
-                            <br>
-                        </td>
-                    </tr>
-                </table>
                 <br>
 
             </div>

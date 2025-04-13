@@ -7,25 +7,7 @@
     <div class="col-md-8 offset-md-8 text-left side_signing_full">
 
 
-        <script language=javascript>
-            function checkform() {
-                if (document.mainform.username.value == '') {
-                    alert("Please type your username!");
-                    document.mainform.username.focus();
-                    return false;
-                }
-                if (document.mainform.password.value == '') {
-                    alert("Please type your password!");
-                    document.mainform.password.focus();
-                    return false;
-                }
-                return true;
-            }
-        </script>
-
-
-
-        <form method="post" action="{{ route('user.login-validate') }}" class="form-signin1 full_side text-white @if (user()) hidden @endif " id="loginForm">
+        <form method="post" action="{{ route('user.login-validate') }}" class="form-signin1 full_side text-white " id="loginForm">
             @csrf
             <img style="width:40%;height:10%" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png">
             <span>
@@ -63,7 +45,8 @@
                     <i class="fa fa-check"></i></label>
                 Remember me
             </div>
-            <input type="submit" value="Login" id="loginBtn" class="btn btn-lg btn-primary btn-round">
+            <button type="submit" id="loginBtn" class="btn btn-lg btn-round btn-primary">Sign in</button>
+
             <br>
             <p class="mt-3"><a href="/register" class="text-white">Register here!</a> <br>
                 <a style="color:#0080db" href="/forgot-password" class="">Forgot password?</a>
@@ -103,120 +86,107 @@
 
 
 <script>
-    const resendBtn = document.getElementById('resendBtn');
-    const loginBtn = document.getElementById('loginBtn');
-    let isClickable = true;
-    let countdown;
+        $(document).ready(function() {
+            $('#loginForm').submit(function(e) {
+                e.preventDefault();
 
-    function startCountdown() {
-        if (isClickable) {
-            isClickable = false;
-            resendBtn.disabled = true;
+                var form = $(this);
+                var formData = form.serialize();
+                var clicked = $('#loginBtn');
 
-            let secondsLeft = 120; // 2 minutes
-            countdown = setInterval(() => {
-                if (secondsLeft > 0) {
-                    const minutes = Math.floor(secondsLeft / 60);
-                    const seconds = secondsLeft % 60;
-                    const formattedTime = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-                    resendBtn.textContent = `Resend Again in ${formattedTime}`;
-                    secondsLeft--;
-                } else {
-                    resendBtn.textContent = 'Resend OTP';
-                    resendBtn.disabled = false;
-                    isClickable = true;
-                    clearInterval(countdown);
-                }
-            }, 1000); // Update every 1 second
-        }
-    }
+                //disable the submit button
+                clicked.addClass('relative disabled');
+                clicked.append('<span class="button-spinner"></span>');
+                clicked.prop('disabled', true);
 
-    resendBtn.addEventListener('click', () => {
-        startCountdown();
-        // Define the CSRF token
-        var csrfToken = '{{ csrf_token() }}';
+                $.ajax({
+                    url: form.attr('action'),
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    success: function(response) {
+                        var verifyText = response.message;
+                        var verify = response.verify;
+                        $('#noticeMsg').html(verifyText).show();
 
-        // Add the CSRF token to the request headers
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': csrfToken
-            }
-        });
+                        if (verify == 1) {
+                            //hide register form and display verification form
+                            $('#loginForm').hide();
+                            $('#verifyForm').show();
 
-        // Send the AJAX request
-        $.ajax({
-            url: "{{ route('user.resend-otp') }}",
-            type: 'POST',
-            dataType: 'json',
-            success: function(response) {
-                var verifyText = response.message;
-                Swal.fire({
-                    icon: 'success',
-                    text: verifyText,
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter',
-                            Swal.stopTimer);
-                        toast.addEventListener('mouseleave',
-                            Swal.resumeTimer);
-                    }
-                });
-            },
-            error: function(xhr, status, error) {
-                var errors = xhr.responseJSON.errors;
-
-                if (errors) {
-                    $.each(errors, function(field, messages) {
-                        var fieldErrors = '';
-                        $.each(messages, function(index, message) {
-                            fieldErrors += message + '<br>';
-                        });
-
-                        Swal.fire({
-                            icon: 'error',
-                            html: fieldErrors,
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 3000,
-                            timerProgressBar: true,
-                            didOpen: (toast) => {
-                                toast.addEventListener('mouseenter', Swal
-                                    .stopTimer);
-                                toast.addEventListener('mouseleave', Swal
-                                    .resumeTimer);
-                            }
-                        });
-                    });
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        text: 'An error occurred, please try again later',
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-                        didOpen: (toast) => {
-                            toast.addEventListener('mouseenter', Swal.stopTimer);
-                            toast.addEventListener('mouseleave', Swal.resumeTimer);
+                            //update page title
+                            $('#page-title').html('Verify OTP');
+                        } else {
+                            var url = '{{ route('user.dashboard') }}';
+                            window.location.href = url;
                         }
-                    });
-                }
-            }
+
+
+
+
+                    },
+                    error: function(xhr, status, error) {
+                        $('#loginBtn').show();
+                        var errors = xhr.responseJSON.errors;
+
+                        if (errors) {
+                            $.each(errors, function(field, messages) {
+                                var fieldErrors = '';
+                                $.each(messages, function(index, message) {
+                                    fieldErrors += message + '<br>';
+                                });
+
+
+                                Swal.fire({
+                                    icon: 'error',
+                                    html: fieldErrors,
+                                    toast: true,
+                                    position: 'top-end',
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true,
+                                    didOpen: (toast) => {
+                                        toast.addEventListener('mouseenter',
+                                            Swal.stopTimer);
+                                        toast.addEventListener('mouseleave',
+                                            Swal.resumeTimer);
+                                    }
+                                });
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                text: 'An error occured, please try again later',
+                                toast: true,
+                                position: 'top-end',
+                                showConfirmButton: false,
+                                timer: 3000,
+                                timerProgressBar: true,
+                                didOpen: (toast) => {
+                                    toast.addEventListener('mouseenter',
+                                        Swal.stopTimer);
+                                    toast.addEventListener('mouseleave',
+                                        Swal.resumeTimer);
+                                }
+                            });
+                        }
+
+
+                    },
+                    complete: function() {
+                        clicked.removeClass('disabled');
+                        clicked.find('.button-spinner').remove();
+                        clicked.prop('disabled', false);
+
+                    }
+
+                });
+            });
+
+
         });
+    </script>
 
 
 
-
-    });
-
-    loginBtn.addEventListener('click', () => {
-        startCountdown();
-    });
-</script>
 @endsection

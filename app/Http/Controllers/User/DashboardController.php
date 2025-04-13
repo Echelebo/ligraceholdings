@@ -118,20 +118,25 @@ class DashboardController extends Controller
             ->with('depositCoin')
             ->orderBy('id', 'DESC')
             ->paginate(site('pagination'));
-            
-            
+
+
         $total_withdrawals = user()->withdrawals()
         ->sum('amount');
-        
+
         $pending_withdrawals = user()->withdrawals()
             ->where('status', 'pending')
             ->sum('amount');
-        
+
         $last_deposit = user()->botActivations()->orderBy('id', 'desc')->first();
-        
+
         $last_withdrawals = user()->withdrawals()->orderBy('id', 'desc')->first();
-    
-            
+
+
+
+        $referralsx = user()->transactions()
+            ->where('description', 'Referral Bonus')
+            ->sum('amount');
+
         return view('user.dashboard', compact(
             'page_title',
             'todays_deposits',
@@ -145,6 +150,7 @@ class DashboardController extends Controller
             'histories',
             'profits',
             'days',
+            'referralsx',
             'profit_percentages',
             'withdrawals',
             'deposits',

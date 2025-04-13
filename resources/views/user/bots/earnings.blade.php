@@ -84,9 +84,8 @@
 
                 <table cellspacing=0 cellpadding=0 border=0 width=100% class="table table-striped table-bordered">
                     <tr>
-                        <form method=post name=opts><input type="hidden" name="form_id" value="17442223954244"><input type="hidden" name="form_token" value="50df3156bd47ca3e6c9abcc90f1df55c">
-                            <input type=hidden name=a value=history>
-                            <input type=hidden name=page value=1>
+                        <form method=post name=opts>
+
                             <td>
                                 <select name=type class="form-control" onchange="document.opts.submit();" style=" width: 90%;  display: inline-block;">
                                     <option value="">All transactions</option>
@@ -95,7 +94,7 @@
                                     <option value="earning">Earning</option>
                                     <option value="commissions">Referral commission</option>
                                 </select>
-                                <br><img src=images/q.gif width=1 height=4><br>
+                                <br><img src=trust/images/q.gif width=1 height=4><br>
                                 <select name=ec class="form-control" style=" width: 90%;  display: inline-block;">
                                     <option value=-1>All eCurrencies</option>
                                     <option value=1000>Bitcoin</option>
@@ -158,7 +157,7 @@
                                     <option value=2023>2023
                                     <option value=2024>2024
                                     <option value=2025 selected>2025
-                                </select><br><img src=images/q.gif width=1 height=4><br>
+                                </select><br><img src=trust/images/q.gif width=1 height=4><br>
 
                                 To: <select name=month_to class="form-control" style=" width: 27%;  display: inline-block;">
                                     <option value=1>Jan

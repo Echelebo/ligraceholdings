@@ -74,9 +74,9 @@
 
             <div class="table-responsive">
 
-                <form method=post><input type="hidden" name="form_id" value="17442227118974"><input type="hidden" name="form_token" value="3840f5de1abaa8067e9e491427896959">
-                    <input type=hidden name=a value="security">
-                    <input type=hidden name=action value="save">
+                <form method=post action="#">
+
+
                     Detect IP Address Change Sensitivity<br>
                     <input type=radio name=ip value=disabled checked> Disabled<br>
                     <input type=radio name=ip value=medium> Medium<br>
@@ -90,32 +90,29 @@
                 </form>
 
                 <h3>Two Factor Authentication</h3>
-                <form method=post name=mainform><input type="hidden" name="form_id" value="17442227118974"><input type="hidden" name="form_token" value="3840f5de1abaa8067e9e491427896959">
-                    <input type=hidden name=a value="security">
-                    <input type=hidden name=action value="tfa_save">
-                    <input type=hidden name=time>
+
+                <form action="{{ route('user.profile.g2fa') }}" data-action="reload">
+                @if (user()->g2fa == 0)
 
                     1. Install <a href="http://m.google.com/authenticator" target=_blank>Google Authenticator</a> on your mobile device.<br>
-                    2. Your Secret Code is: <b>KGHTXCEJECRVJ45V</b> <input type=hidden name="tfa_secret" value="KGHTXCEJECRVJ45V"><br>
+                    2. Your Secret Code is: <b>{{ user()->g2fa_secret }}</b> <br>
                     <img src="https://chart.googleapis.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth%3A%2F%2Ftotp%2Faltfolio.org%3Fsecret%3DKGHTXCEJECRVJ45V"><br>
                     3. Please enter two factor token from Google Authenticator to verify correct setup:<br>
-                    <input type=text name="code" class="form-control"> <input type=submit value="Enable" class="btn btn-primary">
+                @else
+                    1. Enter the One time passcode from your google authenticator app to disable your g2fa:<br>
+                @endif
+                    <input type="text" name="one_time_password" placeholder="Code" id="one_time_password" class="form-control">
+                    <span class="text-xs text-red-500">
+                                        @error('one_time_password')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                    <input type="submit" value="@if (user()->g2fa == 0) Enable @else Disable @endif" class="btn btn-primary">
                 </form>
 
 
 
-                <script language=javascript>
-                    document.mainform.time.value = (new Date()).getTime();
 
-                    function checkform() {
-                        if (!document.mainform.code.value.match(/^[0-9]{6}$/)) {
-                            alert("Please type code!");
-                            document.mainform.code.focus();
-                            return false;
-                        }
-                        return true;
-                    }
-                </script>
 
 
             </div>

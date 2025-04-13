@@ -136,16 +136,16 @@
 
                 <br>
 
-                <form method=post name="spendform"><input type="hidden" name="form_id" value="17442212371306"><input type="hidden" name="form_token" value="d1561bbe6253a15eef9568d7dd88632d">
-                    <input type=hidden name=a value=deposit>
+                <form action="{{ route('user.bots.new') }}" method="post" id="botForm" name="spendform">
+                @csrf
                     Select a plan:<br>
-
+                    @foreach ($bots as $bot)
                     <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
                         <tr>
                             <td colspan=3>
-                                <input type=radio name=h_id value="1" checked onclick="updateCompound()">
+                                <input type="radio" id="bot_id" name="bot_id" value="{{$bot->id}}" onclick="updateCompound()">
 
-                                <b>STARTER</b>
+                                <b>{{ $bot->name }}</b>
                             </td>
                         </tr>
                         <tr>
@@ -156,78 +156,23 @@
                             </th>
                         </tr>
                         <tr>
-                            <td class=item>Plan 1</td>
-                            <td class=item align=right><span class="min_deposit">$100.00</span> - <span class="max_deposit">$59999.00</span></td>
-                            <td class=item align=right>2.00%</td>
+                            <td class=item>{{ $bot->name }}</td>&infin;
+                            <td class=item align=right><span class="min_deposit">${{number_format($bot->min)}}</span> - <span class="max_deposit">$ @if ($bot->max >= 10000000) &infin; @else {{ number_format($bot->max) }}</span></td>
+                            <td class=item align=right>{{ $bot->daily_min . '%' }}</td>
                         </tr>
                         <tr>
-                            <td colspan=3 align=right><a href="javascript:openCalculator('1')">Calculate your profit &gt;&gt;</a></td>
+                            <td colspan=3 align=right><a href="javascript:openCalculator('$bot->id')">Calculate your profit &gt;&gt;</a></td>
                         </tr>
                     </table><br><br>
                     <script>
-                        cps[1] = [];
+                        cps[$bot->id] = [];
                     </script>
-                    <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
-                        <tr>
-                            <td colspan=3>
-                                <input type=radio name=h_id value="2" onclick="updateCompound()">
-
-                                <b>SILVER</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th class=inheader>Plan</th>
-                            <th class=inheader width=200>Spent Amount (<span class="fiat">$</span>)</th>
-                            <th class=inheader width=100 nowrap>
-                                <nobr>Daily Profit (%)</nobr>
-                            </th>
-                        </tr>
-                        <tr>
-                            <td class=item>Plan 2</td>
-                            <td class=item align=right><span class="min_deposit">$60000.00</span> - <span class="max_deposit">$99999.00</span></td>
-                            <td class=item align=right>6.00%</td>
-                        </tr>
-                        <tr>
-                            <td colspan=3 align=right><a href="javascript:openCalculator('2')">Calculate your profit &gt;&gt;</a></td>
-                        </tr>
-                    </table><br><br>
-                    <script>
-                        cps[2] = [];
-                    </script>
-                    <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
-                        <tr>
-                            <td colspan=3>
-                                <input type=radio name=h_id value="3" onclick="updateCompound()">
-
-                                <b>GOLD</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th class=inheader>Plan</th>
-                            <th class=inheader width=200>Spent Amount (<span class="fiat">$</span>)</th>
-                            <th class=inheader width=100 nowrap>
-                                <nobr> Profit (%)</nobr>
-                            </th>
-                        </tr>
-                        <tr>
-                            <td class=item>Plan 3</td>
-                            <td class=item align=right><span class="min_deposit">$100000.00</span> - <span class="max_deposit">&infin;</span></td>
-                            <td class=item align=right>10.00%</td>
-                        </tr>
-                        <tr>
-                            <td colspan=3 align=right><a href="javascript:openCalculator('3')">Calculate your profit &gt;&gt;</a></td>
-                        </tr>
-                    </table><br><br>
-                    <script>
-                        cps[3] = [];
-                    </script>
-
-
+                    @endforeach
 
                     <table cellspacing=0 cellpadding=2 border=0 class="table table-striped table-bordered">
                         <tr>
                             <td>Account Balance:</td>
-                            <td>$<b>0.00</b></td>
+                            <td>$<b>{{ number_format(user()->balance) }}</b></td>
                         </tr>
                     </table>
                     <br>
@@ -238,26 +183,27 @@
                             <th>Balance</th>
                         </tr>
                         <tr>
-                            <td><img src="images/1000.gif" width="44" height="17" align="absmiddle"> Bitcoin:</td>
-                            <td><input type=radio name=type value="process_1000" data-fiat=""></td>
-                            <td><input type=radio name=type value="account_1000" data-fiat="" disabled> $0.00</td>
+                            <td><img src="/trust/images/1000.gif" width="44" height="17" align="absmiddle"> Bitcoin:</td>
+                            <td><input type=radio name=type value="1" data-fiat=""></td>
+                            <td><input type=radio name=type value="0" data-fiat="" disabled> ${{ number_format(user()->balance) }}</td>
                         </tr>
                         <tr>
-                            <td><img src="images/1001.gif" width="44" height="17" align="absmiddle"> Ethereum:</td>
-                            <td><input type=radio name=type value="process_1001" data-fiat=""></td>
-                            <td><input type=radio name=type value="account_1001" data-fiat="" disabled> $0.00</td>
+                       <td><img src="/trust/images/1001.gif" width="44" height="17" align="absmiddle"> Ethereum:</td>
+                            <td><input type=radio name=type value="2" data-fiat=""></td>
+                            <td><input type=radio name=type value="0" data-fiat="" disabled> ${{ number_format(user()->balance) }}</td>
                         </tr>
                         <tr>
-                            <td><img src="images/1002.gif" width="44" height="17" align="absmiddle"> USDT TRC20:</td>
-                            <td><input type=radio name=type value="process_1002" data-fiat=""></td>
-                            <td><input type=radio name=type value="account_1002" data-fiat="" disabled> $0.00</td>
+                            <td><img src="/trust/images/1002.gif" width="44" height="17" align="absmiddle"> USDT TRC20:</td>
+                            <td><input type=radio name=type value="3" data-fiat=""></td>
+                            <td><input type=radio name=type value="0" data-fiat="" disabled> ${{ number_format(user()->balance) }}</td>
                         </tr>
+                        <p class="mb-3 text-red-500 " id="errorMessage"></p>
                     </table>
                     <br>
                     <table cellspacing=0 cellpadding=2 border=0 class="table table-striped table-bordered">
                         <tr>
                             <td>Amount to Spend ($):</td>
-                            <td align=right><input type=text name=amount value='100.00' class="form-control" size=15 style="text-align:right;"></td>
+                            <td align=right><input type="text" name="capital" id="capital" value='100.00' class="form-control" size=15 style="text-align:right;"></td>
                         </tr>
                         <tr id="coumpond_block" style="display:none">
                             <td>Compounding(%):</td>
@@ -266,7 +212,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan=2><input type=submit value="Spend" class="btn btn-primary"></td>
+                            <td colspan=2><input type=submit value="Spend" class="btn btn-primary" id="activateButton"></td>
                         </tr>
                     </table>
 

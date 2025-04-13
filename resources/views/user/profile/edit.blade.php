@@ -75,120 +75,71 @@
 
 
 
-            <script language=javascript>
-                function IsNumeric(sText) {
-                    var ValidChars = "0123456789.";
-                    var IsNumber = true;
-                    var Char;
-                    if (sText == '') return false;
-                    for (i = 0; i < sText.length && IsNumber == true; i++) {
-                        Char = sText.charAt(i);
-                        if (ValidChars.indexOf(Char) == -1) {
-                            IsNumber = false;
-                        }
-                    }
-                    return IsNumber;
-                }
 
-                function checkform() {
-                    if (document.editform.fullname.value == '') {
-                        alert("Please type your full name!");
-                        document.editform.fullname.focus();
-                        return false;
-                    }
-
-
-                    if (document.editform.password.value != document.editform.password2.value) {
-                        alert("Please check your password!");
-                        document.editform.fullname.focus();
-                        return false;
-                    }
-
-
-
-
-                    if (document.editform.email.value == '') {
-                        alert("Please enter your e-mail address!");
-                        document.editform.email.focus();
-                        return false;
-                    }
-
-
-
-                    for (i in document.editform.elements) {
-                        f = document.editform.elements[i];
-                        if (f.name && f.name.match(/^pay_account/)) {
-                            if (f.value == '') continue;
-                            var notice = f.getAttribute('data-validate-notice');
-                            var invalid = 0;
-                            if (f.getAttribute('data-validate') == 'regexp') {
-                                var re = new RegExp(f.getAttribute('data-validate-regexp'));
-                                if (!f.value.match(re)) {
-                                    invalid = 1;
-                                }
-                            } else if (f.getAttribute('data-validate') == 'email') {
-                                var re = /^[^\@]+\@[^\@]+\.\w{2,4}$/;
-                                if (!f.value.match(re)) {
-                                    invalid = 1;
-                                }
-                            }
-                            if (invalid) {
-                                alert('Invalid account format. Expected ' + notice);
-                                f.focus();
-                                return false;
-                            }
-                        }
-                    }
-
-                    return true;
-                }
-            </script>
 
             <div class="table-responsive">
-                <form action="" method=post onsubmit="return checkform()" name=editform><input type="hidden" name="form_id" value="17442228201186"><input type="hidden" name="form_token" value="c0a73a65154450060f9c2ca63edc8bf0">
-                    <input type=hidden name=a value=edit_account>
-                    <input type=hidden name=action value=edit_account>
-                    <input type=hidden name=say value="">
+                <form action="{{ route('user.profile.edit-validate') }}" method="post">
+
+                @csrf
 
 
                     <table cellspacing=0 cellpadding=2 border=0 class="table table-striped table-bordered">
                         <tr>
                         <tr>
                             <td>Account Name:</td>
-                            <td>edwinman</td>
+                            <td>{{user()->username }}</td>
                         </tr>
                         <tr>
                             <td>Registration date:</td>
-                            <td>Apr-9-2025 11:49:21 PM</td>
+                            <td>{{user()->created_at }}</td>
                         </tr>
-                        <tr>
+
                             <td>Your Full Name:</td>
-                            <td><input type=text name=fullname value="Pamela Nirav" class="form-control" size=30>
+                            <td><input type=text name=name value="{{user()->name }}" id="name" class="form-control" size=30>
+                            <span class="text-xs text-red-500">
+                                        @error('name')
+                                            {{ $message }}
+                                        @enderror
+                                    </span></tr></td>
+
                         </tr>
 
                         <tr>
                             <td>New Password:</td>
-                            <td><input type=password name=password value="" class="form-control" size=30></td>
+                            <td><input type=password name=password id="password" value="" class="form-control" size=30>
+                            <span class="text-xs text-red-500">
+                                        @error('password')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                        </td>
                         </tr>
                         <tr>
                             <td>Retype Password:</td>
-                            <td><input type=password name=password2 value="" class="form-control" size=30></td>
+                            <td><input type=password name=password_confirmation id="password_confirmation" value="" class="form-control" size=30>
+                            <span class="text-xs text-red-500">
+                                        @error('password_confirmation')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                                </td>
                         </tr>
                         <tr>
                             <td>Your Account ID:</td>
-                            <td><input type=text class="form-control" size=30 name="pay_account[1000][Account ID]" value="gfgffghghgghhghghg"></td>
+                            <td><input type=text class="form-control" id="usdt_wallet" size=30 name="usdt_wallet" value="{{user()->usdt_wallet }}"></td>
                         </tr>
                         <tr>
                             <td>Your Account ID:</td>
-                            <td><input type=text class="form-control" size=30 name="pay_account[1001][Account ID]" value="gfgffgfgfgfgfggf"></td>
-                        </tr>
-                        <tr>
-                            <td>Your Account ID:</td>
-                            <td><input type=text class="form-control" size=30 name="pay_account[1002][Account ID]" value="fgfgfgfghhghg"></td>
+                            <td><input type=text class="form-control" size=30 id="usdt_wallet2" name="usdt_wallet2" value="{{user()->usdt_wallet2 }}"></td>
                         </tr>
                         <tr>
                             <td>Your E-mail address:</td>
-                            <td><input type=text name=email value="edwinted22@gmail.com" class="form-control" size=30></td>
+                            <td><input type=text name=email id="email" value="{{user()->email }}" class="form-control" size=30 disabled>
+                            <span class="text-xs text-red-500">
+                                        @error('email')
+                                            {{ $message }}
+                                        @enderror
+                                    </span></td>
                         </tr>
 
 

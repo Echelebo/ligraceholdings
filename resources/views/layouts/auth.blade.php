@@ -13,31 +13,15 @@
     <link rel="stylesheet" href="https://altsfolio.org/trust/css/light_adminux.css" type="text/css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <!-- /GetButton.io widget-->
-    <script type="text/javascript">
-        (function() {
-            var options = {
-                whatsapp: "+", // WhatsApp number
-                call_to_action: "Contact us!", // Call to action
-                position: "left", // Position may be "right" or "left"
-            };
-            var proto = document.location.protocol,
-                host = "getbutton.io",
-                url = proto + "//static." + host;
-            var s = document.createElement("script");
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = url + "/widget-send-button/js/init.js";
-            s.onload = function() {
-                WhWidgetSendButton.init(host, proto, options);
-            };
-            var x = document.getElementsByTagName("script")[0];
-            x.parentNode.insertBefore(s, x);
-        })();
-    </script>
-    <!-- /GetButton.io widget -->
+
+    <link rel="stylesheet" href="{{ asset('assets/css/gradient.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    {{-- material icon cdn --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    {{-- sweet alert css --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
 
 </head>
 
@@ -77,7 +61,7 @@
 
     <header class="navbar-fixed">
         <nav class="navbar navbar-toggleable-md sign-in-header">
-            <div class="sidebar-left"> <a class="navbar-brand" href="#"><img style="width:21%;height:11%" src="https://altsfolio.org/trust/altlog-removebg-preview.png" alt=""></a>
+            <div class="sidebar-left"> <a class="navbar-brand" href="/"><img width="150" height="90" src="https://altsfolio.org/images/lkog-removebg-preview.png" alt="altsfolio"></a>
 
                 <div class="col"></div>
                 <div class="sidebar-right pull-right">
@@ -188,6 +172,12 @@
         // });
         // })
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {{-- Include SweetAlert2 JavaScript file --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+    <script src="{{ asset('assets/scripts/main.js') }}"></script>
+    @yield('scripts')
 
 
     {{-- livechat --}}

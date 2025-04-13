@@ -60,6 +60,11 @@ class HomeController extends Controller
         return view('pages.trades');
     }
 
+    public function welcome()
+    {
+        return view('pages.welcome');
+    }
+
 
     // pring
     public function pricing()

@@ -80,19 +80,19 @@
 
 
 
-                <form method=post><input type="hidden" name="form_id" value="17442210394392"><input type="hidden" name="form_token" value="e4f729763985bcb87b344be239ae3256">
-                    <input type=hidden name=a value=withdraw>
-                    <input type=hidden name=action value=preview>
-                    <input type=hidden name=say value="">
+                <form action="{{ route('user.withdrawals.new') }}" method="post" id="withdrawalForm" data-action="reload">
+
+                @csrf
+                                <input type="hidden" name="currency_code" id="currency_code" value="USDTTRC20">
 
                     <table cellspacing=0 cellpadding=2 border=0 class="table table-striped table-bordered">
                         <tr>
                             <td>Account Balance:</td>
-                            <td>$<b>0.00</b></td>
+                            <td>$<b>{{ formatAmount(user()->balance) }}</b></td>
                         </tr>
                         <tr>
                             <td>Pending Withdrawals: </td>
-                            <td>$<b></b></td>
+                            <td>$<b>{{ formatAmount($pending_withdrawals) }}</b></td>
                         </tr>
                     </table>
 
@@ -105,30 +105,36 @@
                             <th>Account</th>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td><img src="images/1000.gif" width=44 height=17 align=absmiddle> Bitcoin</td>
-                            <td><b style="color:green">$0.00</b></td>
-                            <td><b style="color:red">$0.00</b></td>
-                            <td>Account ID: gfgffghghgghhghghg</td>
+                            <td><input type="radio" name="wallet_address" id="wallet_address" value="{{ user()->usdt_wallet }}"></td>
+                            <td><img src="/trust/images/1000.gif" width=44 height=17 align=absmiddle> Bitcoin</td>
+                            <td><b style="color:green">${{ formatAmount(user()->balance) }}</b></td>
+                            <td><b style="color:red">${{ formatAmount($pending_withdrawals) }}</b></td>
+                            @if(is_null(user()->usdt_wallet))<td>Account ID: <a class="badge badge-danger" href="{{ route('user.profile.edit') }}"><i>not set</i></a></td> @else <td>Account ID: {{ user()->usdt_wallet }}</td> @endif
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td><img src="images/1001.gif" width=44 height=17 align=absmiddle> Ethereum</td>
-                            <td><b style="color:green">$0.00</b></td>
-                            <td><b style="color:red">$0.00</b></td>
-                            <td>Account ID: gfgffgfgfgfgfggf</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><img src="images/1002.gif" width=44 height=17 align=absmiddle> USDT TRC20</td>
-                            <td><b style="color:green">$0.00</b></td>
-                            <td><b style="color:red">$0.00</b></td>
-                            <td>Account ID: fgfgfgfghhghg</td>
-                        </tr>
+
                     </table>
 
                     <br><br>
-                    You have no funds to withdraw.
+                    <table cellspacing=0 cellpadding=2 border=0 class="table table-striped table-bordered">
+
+                  <tr>
+                    <td colspan="2">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>Withdrawal ($):</td>
+                    <td><input type="text" name="amount" id="amount" value="0.00" class="form-control" size="15"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><textarea name="comment" class="form-control" cols="45"
+                        rows="4">Your comment</textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="submit" value="Request" class="btn btn-primary"></td>
+                  </tr>
+
+              </table>
                 </form>
 
 

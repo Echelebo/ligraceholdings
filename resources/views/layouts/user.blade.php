@@ -24,7 +24,7 @@
     <!-- <link rel="stylesheet" href="/trust/css/dark_green_adminux.css" type="text/css"> -->
     <link rel="stylesheet" href="/trust/css/margin.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 
     <!-- g-hide -->
     <style type="text/css">
@@ -40,29 +40,23 @@
     </style>
     <!-- end-g-hide -->
 
-    <!-- /GetButton.io widget
-<script type="text/javascript">
-    (function() {
-        var options = {
-            whatsapp: "+", // WhatsApp number
-            call_to_action: "Contact us!", // Call to action
-            position: "left", // Position may be "right" or "left"
-        };
-        var proto = document.location.protocol,
-            host = "getbutton.io",
-            url = proto + "//static." + host;
-        var s = document.createElement("script");
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = url + "/widget-send-button/js/init.js";
-        s.onload = function() {
-            WhWidgetSendButton.init(host, proto, options);
-        };
-        var x = document.getElementsByTagName("script")[0];
-        x.parentNode.insertBefore(s, x);
-    })();
-</script>
-<!-- /GetButton.io widget -->
+    <link rel="stylesheet" href="{{ asset('assets/css/gradient.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    {{-- material icon cdn --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    {{-- sweet alert css --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+
+    {{-- datatable cdn  --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/scroller/2.0.7/css/scroller.dataTables.min.css">
+
+    {{-- owl carrousel --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
 </head>
 
 
@@ -298,7 +292,7 @@
         <footer class="footer-content ">
             <div class="container ">
                 <div class="row align-items-center justify-content-between">
-                    <div class="col-md-16 col-lg-8 col-xl-8">Copyright 2025 <a href="https://altfolio.org" target="_blank" class="">altfolio.org</a></div>
+                    <div class="col-md-16 col-lg-8 col-xl-8">Copyright 2025 <a href="https://altsfolio.org" target="_blank" class="">altsfolio.org</a></div>
                 </div>
             </div>
         </footer>
@@ -508,6 +502,99 @@ var transarray = ['just <b>invested</b>', 'has <b>withdrawn</b>', 'is <b>trading
 
 
 
+
+{{-- all script placements --}}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+<!-- Include SweetAlert2 JavaScript file -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
+
+{{-- owl carrousel --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+
+{{-- datatable --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script
+    src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.12.1/af-2.4.0/b-2.2.3/b-colvis-2.2.3/b-html5-2.2.3/b-print-2.2.3/date-1.1.2/fh-3.2.4/kt-2.7.0/r-2.3.0/sc-2.0.7/sb-1.3.4/sp-2.0.2/datatables.min.js">
+</script>
+
+
+{{-- qrcode --}}
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+{{-- main scripts --}}
+<script src="{{ asset('assets/scripts/cs.js') }}"></script>
+<script src="{{ asset('assets/scripts/main.js') }}"></script>
+
+
+@yield('scripts')
+
+<script>
+    $(document).ready(function() {
+        $('.datatable-skeleton-table').DataTable({
+            scrollX: true,
+            "sScrollXInner": "100%",
+        });
+
+
+    });
+</script>
+
+{{-- toast notification --}}
+@php
+    if (session()->has('fail')) {
+        $type = 'error';
+        $message = session()->get('fail');
+    } elseif (session()->has('success')) {
+        $type = 'success';
+        $message = session()->get('success');
+    } else {
+        $type = null;
+        $message = null;
+    }
+@endphp
+<script>
+    var type = "{{ $type }}";
+    var message = "{{ $message }}";
+    if (type && message) {
+        toastNotify(type, message);
+    }
+</script>
+
+{{-- logout --}}
+<script>
+    $(document).on('click', '.logout', function(e){
+        html = `
+            <div class="mt-5 h-72 ts-gray-3 p-2 rounded-lg flex justify-center items-center">
+                <div>
+                    <h2 class="text-white text-center">Do you really want to Logout?</h2>
+                    <form action="{{ route('user.logout') }}" class="mt-5 gen-form" data-action="redirect" data-url="{{ url('/') }}">
+                        @csrf
+                        <button type="submit" class="mt-5 bg-red-500 text-white px-2 py-1 rounded-full text-xs hover:scale-110 transition-all uppercase" type="submit">Yes,  Logout</button>
+                    </form>
+
+                </div>
+            </div>
+            `;
+        Swal.fire({
+            html: html,
+            toast: false,
+            background: 'rgb(7, 3, 12, 0)',
+            showConfirmButton: false,
+            showCloseButton: true,
+            allowEscapeKey: false, // Prevent closing by escape key
+            allowOutsideClick: false, // Prevent closing by clicking backdrop
+            willClose: () => {
+                //delete the previously generated qrcode
+                // $('#single_wallet_qrcode').html('');
+            }
+        });
+    });
+</script>
     {{-- livechat --}}
     {!! json_decode(site('livechat')) !!}
 

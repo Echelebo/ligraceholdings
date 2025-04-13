@@ -170,16 +170,30 @@
                                     <a class="nav-link" href="/about">About Us</a>
                                 </li>
 
-
+                                @auth
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('user.dashboard') }}">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a role="button" class="nav-link logout" >Logout</a>
+                                </li>
+                                @else
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="/login">Login</a>
                                 </li>
+                                @endauth
                             </ul>
                             <ul class="navbar-nav justify-content-end">
+                                @auth
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('user.dashboard') }}">Account</a>
+                                </li>
+                                @else
                                 <li class="nav-item">
                                     <a class="nav-link" href="/register">Get Started</a>
                                 </li>
+                                @endauth
                             </ul>
                         </div>
                     </nav>
@@ -455,6 +469,36 @@
         }
     </script>
 
+{{-- logout --}}
+<script>
+        $(document).on('click', '.logout', function(e){
+            html = `
+                <div class="mt-5 h-72 ts-gray-3 p-2 rounded-lg flex justify-center items-center">
+                    <div>
+                        <h2 class="text-white text-center">Do you really want to Logout?</h2>
+                        <form action="{{ route('user.logout') }}" class="mt-5 gen-form" data-action="redirect" data-url="{{ url('/') }}">
+                            @csrf
+                            <button type="submit" class="mt-5 bg-red-500 text-white px-2 py-1 rounded-full text-xs hover:scale-110 transition-all uppercase" type="submit">Yes,  Logout</button>
+                        </form>
+
+                    </div>
+                </div>
+                `;
+            Swal.fire({
+                html: html,
+                toast: false,
+                background: 'rgb(7, 3, 12, 0)',
+                showConfirmButton: false,
+                showCloseButton: true,
+                allowEscapeKey: false, // Prevent closing by escape key
+                allowOutsideClick: false, // Prevent closing by clicking backdrop
+                willClose: () => {
+                    //delete the previously generated qrcode
+                    // $('#single_wallet_qrcode').html('');
+                }
+            });
+        });
+    </script>
 
     {{-- livechat --}}
     {!! json_decode(site('livechat')) !!}

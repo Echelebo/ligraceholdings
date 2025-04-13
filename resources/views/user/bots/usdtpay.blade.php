@@ -94,11 +94,11 @@
                     <tbody>
                         <tr>
                             <th>Plan:</th>
-                            <td>GOLD</td>
+                            <td>{{$plan_name}}</td>
                         </tr>
                         <tr>
                             <th>Profit:</th>
-                            <td>10.00% after 5 days</td>
+                            <td>{{$plan_daily_profit}}% after 24 hours</td>
                         </tr>
                         <tr>
                             <th>Principal Return:</th>
@@ -112,7 +112,7 @@
 
                         <tr>
                             <th>Credit Amount:</th>
-                            <td>$100000.00</td>
+                            <td>${{$plan_amount}}</td>
                         </tr>
                         <tr>
                             <th>Deposit Fee:</th>
@@ -120,18 +120,17 @@
                         </tr>
                         <tr>
                             <th>Debit Amount:</th>
-                            <td>$100000.00</td>
+                            <td>${{$plan_amount}}</td>
                         </tr>
                     </tbody>
                 </table>
                 <br><br>
-                <form name="spend" method="post"><input type="hidden" name="form_id" value="17442217526482"><input type="hidden" name="form_token" value="bae8cf07672b4b463c9fc9c002793ce1">
-                    <input type="hidden" name="a" value="deposit">
-                    <input type="hidden" name="action" value="confirm">
-                    <input type="hidden" name="type" value="process_1000">
-                    <input type="hidden" name="h_id" value="3">
-                    <input type="hidden" name="compound" value="0">
-                    <input type="hidden" name="amount" value="100.00">
+                <form action="{{ route('user.bots.activateusdtpay') }}" method="post" id="depositForm">
+                    @csrf
+<input type="hidden" name="plan_id" value="{{$botx}}">
+<input type="hidden" name="amount" id="amount" value="{{$plan_amount}}">
+<input type="hidden" name="currency_code" id="currency_code" value="USDTTRC20">
+<input type="hidden" name="compound" value="{{$compound}}">
                     <table cellspacing="0" cellpadding="2" class="table table-striped table-bordered">
                         <tbody>
                             <tr>
@@ -139,17 +138,17 @@
                             </tr>
                             <tr>
                                 <td>Payer Account</td>
-                                <td><input type="text" name="fields[1]" value="" class="inpts"></td>
+                                <td><input type="text" name="payername" value="" class="inpts"></td>
                             </tr>
                             <tr>
                                 <td>Transaction ID</td>
-                                <td><input type="text" name="fields[2]" value="" class="inpts"></td>
+                                <td><input type="text" name="trans_id" value="" class="inpts"></td>
                             </tr>
                         </tbody>
                     </table>
 
                     <br><input type="submit" value="Save" class="sbmt"> &nbsp;
-                    <input type="button" class="sbmt" value="Cancel" onclick="document.location='?a=deposit'">
+                    <input type="button" class="sbmt" value="Cancel" onclick="document.location='/user/bots'">
                 </form>
 
 

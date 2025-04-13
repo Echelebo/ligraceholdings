@@ -6,18 +6,6 @@
 
     <div class="container text-center">
 
-
-        <script language=javascript>
-            function checkform() {
-                if (document.forgotform.email.value == '') {
-                    alert("Please type your username or email!");
-                    document.forgotform.email.focus();
-                    return false;
-                }
-                return true;
-            }
-        </script>
-
         <h3>Forgot your password:</h3><br>
 
 
@@ -41,7 +29,7 @@
             <br>
 
 
-            <input type="submit" value="Send" id="registerBtn" class="btn btn-lg btn-primary btn-round">
+            <button type="submit" id="registerBtn" class="btn btn-lg btn-primary btn-round">Send</button>
             <br>
             <p class="mt-3"><a href="/login" class="text-white">Back to login!</a>
             </p>
@@ -80,8 +68,8 @@
                 {{ $message }}
                 @enderror</span>
             <br>
+            <button type="submit" id="verifyBtn" class="btn btn-lg btn-primary btn-round">Save</button>
 
-            <input type="submit" value="Save" id="verifyBtn" class="btn btn-lg btn-primary btn-round">
             <br>
             <p class="mt-3"><a href="/login" class="text-white">Back to login</a>
             </p>

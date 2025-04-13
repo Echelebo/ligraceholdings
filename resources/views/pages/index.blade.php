@@ -318,7 +318,7 @@ $page_title = 'Home';
                         <div class="price-header">
                             <div class="title">{{ $bot->name }}</div>
                             <h1 class="price">{{ $bot->daily_min }}%</h1>
-                            <div class="text-white">{{ $bot->duration }} {{ $bot->duration_type }}</div>
+                            <div class="text-white">24 Hours</div>
                         </div>
                         <div class="content">
                             <ul>

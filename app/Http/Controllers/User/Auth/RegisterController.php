@@ -156,8 +156,8 @@ class RegisterController extends Controller
         session()->pull('referred_by');
 
         //login the user in
-        session()->put('user', $user->id);
-        session()->put('login-otp', 1);
+       // session()->put('user', $user->id);
+     //   session()->put('login-otp', 1);
 
         //send welcome email
         sendWelcomeEmail($user, $pass);

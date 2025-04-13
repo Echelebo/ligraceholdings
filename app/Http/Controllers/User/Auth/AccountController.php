@@ -80,28 +80,48 @@ class AccountController extends Controller
     //validate profile edit
     public function editProfileValidate(Request $request)
     {
-        
 
-        $validationRules = [
-            'name' => 'two_words',
-        ];
+        $require_strong_password = site('strong_password');
+        $request->validate([
+            'name' => 'required',
+            'password' => [
+                'confirmed',
+                ($require_strong_password == 1 ? 'min:8' : 'min:5'),
+                function ($attribute, $value, $fail) use ($require_strong_password) {
+                    if ($require_strong_password == 1) {
+                        if (!preg_match('/\d/', $value)) {
+                            $fail('The password must contain a number');
+                        } elseif (!preg_match('/[a-z]/', $value)) {
+                            $fail('The password must contain a lowercase');
+                        } elseif (!preg_match('/[A-Z]/', $value)) {
+                            $fail('The password must contain an uppercase');
+                        } elseif (!preg_match('/[\W_]/', $value)) {
+                            $fail('The password must contain a symbol');
+                        }
+                    }
+                }
+            ],
+        ]);
 
-        if (!user()->username) {
-            $validationRules['username'] = 'required|unique:users|min:3|max:10';
+
+
+        //check to see if the password was used previously
+        if (Hash::check($request->password, user()->password)) {
+            return response()->json(validationError('You have used this password before'), 422);
         }
-
-        $request->validate($validationRules);
 
         //update the user
         $user = User::find(user()->id);
         $user->name = $request->name;
-        $user->username = user()->username ?? $request->username;
+        $user->username = user()->username;
         $user->usdt_wallet = $request->usdt_wallet;
+        $user->usdt_wallet2 = $request->usdt_wallet2;
+        $user->password = Hash::make($request->password);
         $user->save();
 
         return response()->json(['message' => 'Account updated successfully']);
 
-        
+
     }
 
     //update password
@@ -109,7 +129,7 @@ class AccountController extends Controller
     {
         $require_strong_password = site('strong_password');
         $request->validate([
-            'current_password' => 'required', 
+            'current_password' => 'required',
             'password' => [
                 'required',
                 'confirmed',
@@ -130,7 +150,7 @@ class AccountController extends Controller
             ],
         ]);
 
-        
+
         //check to see if the password was used previously
         if (Hash::check($request->password, user()->password)) {
             return response()->json(validationError('You have used this password before'), 422);

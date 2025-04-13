@@ -27,6 +27,7 @@ Route::get('/tos', [HomeController::class, 'tos'])->name('tos');
 Route::get('/privacy', [HomeController::class, 'privacy'])->name('privacy');
 Route::get('/faqs', [HomeController::class, 'faqs'])->name('faqs');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/welcome', [HomeController::class, 'welcome'])->name('welcome');
 Route::post('/contact', [HomeController::class, 'contactValidate'])->name('contact-validate');
 Route::get('/p/{slug}', [HomeController::class, 'page'])->name('page');
 
