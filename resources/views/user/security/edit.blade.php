@@ -86,7 +86,7 @@
                     Detect Browser Change<br>
                     <input type=radio name=browser value=disabled checked> Disabled<br>
                     <input type=radio name=browser value=enabled> Enabled<br><br>
-                    <input type=submit value="Set" class="btn btn-primary">
+                    <input type=submit value="Set" class="btn btn-primary" style="background-color: #5770e8;">
                 </form>
 
                 <h3>Two Factor Authentication</h3>
@@ -107,7 +107,7 @@
                                             {{ $message }}
                                         @enderror
                                     </span>
-                    <input type="submit" value="@if (user()->g2fa == 0) Enable @else Disable @endif" class="btn btn-primary">
+                    <input type="submit" value="@if (user()->g2fa == 0) Enable @else Disable @endif" class="btn btn-primary" style="background-color: #5770e8;">
                 </form>
 
 

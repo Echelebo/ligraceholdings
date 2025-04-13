@@ -149,7 +149,7 @@
 
                         <tr>
                             <td>&nbsp;</td>
-                            <td><input type=submit value="Update" class="btn btn-primary"></td>
+                            <td><input type=submit value="Update" class="btn btn-primary" style="background-color: #5770e8;"></td>
                         </tr>
                     </table>
                 </form>

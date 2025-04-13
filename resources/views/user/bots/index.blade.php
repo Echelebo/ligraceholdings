@@ -212,7 +212,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan=2><input type=submit value="Spend" class="btn btn-primary" id="activateButton"></td>
+                            <td colspan=2><input type=submit value="Spend" class="btn btn-primary" id="activateButton" style="background-color: #5770e8;"></td>
                         </tr>
                     </table>
 

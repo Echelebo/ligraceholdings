@@ -152,7 +152,7 @@
                         </tbody>
                     </table>
 
-                    <br><input type="submit" value="Save" class="sbmt"> &nbsp;
+                    <br><input type="submit" value="Save" class="sbmt" style="background-color: #5770e8;"> &nbsp;
                     <input type="button" class="sbmt" value="Cancel" onclick="document.location='/user/bots'">
                 </form>
 
