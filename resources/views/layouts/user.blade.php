@@ -499,7 +499,7 @@ var transarray = ['just <b>invested</b>', 'has <b>withdrawn</b>', 'is <b>trading
 
 
 {{-- all script placements --}}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 
 
