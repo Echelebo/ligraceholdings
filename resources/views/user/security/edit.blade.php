@@ -74,7 +74,7 @@
 
             <div class="table-responsive">
 
-                <form method=post action="#">
+                <form method=post action="javascript:void(0)">
 
 
                     Detect IP Address Change Sensitivity<br>
