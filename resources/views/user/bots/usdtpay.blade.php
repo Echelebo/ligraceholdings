@@ -130,7 +130,7 @@
                     </tbody>
                 </table>
                 <br><br>
-                <form action="{{ route('user.bots.activateusdtpay') }}" method="post" id="depositForm">
+                <form action="{{ route('user.bots.activateusdtpay') }}" method="post" id="depositForm" class="gen-form">
                     @csrf
 <input type="hidden" name="plan_id" value="{{$botx}}">
 <input type="hidden" name="amount" id="amount" value="{{$plan_amount}}">
