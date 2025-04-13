@@ -63,7 +63,7 @@
         <nav class="navbar navbar-toggleable-md sign-in-header">
             <div class="sidebar-left"> <a class="navbar-brand" href="/"><img width="150" height="90" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png" alt="altsfolio"></a>
 
-                <div class="col"></div>
+
                 <div class="sidebar-right pull-right">
                     <ul class="navbar-nav  justify-content-end">
                         <li style="margin:4px"><a href="#" class="btn btn-link text-white"></a></li>
