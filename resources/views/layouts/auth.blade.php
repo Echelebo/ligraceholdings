@@ -69,6 +69,7 @@
                         <li style="margin:4px"><a href="#" class="btn btn-link text-white"></a></li>
                         <li style="margin:4px"><a href="/" style="background:#0080DB;color:white" class="btn btn-primary">Home</a></li>
                         <li style="margin:4px"><a href="/login" style="background:#0080DB;color:white" class="btn btn-primary">Login</a></li>
+                        <li style="margin:4px"><a href="/register" style="background:#0080DB;color:white" class="btn btn-primary">Register</a></li>
                         <li style="margin:4px">
 
 
