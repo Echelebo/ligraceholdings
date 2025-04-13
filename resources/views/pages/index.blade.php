@@ -156,7 +156,7 @@ $page_title = 'Home';
 
     <center>
         <div class="amk_video">
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/qbnBU9Kezgs?si=T8-Ki9eVRdXsxV6A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/VQsN3eCLqB0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
         </div>
     </center>
 
