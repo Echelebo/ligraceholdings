@@ -267,7 +267,7 @@
         <br>
     </div>
     <div class="wrapper-content">
-        <!-- <div class="container" style="max-width:1300px"> -->
+    <div class="page-content">
         <div class="container" style="max-width:1400px">
 
 
@@ -291,6 +291,7 @@
                 </div>
             </div>
         </footer>
+        </div>
     </div>
     <!-- whatsapp widget -->
     <script type="text/javascript">

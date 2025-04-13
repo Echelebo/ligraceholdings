@@ -159,3 +159,113 @@
 </div>
 <br><br>
 @endsection
+
+@section('scripts')
+<script>
+$(document).on('submit', '#withdrawalFormbt', function(e) {
+        e.preventDefault();
+        var amount = $('#amount').val() * 1;
+        var currency_code = $('#currency_code').val();
+        var min_withdrawal = "{{ site('min_withdrawal') }}" * 1;
+        var max_withdrawal = "{{ site('max_withdrawal') }}" * 1;
+        var currency = "{{ site('currency') }}";
+
+        //check the currency code
+        var error = null;
+        //if (!currency_code) {
+        //     error = 'You have not selected a withdrawal method';
+        // }
+
+        //check min and max withdrawal
+        if (amount < min_withdrawal) {
+            error = 'Minimum withdrawal amount is ' + currency + min_withdrawal;
+        }
+
+        if (amount > max_withdrawal) {
+            error = 'Maximum withdrawal amount is ' + currency + max_withdrawal;
+        }
+
+        if (error === null) {
+            var form = $(this);
+            var formData = new FormData(this);
+
+            var submitButton = $(this).find('button[type="submit"]');
+            submitButton.addClass('relative disabled');
+            submitButton.append('<span class="button-spinner"></span>');
+            submitButton.prop('disabled', true);
+            $.ajax({
+                url: form.attr('action'),
+                method: 'POST',
+                data: formData,
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                success: function(response) {
+
+
+                    loadPage(window.location.href, submitButton, '#pageContent');
+
+                    $('html, body').animate({
+                        scrollTop: 0 + 100
+                    }, 800);
+                    toastNotify('success', 'withdrawal request initated successfully');
+
+
+
+
+                },
+                error: function(xhr, status, error) {
+
+                    if (status == 422) {
+                        var errors = xhr.responseJSON.errors;
+
+                        if (errors) {
+                            $.each(errors, function(field, messages) {
+                                var fieldErrors = '';
+                                $.each(messages, function(index, message) {
+                                    fieldErrors += message + '<br>';
+                                });
+
+
+                                Swal.fire({
+                                    icon: 'error',
+                                    html: fieldErrors,
+                                    toast: true,
+                                    position: 'top-end',
+                                    showConfirmButton: false,
+                                    timer: 3000,
+                                    timerProgressBar: true,
+                                    didOpen: (toast) => {
+                                        toast.addEventListener('mouseenter',
+                                            Swal.stopTimer);
+                                        toast.addEventListener('mouseleave',
+                                            Swal.resumeTimer);
+                                    }
+                                });
+                            });
+                        } else {
+                            toastNotify('error', 'An Error occured, try again later');
+                        }
+                    } else {
+                        toastNotify('error', 'Server Error occured, try again later');
+                    }
+
+
+
+                },
+                complete: function() {
+                    submitButton.removeClass('disabled');
+                    submitButton.find('.button-spinner').remove();
+                    submitButton.prop('disabled', false);
+
+                }
+            });
+        } else {
+
+            toastNotify('error', error);
+
+        }
+
+    });
+    </script>
+    @endsection
