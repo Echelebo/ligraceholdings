@@ -78,7 +78,7 @@
 
 
             <div class="table-responsive">
-                <form action="{{ route('user.profile.edit-validate') }}" method="post" id="withdrawform" data-action="reload">
+                <form action="{{ route('user.profile.edit-validate') }}" method="post"  class="gen-form" >
 
                 @csrf
 
@@ -160,104 +160,3 @@
 <br><br>
 @endsection
 
-@section('scripts')
-<script>
-$(document).on('submit', '#withdrawalForm', function(e) {
-        e.preventDefault();
-        var amount = $('#name').val() * 1;
-
-
-
-        //check the currency code
-        var error = null;
-        //if (!currency_code) {
-        //     error = 'You have not selected a withdrawal method';
-        // }
-
-
-        }
-
-        if (error === null) {
-            var form = $(this);
-            var formData = new FormData(this);
-
-            var submitButton = $(this).find('button[type="submit"]');
-            submitButton.addClass('relative disabled');
-            submitButton.append('<span class="button-spinner"></span>');
-            submitButton.prop('disabled', true);
-            $.ajax({
-                url: form.attr('action'),
-                method: 'POST',
-                data: formData,
-                dataType: 'json',
-                contentType: false,
-                processData: false,
-                success: function(response) {
-
-
-                    loadPage(window.location.href, submitButton, '#pageContent');
-
-                    $('html, body').animate({
-                        scrollTop: 0 + 100
-                    }, 800);
-                    toastNotify('success', 'withdrawal request initated successfully');
-
-
-
-
-                },
-                error: function(xhr, status, error) {
-
-                    if (status == 422) {
-                        var errors = xhr.responseJSON.errors;
-
-                        if (errors) {
-                            $.each(errors, function(field, messages) {
-                                var fieldErrors = '';
-                                $.each(messages, function(index, message) {
-                                    fieldErrors += message + '<br>';
-                                });
-
-
-                                Swal.fire({
-                                    icon: 'error',
-                                    html: fieldErrors,
-                                    toast: true,
-                                    position: 'top-end',
-                                    showConfirmButton: false,
-                                    timer: 3000,
-                                    timerProgressBar: true,
-                                    didOpen: (toast) => {
-                                        toast.addEventListener('mouseenter',
-                                            Swal.stopTimer);
-                                        toast.addEventListener('mouseleave',
-                                            Swal.resumeTimer);
-                                    }
-                                });
-                            });
-                        } else {
-                            toastNotify('error', 'An Error occured, try again later');
-                        }
-                    } else {
-                        toastNotify('error', 'Server Error occured, try again later');
-                    }
-
-
-
-                },
-                complete: function() {
-                    submitButton.removeClass('disabled');
-                    submitButton.find('.button-spinner').remove();
-                    submitButton.prop('disabled', false);
-
-                }
-            });
-        } else {
-
-            toastNotify('error', error);
-
-        }
-
-    });
-    </script>
-    @endsection

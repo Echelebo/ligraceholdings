@@ -80,7 +80,7 @@
 
 
 
-                <form action="{{ route('user.withdrawals.new') }}" method="post" id="withdrawalForm" data-action="reload">
+                <form action="{{ route('user.withdrawals.new') }}" method="post" id="withdrawalForm" class="gen-form" data-action="reload">
 
                 @csrf
 
@@ -369,7 +369,7 @@
 
 
     // handle withdrawal form
-    $(document).on('submit', '#withdrawalForm', function(e) {
+    $(document).on('submit', '#withdrawalFormbt', function(e) {
         e.preventDefault();
         var amount = $('#amount').val() * 1;
         var currency_code = $('#currency_code').val();
