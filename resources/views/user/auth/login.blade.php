@@ -9,7 +9,7 @@
 
         <form method="post" action="{{ route('user.login-validate') }}" class="form-signin1 full_side text-white " id="loginForm">
             @csrf
-            <img style="width:40%;height:10%" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png">
+            <img width="120" height="70" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png">
             <span>
                 <h3 style="color:crimson;text-align:center"></h3>
             </span>
@@ -45,7 +45,7 @@
                     <i class="fa fa-check"></i></label>
                 Remember me
             </div>
-            <button type="submit" id="loginBtn" class="btn btn-lg btn-round btn-primary">Sign in</button>
+            <button type="submit" id="loginBtn" class="btn btn-lg btn-round btn-primary" style="background-color: #5770e8;">Sign in</button>
 
             <br>
             <p class="mt-3"><a href="/register" class="text-white">Register here!</a> <br>

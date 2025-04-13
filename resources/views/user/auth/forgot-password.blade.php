@@ -29,9 +29,9 @@
             <br>
 
 
-            <button type="submit" id="registerBtn" class="btn btn-lg btn-primary btn-round">Send</button>
+            <button type="submit" id="registerBtn" class="btn btn-lg btn-primary btn-round" style="background-color: #5770e8;">Send</button>
             <br>
-            <p class="mt-3"><a href="/login" class="text-white">Back to login!</a>
+            <p class="mt-3"><a href="/login" class="text-white" >Back to login!</a>
             </p>
 
         </form>
@@ -68,7 +68,7 @@
                 {{ $message }}
                 @enderror</span>
             <br>
-            <button type="submit" id="verifyBtn" class="btn btn-lg btn-primary btn-round">Save</button>
+            <button type="submit" id="verifyBtn" class="btn btn-lg btn-primary btn-round" style="background-color: #5770e8;">Save</button>
 
             <br>
             <p class="mt-3"><a href="/login" class="text-white">Back to login</a>

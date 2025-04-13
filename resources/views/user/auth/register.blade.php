@@ -12,7 +12,7 @@
 
             @csrf
 
-            <img width="120" height="70" src="https://altsfolio.org/images/lkog-removebg-preview.png">
+            <img width="120" height="70" src="https://altsfolio.org/trust/images/lkog-removebg-preview.png">
             <span>
                 <h3 style="color:crimson;text-align:center"></h3>
             </span>
@@ -89,7 +89,7 @@
 
             <input type="checkbox" id="agreeTerms" name="agree" value="1"> I agree with <a href="/tos">Terms and conditions</a>
 
-            <button type="submit" id="registerBtn" class="btn btn-lg btn-round btn-primary">Sign Up</button>
+            <button type="submit" id="registerBtn" class="btn btn-lg btn-round btn-primary" style="background-color: #5770e8;">Sign Up</button>
 
 
         </form>
