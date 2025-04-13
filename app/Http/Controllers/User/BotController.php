@@ -489,7 +489,7 @@ class BotController extends Controller
 
 
 
-        return view('user.bots.usdtpay', compact(
+        return view('user.bots.index', compact(
             'page_title',
             'bots',
             'activations',
