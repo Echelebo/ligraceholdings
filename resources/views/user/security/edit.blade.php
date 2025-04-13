@@ -1,6 +1,7 @@
 @extends('layouts.user')
 
 @section('contents')
+
 <div class="row  align-items-center justify-content-between" style="margin-top:10px">
     <div class="col-16 col-sm-16" class="btn-group pull-right">
         <p style="color:white"><b>SECURITY</b></p>
@@ -91,7 +92,7 @@
 
                 <h3>Two Factor Authentication</h3>
 
-                <form action="{{ route('user.security.g2fa') }}" class="mt-5 gen-form" data-action="reload">
+                <form action="{{ route('user.security.g2fa') }}" class="gen-form" data-action="reload">
                 @csrf
                 @if (user()->g2fa == 0)
 
