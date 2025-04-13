@@ -139,34 +139,35 @@
                 <form action="{{ route('user.bots.new') }}" method="post" id="botForm" name="spendform">
                 @csrf
                     Select a plan:<br>
+
                     @foreach ($bots as $bot)
-                    <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
+
+                    <table cellspacing="1" cellpadding="2" border="0" width="100%" class="table table-striped table-bordered">
                         <tr>
-                            <td colspan=3>
+                            <td colspan="3">
                                 <input type="radio" id="bot_id" name="bot_id" value="{{$bot->id}}" onclick="updateCompound()">
 
                                 <b>{{ $bot->name }}</b>
                             </td>
                         </tr>
                         <tr>
-                            <th class=inheader>Plan</th>
-                            <th class=inheader width=200>Spent Amount (<span class="fiat">$</span>)</th>
-                            <th class=inheader width=100 nowrap>
+                            <th class="inheader">Plan</th>
+                            <th class="inheader" width="200">Spent Amount (<span class="fiat">$</span>)</th>
+                            <th class="inheader" width="100" nowrap>
                                 <nobr>Daily Profit (%)</nobr>
                             </th>
                         </tr>
                         <tr>
-                            <td class=item>{{ $bot->name }}</td>&infin;
-                            <td class=item align=right><span class="min_deposit">${{number_format($bot->min)}}</span> - <span class="max_deposit">$ @if ($bot->max >= 10000000) &infin; @else {{ number_format($bot->max) }}</span></td>
-                            <td class=item align=right>{{ $bot->daily_min . '%' }}</td>
+                            <td class="item">{{ $bot->name }}</td>
+                            <td class="item" align="right"><span class="min_deposit">${{number_format($bot->min)}}</span> - <span class="max_deposit">$ @if ($bot->max >= 10000000) &infin; @else {{ number_format($bot->max) }} @endif </span></td>
+                            <td class="item" align="right">{{ $bot->daily_min . '%' }}</td>
                         </tr>
                         <tr>
                             <td colspan=3 align=right><a href="javascript:openCalculator('$bot->id')">Calculate your profit &gt;&gt;</a></td>
                         </tr>
                     </table><br><br>
-                    <script>
-                        cps['$bot->id'] = [];
-                    </script>
+                    <script>cps[{{$bot->id}}] =[];
+                </script>
 
                     @endforeach
 
