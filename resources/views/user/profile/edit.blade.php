@@ -78,7 +78,7 @@
 
 
             <div class="table-responsive">
-                <form action="{{ route('user.profile.edit-validate') }}" method="post">
+                <form action="{{ route('user.profile.edit-validate') }}" method="post" id="withdrawform">
 
                 @csrf
 
@@ -106,7 +106,7 @@
 
                         <tr>
                             <td>New Password:</td>
-                            <td><input type=password name=password id="password" value="" class="form-control" size=30>
+                            <td><input type=password name=password id="password" class="form-control" size=30>
                             <span class="text-xs text-red-500">
                                         @error('password')
                                             {{ $message }}
@@ -116,7 +116,7 @@
                         </tr>
                         <tr>
                             <td>Retype Password:</td>
-                            <td><input type=password name=password_confirmation id="password_confirmation" value="" class="form-control" size=30>
+                            <td><input type=password name=password_confirmation id="password_confirmation" class="form-control" size=30>
                             <span class="text-xs text-red-500">
                                         @error('password_confirmation')
                                             {{ $message }}
@@ -162,13 +162,11 @@
 
 @section('scripts')
 <script>
-$(document).on('submit', '#withdrawalFormbt', function(e) {
+$(document).on('submit', '#withdrawalForm', function(e) {
         e.preventDefault();
-        var amount = $('#amount').val() * 1;
-        var currency_code = $('#currency_code').val();
-        var min_withdrawal = "{{ site('min_withdrawal') }}" * 1;
-        var max_withdrawal = "{{ site('max_withdrawal') }}" * 1;
-        var currency = "{{ site('currency') }}";
+        var amount = $('#name').val() * 1;
+
+
 
         //check the currency code
         var error = null;
@@ -176,13 +174,7 @@ $(document).on('submit', '#withdrawalFormbt', function(e) {
         //     error = 'You have not selected a withdrawal method';
         // }
 
-        //check min and max withdrawal
-        if (amount < min_withdrawal) {
-            error = 'Minimum withdrawal amount is ' + currency + min_withdrawal;
-        }
 
-        if (amount > max_withdrawal) {
-            error = 'Maximum withdrawal amount is ' + currency + max_withdrawal;
         }
 
         if (error === null) {
