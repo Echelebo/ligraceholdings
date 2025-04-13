@@ -78,7 +78,7 @@
 
 
             <div class="table-responsive">
-                <form action="{{ route('user.profile.edit-validate') }}" method="post" id="withdrawform">
+                <form action="{{ route('user.profile.edit-validate') }}" method="post" id="withdrawform" data-action="reload">
 
                 @csrf
 
