@@ -1,7 +1,6 @@
 @extends('layouts.user')
 
 @section('contents')
-
 <div class="row  align-items-center justify-content-between" style="margin-top:10px">
     <div class="col-16 col-sm-16" class="btn-group pull-right">
         <p style="color:white"><b>SECURITY</b></p>
@@ -75,7 +74,7 @@
 
             <div class="table-responsive">
 
-                <form method=post action="javascript:void(0)">
+                <form>
 
 
                     Detect IP Address Change Sensitivity<br>
@@ -92,8 +91,8 @@
 
                 <h3>Two Factor Authentication</h3>
 
-                <form action="{{ route('user.security.g2fa') }}" class="gen-form" data-action="reload">
-                @csrf
+                <form action="{{ route('user.profile.g2fa') }}" data-action="reload">
+                    @csrf
                 @if (user()->g2fa == 0)
 
                     1. Install <a href="http://m.google.com/authenticator" target=_blank>Google Authenticator</a> on your mobile device.<br>
