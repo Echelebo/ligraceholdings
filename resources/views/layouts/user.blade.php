@@ -502,7 +502,7 @@ var transarray = ['just <b>invested</b>', 'has <b>withdrawn</b>', 'is <b>trading
 {{-- all script placements --}}
 
 
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <!-- Include SweetAlert2 JavaScript file -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.all.min.js"></script>
