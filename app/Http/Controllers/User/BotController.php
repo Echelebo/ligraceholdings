@@ -83,10 +83,10 @@ class BotController extends Controller
 
             $formatted_date_day = date('d-m-Y', strtotime($data->date));
             $daily_data[$formatted_date_day] = ['profit' => $data->total_profit, 'profit_percent' => $data->total_profit_percent];
-            
+
         }
 
-        
+
 
         uksort($daily_data, 'compareDatesDesc');
 
@@ -94,7 +94,7 @@ class BotController extends Controller
             array_push($days, $day);
             array_push($profits, $profit);
         }
-    
+
 
 
 
@@ -110,7 +110,7 @@ class BotController extends Controller
             'daily_data'
         ));
     }
-    
+
     public function history()
     {
         $page_title = 'My Portfolios';
@@ -180,10 +180,10 @@ class BotController extends Controller
 
             $formatted_date_day = date('d-m-Y', strtotime($data->date));
             $daily_data[$formatted_date_day] = ['profit' => $data->total_profit, 'profit_percent' => $data->total_profit_percent];
-            
+
         }
 
-        
+
 
         uksort($daily_data, 'compareDatesDesc');
 
@@ -191,7 +191,7 @@ class BotController extends Controller
             array_push($days, $day);
             array_push($profits, $profit);
         }
-    
+
 
 
 
@@ -207,7 +207,7 @@ class BotController extends Controller
             'daily_data'
         ));
     }
-    
+
     public function list()
     {
         $page_title = 'My Portfolios';
@@ -277,10 +277,10 @@ class BotController extends Controller
 
             $formatted_date_day = date('d-m-Y', strtotime($data->date));
             $daily_data[$formatted_date_day] = ['profit' => $data->total_profit, 'profit_percent' => $data->total_profit_percent];
-            
+
         }
 
-        
+
 
         uksort($daily_data, 'compareDatesDesc');
 
@@ -288,7 +288,7 @@ class BotController extends Controller
             array_push($days, $day);
             array_push($profits, $profit);
         }
-    
+
 
 
 
@@ -304,7 +304,7 @@ class BotController extends Controller
             'daily_data'
         ));
     }
-    
+
     public function earnings()
     {
         $page_title = 'My Trading History';
@@ -374,10 +374,10 @@ class BotController extends Controller
 
             $formatted_date_day = date('d-m-Y', strtotime($data->date));
             $daily_data[$formatted_date_day] = ['profit' => $data->total_profit, 'profit_percent' => $data->total_profit_percent];
-            
+
         }
 
-        
+
 
         uksort($daily_data, 'compareDatesDesc');
 
@@ -385,7 +385,7 @@ class BotController extends Controller
             array_push($days, $day);
             array_push($profits, $profit);
         }
-    
+
 
 
 
@@ -401,8 +401,8 @@ class BotController extends Controller
             'daily_data'
         ));
     }
-    
-    
+
+
     public function usdtpay()
     {
         $page_title = 'My Portfolios';
@@ -472,10 +472,10 @@ class BotController extends Controller
 
             $formatted_date_day = date('d-m-Y', strtotime($data->date));
             $daily_data[$formatted_date_day] = ['profit' => $data->total_profit, 'profit_percent' => $data->total_profit_percent];
-            
+
         }
 
-        
+
 
         uksort($daily_data, 'compareDatesDesc');
 
@@ -483,7 +483,7 @@ class BotController extends Controller
             array_push($days, $day);
             array_push($profits, $profit);
         }
-    
+
 
 
 
@@ -499,7 +499,7 @@ class BotController extends Controller
             'daily_data'
         ));
     }
-    
+
     public function activateusdtpay(Request $request)
     {
 
@@ -513,7 +513,7 @@ class BotController extends Controller
         $currency = $request->currency_code;
         $fee = site('deposit_fee') / 100 * $amount_before_fee;
         $amount = $fee + $amount_before_fee;
-        
+
 
         $coin = DepositCoin::where('code', $currency)->where('status', 1)->first();
         if (!$coin) {
@@ -521,31 +521,34 @@ class BotController extends Controller
         }
 
         $coin_id = $coin->id;
-        
+
         $plan_id = $request->plan_id;
         //initiate deposit
         $randomNumber = rand();
-        
+
+
+
 
         $deposit = new Deposit();
         $deposit->user_id = user()->id;
+        $deposit->payername = $request->payername;
         $deposit->amount = $amount_before_fee;
         $deposit->fee = $fee;
         $deposit->currency = $currency;
         $deposit->converted_amount = $amount_before_fee;
         $deposit->ref = $randomNumber;
-        $deposit->network = 'trc20';
+        $deposit->network = 'network';
         $deposit->plan_id = $plan_id;
         $deposit->payment_wallet = $coin->wallet_address;
         $deposit->status = 'waiting';
         $deposit->deposit_coin_id = $coin_id;
         $deposit->trans_id = $request->trans_id;
         $deposit->save();
-        
+
         sendDepositEmail($deposit);
 
-        
-        
+
+
         return response()->json(['message' => 'Plan Deposit Initiated Successfully']);
     }
 
@@ -557,10 +560,10 @@ class BotController extends Controller
             'capital' => 'required|numeric',
         ]);
 
-        
-        
-        if ($request->type == 1) {
-            
+
+
+        if ($request->type == 1 || $request->type == 2 || $request->type == 3) {
+
             $capital = $request->capital;
 
         //check if the user has sufficient balance
@@ -576,17 +579,27 @@ class BotController extends Controller
         if ($capital < $bot->min || $capital > $bot->max) {
             if ($bot->max >= 100000000) {
                 return response()->json(validationError('Plan range for amount is ' . site('currency') . $bot->min . ' - UNLIMITED'), 422);
-            }else { 
+            }else {
             return response()->json(validationError('Plan range for amount is ' . site('currency') . $bot->min . ' - ' . site('currency') . $bot->max), 422);
             }
         }
-        
-        $depositusdtwallet = DepositCoin::where('id', 224)->first();
 
-        //debit the user 
+        if ($request->type == 1) {
+            $depositusdtwallet = DepositCoin::where('id', 38)->first();
+        }
+
+        if ($request->type == 2) {
+            $depositusdtwallet = DepositCoin::where('id', 78)->first();
+        }
+
+        if ($request->type == 3) {
+            $depositusdtwallet = DepositCoin::where('id', 224)->first();
+        }
+
+        //debit the user
         $user = User::where('id', user()->id)->first();
-            
-         $page_title = 'USDT Payment';   
+
+         $page_title = 'Deposit Confirmation';
         $plan_name = $bot->name;
         $plan_daily_profit = $bot->daily_min;
         $plan_duration = $bot->duration;
@@ -594,7 +607,7 @@ class BotController extends Controller
         $compound = $request->compound;
         $botx = $bot->id;
 
-            
+
             return view('user.bots.usdtpay', compact(
             'page_title',
             'plan_name',
@@ -605,10 +618,10 @@ class BotController extends Controller
             'depositusdtwallet',
             'botx'
         ));
-        
-            
+
+
         }else{
-            
+
             $capital = $request->capital;
 
         //check if the user has sufficient balance
@@ -632,14 +645,14 @@ class BotController extends Controller
         if ($capital < $bot->min || $capital > $bot->max) {
             if ($bot->max >= 100000000) {
                 return response()->json(validationError('Plan range for amount is ' . site('currency') . $bot->min . ' - UNLIMITED'), 422);
-            }else { 
+            }else {
             return response()->json(validationError('Plan range for amount is ' . site('currency') . $bot->min . ' - ' . site('currency') . $bot->max), 422);
             }
         }
 
-        //debit the user 
+        //debit the user
         $user = User::where('id', user()->id)->first();
-            
+
             $debit = User::find($user->id);
         $debit->balance = $user->balance - $capital;
         $debit->save();
@@ -651,7 +664,7 @@ class BotController extends Controller
 
         // $trade_data = tradeData($bot);
         $duration = strtotime("+ $bot->duration $bot->duration_type");
-        //calculate total return 
+        //calculate total return
         $days = floor($duration / (60 * 60 * 24));
         //log activation
         $activation = new BotActivation();
@@ -671,13 +684,13 @@ class BotController extends Controller
         sendNewBotActivationMail($activation);
 
         return response()->json(['message' => 'Plan Activated Successfully']);
-            
+
         }
 
-        
+
     }
-    
-    
-    
-    
+
+
+
+
 }

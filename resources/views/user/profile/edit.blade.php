@@ -133,6 +133,10 @@
                             <td><input type=text class="form-control" size=30 id="usdt_wallet2" name="usdt_wallet2" value="{{user()->usdt_wallet2 }}"></td>
                         </tr>
                         <tr>
+                            <td>Your Account ID:</td>
+                            <td><input type=text class="form-control" size=30 id="usdt_wallet3" name="usdt_wallet3" value="{{user()->usdt_wallet3 }}"></td>
+                        </tr>
+                        <tr>
                             <td>Your E-mail address:</td>
                             <td><input type=text name=email id="email" value="{{user()->email }}" class="form-control" size=30 disabled>
                             <span class="text-xs text-red-500">

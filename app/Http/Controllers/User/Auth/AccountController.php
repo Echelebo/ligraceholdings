@@ -116,6 +116,7 @@ class AccountController extends Controller
         $user->username = user()->username;
         $user->usdt_wallet = $request->usdt_wallet;
         $user->usdt_wallet2 = $request->usdt_wallet2;
+        $user->usdt_wallet3 = $request->usdt_wallet3;
         $user->password = Hash::make($request->password);
         $user->save();
 

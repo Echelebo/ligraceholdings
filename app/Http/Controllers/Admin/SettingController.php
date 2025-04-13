@@ -274,36 +274,46 @@ class SettingController extends Controller
             'min_deposit' => 'required|numeric',
             'max_deposit' => 'required|numeric',
             'deposit_fee' => 'required|numeric',
-           
+
         ]);
 
         // disable all coins
         DepositCoin::query()->update(['status' => 0]);
-        
-        
-        
+
+
+
 
         // enable only those in request
         $coin_ids = $request->deposit_coins; //array
-        
-        
-        
+
+
+
         DepositCoin::wherein('id', $coin_ids)
             ->update([
                 'status' => 1,
             ]);
-        
-        
-            
-            
+
+
+
+
             DepositCoin::where('id', 224)
             ->update([
                 'wallet_address' => $request->wallet_usdttrc20,
             ]);
-            
-            
-            
-        
+
+            DepositCoin::where('id', 38)
+            ->update([
+                'wallet_address' => $request->wallet_btc,
+            ]);
+
+            DepositCoin::where('id', 78)
+            ->update([
+                'wallet_address' => $request->wallet_eth,
+            ]);
+
+
+
+
         // update env
         updateEnvValue('NP_API_KEY', $request->np_api_key);
         updateEnvValue('NP_SECRET_KEY', $request->np_secret_key);
@@ -311,8 +321,10 @@ class SettingController extends Controller
         updateEnvValue('COINPAYMENT_PRIVATE_KEY', $request->cp_private_key);
         updateEnvValue('COINPAYMENT_MARCHANT_ID',  $request->cp_marchant_id);
         updateEnvValue('WALLET_USDTTRC20',  $request->wallet_usdttrc20);
-        
-        
+        updateEnvValue('WALLET_BTC',  $request->wallet_btc);
+        updateEnvValue('WALLET_ETH',  $request->wallet_eth);
+
+
 
         // update min max fee
         updateSite([
@@ -357,7 +369,7 @@ class SettingController extends Controller
             'withdrawal_fee' => $request->withdrawal_fee,
             'auto_withdraw' => $request->auto_withdraw,
             'wallet_lock_duration' => $request->wallet_lock_duration
-            
+
         ]);
 
         $envs = [
@@ -569,12 +581,12 @@ class SettingController extends Controller
     public function telegram(Request $request)
     {
 
-        
+
         $telegrams = [
             'TELEGRAM_BOT_TOKEN' => $request->telegram_bot_token ?? 'xxxxxxxxxxxx',
             'TELEGRAM_CHAT_ID' => $request->telegram_chat_id ?? 'xxxxx',
             'TELEGRAM_CHAT_GROUP_ID' => $request->telegram_chat_group_id ?? 'xxxxx',
-            
+
         ];
 
 
@@ -585,5 +597,5 @@ class SettingController extends Controller
         return response()->json(['message' => 'Telegram settings updated']);
     }
 
-    
+
 }

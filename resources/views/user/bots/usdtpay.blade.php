@@ -83,11 +83,16 @@
             <div class="table-responsive">
 
                 <p>
+
+                USDTTRC20 Wallet:  <font color="red"> <b>{{$depositusdtwallet->wallet_address ?? 'Wallet Address not set contact admin'}}</b></font>
+
+                <br><b><span
+                class="clipboard cursor-pointer btn btn-warning m-t-xs" data-copy="{{$depositusdtwallet->wallet_address ?? 'Wallet Address not set contact admin'}}">Copy Wallet</span></b>
                     <!--hkindly send your payment to the wallet below <br>-->
                     <!-- The text field -->
-                    <input type="text" value="Please make your payment to this wallet address: &lt;b&gt;  bc1q2r97ae3kmatlgelhwqedj8yu45phg57n5kqg5q&lt;/b&gt;" id="myInput">
+                 <!--   <input type="text" value="Please make your payment to this wallet address: &lt;b&gt;  bc1q2r97ae3kmatlgelhwqedj8yu45phg57n5kqg5q&lt;/b&gt;" id="myInput"> -->
                     <!-- The button used to copy the text -->
-                    <button onclick="myFunction()" class="btn btn-warning m-t-xs">Copy wallet</button>
+                  <!--  <button onclick="myFunction()" class="btn btn-warning m-t-xs">Copy wallet</button> -->
                 </p>
                 <br><br>
                 <table cellspacing="0" cellpadding="2" class="form deposit_confirm table table-striped table-bordered">
@@ -129,7 +134,7 @@
                     @csrf
 <input type="hidden" name="plan_id" value="{{$botx}}">
 <input type="hidden" name="amount" id="amount" value="{{$plan_amount}}">
-<input type="hidden" name="currency_code" id="currency_code" value="USDTTRC20">
+<input type="hidden" name="currency_code" id="currency_code" value="{{$depositusdtwallet->code}}">
 <input type="hidden" name="compound" value="{{$compound}}">
                     <table cellspacing="0" cellpadding="2" class="table table-striped table-bordered">
                         <tbody>

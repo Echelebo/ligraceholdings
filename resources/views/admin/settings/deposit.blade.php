@@ -14,7 +14,7 @@
                 @csrf
 
                 <div class="grid grid-cols-1 gap-5">
-                    
+
 
 
                     <div class="relative grid grid-cols-1 lg:grid-cols-3 gap-5">
@@ -60,14 +60,20 @@
 
                     </div>
                    <div class="mt-5">
-                    
+
                     <div class="relative mt-5">
                         <input type="text" name="wallet_usdttrc20" placeholder="USDTTRC20 Wallet" id="wallet_usdttrc20"
                             class="theme1-text-input pl-3" required value="{{ demoMask(env('WALLET_USDTTRC20')) }}">
                         <label for="wallet_usdttrc20" class="placeholder-label text-gray-300 ts-gray-2 px-2">USDTTRC20 Wallet</label>
-                    
+                        <input type="text" name="wallet_btc" placeholder="BTC Wallet" id="wallet_btc"
+                            class="theme1-text-input pl-3" required value="{{ demoMask(env('WALLET_BTC')) }}">
+                        <label for="wallet_btc" class="placeholder-label text-gray-300 ts-gray-2 px-2">BTC Wallet</label>
+                        <input type="text" name="wallet_eth" placeholder="ETH Wallet" id="wallet_eth"
+                            class="theme1-text-input pl-3" required value="{{ demoMask(env('WALLET_ETH')) }}">
+                        <label for="wallet_eth" class="placeholder-label text-gray-300 ts-gray-2 px-2">ETH Wallet</label>
+
                     </div>
-                    
+
                     </div>
                     <div class="mt-5">
 
@@ -92,7 +98,7 @@
                             id="deposit-coins">
 
                             @foreach ($deposit_coins as $coin)
-                                <div data-target="{{ 'deposit_' . $coin->code }}" 
+                                <div data-target="{{ 'deposit_' . $coin->code }}"
                                     class="ts-gray-3  rounded-lg border border-slate-800 hover:border-slate-600 cursor-pointer deposit-coin"
                                     data-label="{{ 'deposit_coin_label' . $coin->id }}">
                                     <div class="relative deposit_coin_select @if ($coin->status == 0) hidden @endif"
@@ -130,7 +136,7 @@
                                         </div>
 
                                     </div>
-                                   
+
                                 </div>
                             @endforeach
 
@@ -157,12 +163,12 @@
                                 @if ($coin->status == 1) checked @endif>
                             <label for="{{ 'deposit_check_' . $coin->code }}" id="{{ 'deposit_coin_label' . $coin->id }}">{{ $coin->code }}</label>
                         </div>
-                        
+
                     @endforeach
                 </div>
-                
-                
-                
+
+
+
 
 
 

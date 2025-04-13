@@ -98,7 +98,7 @@ function runBot()
                 $entry_price = $randomPair['lastPrice'];
                 $exit_price = $randomPair['lastPrice'];
             } elseif ($percentage < 0) {
-                //loss 
+                //loss
 
                 $exit_price = $randomPair['lastPrice'];
                 $entry_price = $randomPair['lastPrice'] - ($randomPair['lastPrice'] * $percentage / 100);
@@ -108,11 +108,16 @@ function runBot()
                 $entry_price = $randomPair['lastPrice'] - ($randomPair['lastPrice'] * $percentage / 100);
             }
 
-            //confirm timestamp 
+            //confirm timestamp
             $current_date = date('dm', time());
             $daily_date = date('dm', $act->daily_timestamp);
 
-            //calculate daily return 
+            $current_timex = time();
+            $daily_timex = $act->daily_timestamp;
+
+            $days_differencex = ($current_timex - $daily_timex) / (60 * 60);
+
+            //calculate daily return
             $bot = $act->bot();
 
             // if (site('bot_compounding') == 1) {
@@ -125,7 +130,7 @@ function runBot()
 
 
             if (
-                $current_date == $daily_date &&
+                $days_differencex < 24 &&
                 time() > $timestamp
             ) {
                 $decodedSequence = json_decode($act->daily_sequence, true);
@@ -147,6 +152,8 @@ function runBot()
                     $next_trade = null;
                     $gen_timestamps = json_encode($gen_timestamps);
                 }
+
+
 
                 if ($exit_price >  0) {
                     //add to the user bot activation instance balance
@@ -222,7 +229,7 @@ function runBot()
     //                 $entry_price = $randomPair['lastPrice'];
     //                 $exit_price = $randomPair['lastPrice'];
     //             } elseif ($percentage < 0) {
-    //                 //loss 
+    //                 //loss
 
     //                 $exit_price = $randomPair['lastPrice'];
     //                 $entry_price = $randomPair['lastPrice'] - ($randomPair['lastPrice'] * $percentage / 100);
@@ -232,11 +239,11 @@ function runBot()
     //                 $entry_price = $randomPair['lastPrice'] - ($randomPair['lastPrice'] * $percentage / 100);
     //             }
 
-    //             //confirm timestamp 
+    //             //confirm timestamp
     //             $current_date = date('dm', time());
     //             $daily_date = date('dm', $act->daily_timestamp);
 
-    //             //calculate daily return 
+    //             //calculate daily return
     //             $bot = $act->bot();
 
     //             // if (site('bot_compounding') == 1) {
@@ -402,23 +409,21 @@ function runBot()
     return true;
 }
 
-//update daily timestamp
+
 function updateTimestamp()
 {
+
     // Generate timestamp for the new day
-    $today_start = Carbon::today()->startOfDay()->timestamp;
-    $today_end = Carbon::today()->endOfDay()->timestamp;
+    $togrow = Carbon::now()->subHours(24)->timestamp;
 
     // Chunk the records
-    BotActivation::where('daily_timestamp', '<', $today_start)
-        ->orWhere('daily_timestamp', '>', $today_end)
+    BotActivation::where('daily_timestamp', '<=', $togrow)
         ->where('status', 'active')
         ->chunk(100, function ($bot_activations) {
             //update these records
             foreach ($bot_activations as $act) {
                 $bot = $act->bot;
                 $trade_data = tradeData($bot);
-
 
                 // credit the user the amount that was realized for that day
                 if ($act->daily_profit > 0) {
@@ -443,10 +448,7 @@ function updateTimestamp()
 
     return true;
 }
-
-
-
-
+//update daily timestamp
 
 
 
@@ -466,11 +468,11 @@ function endBot()
                 //credit the user
                 $user = $act->user;
                 $credit = User::find($user->id);
-                $credit->balance = $user->balance + $act->capital;
+                $credit->balance = $user->balance + $act->daily_profit;
                 $credit->save();
 
                 //record transaction
-                recordNewTransaction($act->capital, $user->id, 'credit', 'Plan Capital');
+                recordNewTransaction($act->daily_profit, $user->id, 'credit', 'Plan profit');
             }
         });
 
@@ -488,7 +490,7 @@ function tradeData($bot)
     $daily_max = $bot->daily_max;
     $percentages = [$daily_min, $daily_max];
     $percentage_count = count($percentages);
-    
+
     while ($percentage_count <= 15) {
      $first_number = $percentages[array_rand($percentages)];
      $second_number = $percentages[array_rand($percentages)];
@@ -502,36 +504,36 @@ function tradeData($bot)
 
     $total_percentage = $percentages[array_rand($percentages)];
 
-$t=time();
-$p=$t + (24*60*60);
-$a = range($t,$p);
-shuffle($a); 
-$sets = array_chunk($a, $intervals);
-$first_value = current($sets);
+    $t = time();
+    $p = $t + (24 * 60 * 60);
+    $a = range($t, $p);
+    shuffle($a);
+    $sets = array_chunk($a, $intervals);
+    $first_value = current($sets);
 
-$max = $total_percentage*100;
-$n = $intervals;
-$lastnum = $total_percentage;
+    $max = $total_percentage * 100;
+    $n = $intervals;
+    $lastnum = $total_percentage;
 
-$partition = array();
-    for($i=1; $i < $n; $i++) {
+    $partition = array();
+    for ($i = 1; $i < $n; $i++) {
         $maxSingleNumber = $max - $n;
         $minSingleNumber = 0 - $maxSingleNumber;
-        $partition[] = $number = rand($maxSingleNumber, $minSingleNumber)/100;
+        $partition[] = $number = rand($maxSingleNumber, $minSingleNumber) / 100;
 
-        $lastnum -= $number;			
-}
+        $lastnum -= $number;
+    }
     $partition[] = $lastnum;
     $partitionx = $partition;
-    shuffle ($partitionx); 
+    shuffle($partitionx);
 
-$b = $first_value;
-sort($b);
-    
-$respo = [
-'timestamps' => $b,
-'sequence' => $partitionx,
-]; 
+    $b = $first_value;
+    sort($b);
+
+    $respo = [
+        'timestamps' => $b,
+        'sequence' => $partitionx,
+    ];
 
 
 return $respo;

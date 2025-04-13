@@ -26,6 +26,7 @@ class User extends Authenticatable
         'address',
         'usdt_wallet',
         'usdt_wallet2',
+        'usdt_wallet3',
         'city',
         'state',
         'country',

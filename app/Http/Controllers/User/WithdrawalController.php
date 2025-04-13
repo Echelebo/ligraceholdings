@@ -128,12 +128,24 @@ class WithdrawalController extends Controller
 
         $request->validate([
             'amount' => 'required|numeric',
-            'currency_code' => 'required',
+            
         ]);
 
+        if ($request->wallet_address == "usdt_wallet"){
+$currency = "BTC";
+$walletadd = user()->usdt_wallet;
+        }
+        if ($request->wallet_address == "usdt_wallet2"){
+            $currency = "ETH";
+            $walletadd = user()->usdt_wallet2;
+                    }
+                    if ($request->wallet_address == "usdt_wallet3"){
+                        $currency = "USDTTRC20";
+                        $walletadd = user()->usdt_wallet3;
+                                }
         //check min and max
         $amount_before_fee = $request->amount;
-        $currency = $request->currency_code;
+        $currency = $currency;
         $fee = site('withdrawal_fee') / 100 * $amount_before_fee;
         $amount =  $amount_before_fee - $fee;
         if ($amount_before_fee < site('min_withdrawal') || $amount_before_fee > site('max_withdrawal')) {
@@ -165,7 +177,7 @@ class WithdrawalController extends Controller
         // for auto withdrawal
         if (site('auto_withdraw') == 1) {
             // check that the address and code matches stored
-            $auto_wallet = user()->autoWallets()->where('wallet_address', $request->wallet_address)->first();
+            $auto_wallet = user()->autoWallets()->where('wallet_address', $walletadd)->first();
             if (!$auto_wallet) {
                 return response()->json(validationError('We could not verify the wallet address submitted'), 422);
             }
@@ -205,7 +217,7 @@ class WithdrawalController extends Controller
                 'x-api-key' => $api_key,
                 'Content-Type' => 'application/json',
             ])->post('https://api.nowpayments.io/v1/payout/validate-address', [
-                'address' => $request->wallet_address,
+                'address' => $walletadd,
                 'currency' => $currency_lower,
                 'extra_id' => null,
             ]);
@@ -217,7 +229,7 @@ class WithdrawalController extends Controller
 
 
             // dispatch job
-            ProcessAutoWithdrawJob::dispatch($request->wallet_address, $currency_lower, $converted_amount, $ref)->delay(now()->addMinutes(1));
+            ProcessAutoWithdrawJob::dispatch($walletadd, $currency_lower, $converted_amount, $ref)->delay(now()->addMinutes(1));
 
             $type = 'auto';
         } else {
@@ -240,7 +252,7 @@ class WithdrawalController extends Controller
         $withdrawal = new Withdrawal();
         $withdrawal->user_id = user()->id;
         $withdrawal->deposit_coin_id = $coin->id;
-        $withdrawal->wallet_address = $request->wallet_address;
+        $withdrawal->wallet_address = $walletadd;
         $withdrawal->amount = $amount_before_fee;
         $withdrawal->converted_amount = $converted_amount;
         $withdrawal->fee = $fee;
@@ -258,7 +270,7 @@ class WithdrawalController extends Controller
             'currency' => $currency,
             'converted_amount' => $converted_amount,
             'ref' => $ref,
-            'wallet_address' => $request->wallet_address,
+            'wallet_address' => $walletadd,
             'status' => 'pending',
         ];
 
@@ -324,7 +336,7 @@ class WithdrawalController extends Controller
                 $update->status = 'approved';
                 $update->save();
                 sendWithdrawalEmail($withdrawal);
-                $message = "*New Withdrawal Notification* \n♻️Time: " . date('d-m-y H:i:s') .  " UTC \n♻️Currency: " . $resp->currency .  "\n♻️Amount: " . formatAmount($withdrawal->amount) .  "\n♻️Sent: " . $withdrawal->converted_amount .  $resp->currency . "\n♻️Address: " . $withdrawal->wallet_address .  "\n♻️Hash: " . $resp->hash .  "\n♻️Fee: " . formatAmount($withdrawal->fee) . "\n💃💃💃💃💃💃💃💃💃💃 \n🍷🍷🍷🍷🍷🍷🍷🍷🍷";
+                $message = "*New Withdrawal Notification* \n♻️Time: " . date('d-m-y H:i:s') .  " UTC \n♻️Currency: " . $resp->currency .  "\n♻️Amount: " . formatAmount($withdrawal->amount) .  "\n♻️Sent: " . $withdrawal->converted_amount .  $resp->currency . "\n♻️Address: " . $walletadd .  "\n♻️Hash: " . $resp->hash .  "\n♻️Fee: " . formatAmount($withdrawal->fee) . "\n💃💃💃💃💃💃💃💃💃💃 \n🍷🍷🍷🍷🍷🍷🍷🍷🍷";
                         if (function_exists('sendMessageTelegram')) {
                             sendMessageTelegram($message);
                         }
