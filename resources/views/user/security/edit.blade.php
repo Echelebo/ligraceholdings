@@ -91,7 +91,7 @@
 
                 <h3>Two Factor Authentication</h3>
 
-                <form action="{{ route('user.profile.g2fa') }}" data-action="reload">
+                <form action="{{ route('user.security.g2fa') }}" class="gen-form" data-action="reload">
                     @csrf
                 @if (user()->g2fa == 0)
 
