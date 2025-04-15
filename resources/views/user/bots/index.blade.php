@@ -145,7 +145,7 @@
                     <table cellspacing="1" cellpadding="2" border="0" width="100%" class="table table-striped table-bordered">
                         <tr>
                             <td colspan="3">
-                                <input type="radio" id="bot_id" name="bot_id" value="{{$bot->id}}" onclick="updateCompound()">
+                                <input type="radio" id="bot_id" name="bot_id" value="{{$bot->id}}" onclick="updateCompound()" required>
 
                                 <b>{{ $bot->name }}</b>
                             </td>
@@ -205,7 +205,7 @@
                     <table cellspacing=0 cellpadding=2 border=0 class="table table-striped table-bordered">
                         <tr>
                             <td>Amount to Spend ($):</td>
-                            <td align=right><input type="text" name="capital" id="capital" value='100.00' class="form-control" size=15 style="text-align:right;"></td>
+                            <td align=right><input type="text" name="capital" id="capital" value='100.00' class="form-control" size=15 style="text-align:right;" required></td>
                         </tr>
                         <tr id="coumpond_block" style="display:none">
                             <td>Compounding(%):</td>
@@ -565,7 +565,7 @@
                 submitButton.append('<span class="button-spinner"></span>');
                 submitButton.prop('disabled', true);
 
-                if ($('input[name=type]:checked').val() == 1 || $('input[name=type]:checked').val() == 2 || $('input[name=type]:checked').val() == 3) {
+                if ($('input[name=type]:checked').val() == 1) {
                     tbctransferForm.submit();
                 } else {
                     $.ajax({
