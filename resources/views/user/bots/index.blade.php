@@ -370,7 +370,7 @@ for (i = 0; i<document.spendform.type.length; i++) {
         var form = $(this);
         var formData = new FormData(this);
 
-        var submitButton = $(this).find('input[type="submit"]');
+        var submitButton = $(this).find('button[type="submit"]');
         submitButton.addClass('relative disabled');
         submitButton.append('<span class="button-spinner"></span>');
         submitButton.prop('disabled', true);
