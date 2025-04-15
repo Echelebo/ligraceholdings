@@ -268,7 +268,7 @@
     </div>
     <div class="wrapper-content">
 
-        <div class="container page-content" style="max-width:1400px">
+        <div class="container" style="max-width:1400px">
 
 
 
