@@ -55,9 +55,9 @@
                         class="border-l-4 border-orange-500 px-3 hover:scale-110 hover:text-purple-700 transition-all cursor-pointer rescron-card-trigger">
                         Cron Job</a>
 
-                    <!--<a data-target="misc" role="button"
+                    <a data-target="misc" role="button"
                         class="border-l-4 border-orange-500 px-3 hover:scale-110 hover:text-purple-700 transition-all cursor-pointer rescron-card-trigger">
-                        Misc</a>-->
+                        Misc</a>
 
                     <a data-target="telegram" role="button"
                         class="border-l-4 border-orange-500 px-3 hover:scale-110 hover:text-purple-700 transition-all cursor-pointer rescron-card-trigger">
