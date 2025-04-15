@@ -88,11 +88,11 @@
                     <table cellspacing=0 cellpadding=2 border=0 class="table table-striped table-bordered">
                         <tr>
                             <td>Account Balance:</td>
-                            <td>$<b>{{ formatAmount(user()->balance) }}</b></td>
+                            <td>$<b>{{ number_format(user()->balance) }}</b></td>
                         </tr>
                         <tr>
                             <td>Pending Withdrawals: </td>
-                            <td>$<b>{{ formatAmount($pending_withdrawals) }}</b></td>
+                            <td>$<b>{{ number_format($pending_withdrawals) }}</b></td>
                         </tr>
                     </table>
 
@@ -108,8 +108,8 @@
 
                             <td><input type="radio" name="wallet_address" id="wallet_address" value="usdt_wallet" required></td>
                             <td><img src="/trust/images/1000.gif" width=44 height=17 align=absmiddle> Bitcoin</td>
-                            <td><b style="color:green">${{ formatAmount(user()->balance) }}</b></td>
-                            <td><b style="color:red">${{ formatAmount($pending_withdrawals) }}</b></td>
+                            <td><b style="color:green">${{ number_format(user()->balance) }}</b></td>
+                            <td><b style="color:red">${{ number_format($pending_withdrawals) }}</b></td>
                             @if(is_null(user()->usdt_wallet))<td>Account ID: <a class="badge badge-danger" href="{{ route('user.profile.edit') }}"><i>not set</i></a></td> @else <td>Account ID: {{ user()->usdt_wallet }}</td> @endif
 
 
@@ -118,8 +118,8 @@
 
                             <td><input type="radio" name="wallet_address" id="wallet_address" value="usdt_wallet2"></td>
                             <td><img src="/trust/images/1002.gif" width=44 height=17 align=absmiddle> Ethereum</td>
-                            <td><b style="color:green">${{ formatAmount(user()->balance) }}</b></td>
-                            <td><b style="color:red">${{ formatAmount($pending_withdrawals) }}</b></td>
+                            <td><b style="color:green">${{ number_format(user()->balance) }}</b></td>
+                            <td><b style="color:red">${{ number_format($pending_withdrawals) }}</b></td>
                             @if(is_null(user()->usdt_wallet2))<td>Account ID: <a class="badge badge-danger" href="{{ route('user.profile.edit') }}"><i>not set</i></a></td> @else <td>Account ID: {{ user()->usdt_wallet2 }}</td> @endif
 
 
@@ -128,8 +128,8 @@
 
                             <td><input type="radio" name="wallet_address" id="wallet_address" value="usdt_wallet3"></td>
                             <td><img src="/trust/images/1001.gif" width=44 height=17 align=absmiddle> USDT Trc20</td>
-                            <td><b style="color:green">${{ formatAmount(user()->balance) }}</b></td>
-                            <td><b style="color:red">${{ formatAmount($pending_withdrawals) }}</b></td>
+                            <td><b style="color:green">${{ number_format(user()->balance) }}</b></td>
+                            <td><b style="color:red">${{ number_format($pending_withdrawals) }}</b></td>
                             @if(is_null(user()->usdt_wallet3))<td>Account ID: <a class="badge badge-danger" href="{{ route('user.profile.edit') }}"><i>not set</i></a></td> @else <td>Account ID: {{ user()->usdt_wallet3 }}</td> @endif
 
 
