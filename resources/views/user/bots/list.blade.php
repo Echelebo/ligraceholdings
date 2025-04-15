@@ -97,11 +97,7 @@
                             </table>
                             <br>
                             <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
-                            <tr>
-                                    <td class=item>{{ $bot->name }}</td>
-                                    <td class=item align=right>@if ($bot->max >= 100000000) ${{number_format($bot->min). ' and more'}} @else {{number_format($bot->min). ' - $' .number_format($bot->max)}} @endif</td>
-                                    <td class=item align=right>{{ $bot->daily_min . '%' }}</td>
-                                </tr>    
+
                             <tr>
                                     <td colspan=4><b>No deposits for this plan</b></td>
                                 </tr>
