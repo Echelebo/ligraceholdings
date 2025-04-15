@@ -72,7 +72,7 @@
     <div class="card-body">
         <div class="container_wizard wizard-bordered">
 
-            <b>Total: ${{ number_format($capital) }}</b><br><br>
+            <b>Total: $0.00</b><br><br>
             <div class="table-responsive">
             @foreach ($bots as $bot)
                 <table cellspacing=1 cellpadding=2 border=0 width=100% class=line>
@@ -97,8 +97,7 @@
                             </table>
                             <br>
                             <table cellspacing=1 cellpadding=2 border=0 width=100% class="table table-striped table-bordered">
-
-                            <tr>
+                                <tr>
                                     <td colspan=4><b>No deposits for this plan</b></td>
                                 </tr>
                             </table>
