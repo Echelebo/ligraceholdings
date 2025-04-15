@@ -121,9 +121,7 @@
     </div>
 </div>
 <br><br>
-@endsection
 
-@section('scripts')
 @if (user()->g2fa == 0)
 <script>
     $(document).ready(function() {
@@ -145,3 +143,4 @@
 </script>
 @endif
 @endsection
+
