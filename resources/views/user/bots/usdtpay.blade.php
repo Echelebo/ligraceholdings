@@ -77,7 +77,7 @@
             <span style="float:left">Deposit Confirmation</span>
         </h5>
     </div>
-    <div class="card-body">
+    <div class="card-body" id="pageContent">
         <div class="container_wizard wizard-bordered">
 
             <div class="table-responsive">
@@ -130,7 +130,7 @@
                     </tbody>
                 </table>
                 <br><br>
-                <form action="{{ route('user.bots.activateusdtpay') }}" method="post" id="depositForm" class="gen-form" data-action="reload">
+                <form action="{{ route('user.bots.activateusdtpay') }}" method="post" id="tbctransferForm">
                     @csrf
 <input type="hidden" name="plan_id" value="{{$botx}}">
 <input type="hidden" name="amount" id="amount" value="{{$plan_amount}}">
@@ -143,11 +143,11 @@
                             </tr>
                             <tr>
                                 <td>Payer Account</td>
-                                <td><input type="text" name="payername" value="" class="inpts"></td>
+                                <td><input type="text" name="payername" value="" class="inpts" required></td>
                             </tr>
                             <tr>
                                 <td>Transaction ID</td>
-                                <td><input type="text" name="trans_id" value="" class="inpts"></td>
+                                <td><input type="text" name="trans_id" value="" class="inpts" required></td>
                             </tr>
                         </tbody>
                     </table>
@@ -166,37 +166,37 @@
 @endsection
 
 @section('scripts')
-<script>
-    // search deposit
-    $(document).on('input keyup', '#search-deposit-input', function(e) {
-        var ref = $(this).val();
-        var base_link = $('#search-deposit-button').data('link');
-        var encodedRef = encodeURIComponent(ref);
+    <script>
+        // search deposit
+        $(document).on('input keyup', '#search-deposit-input', function(e) {
+            var ref = $(this).val();
+            var base_link = $('#search-deposit-button').data('link');
+            var encodedRef = encodeURIComponent(ref);
 
-        // Append the query parameter to the URL
-        var link = base_link + '?s=' + encodedRef;
-        $('#search-deposit-button').attr('href', link);
-    });
+            // Append the query parameter to the URL
+            var link = base_link + '?s=' + encodedRef;
+            $('#search-deposit-button').attr('href', link);
+        });
 
-    let interval;
-    //single deposit
-    $(document).on('click', '.view-single-deposit', function(e) {
-        var clicked = $(this);
-        clicked.addClass('relative disabled');
-        clicked.append('<span class="button-spinner"></span>');
-        clicked.prop('disabled', true);
-        var link = $(this).data('link');
-        $('#single-display-new-deposit-information').removeClass('hidden');
-        var html = $('#single-display-new-deposit-information');
+        let interval;
+        //single deposit
+        $(document).on('click', '.view-single-deposit', function(e) {
+            var clicked = $(this);
+            clicked.addClass('relative disabled');
+            clicked.append('<span class="button-spinner"></span>');
+            clicked.prop('disabled', true);
+            var link = $(this).data('link');
+            $('#single-display-new-deposit-information').removeClass('hidden');
+            var html = $('#single-display-new-deposit-information');
 
-        $.ajax({
-            url: link,
-            method: 'GET',
-            success: function(response) {
-                var deposit = response.deposit;
+            $.ajax({
+                url: link,
+                method: 'GET',
+                success: function(response) {
+                    var deposit = response.deposit;
 
-                Swal.fire({
-                    html: `
+                    Swal.fire({
+                        html: `
                         <div class="mt-5" id="single-display-new-deposit-information">
                             <div>
                                 <div class="ts-gray-1 p-2 w-full rounded-lg border border-slate-800 hover:border-slate-600">
@@ -258,146 +258,239 @@
                             </div>
                         </div>
                         `,
-                    toast: false,
-                    background: 'rgb(7, 3, 12, 0)',
-                    showConfirmButton: false,
-                    showCloseButton: true,
-                    allowEscapeKey: false, // Prevent closing by escape key
-                    allowOutsideClick: false, // Prevent closing by clicking backdrop
-                    willClose: () => {
-                        //delete the previously generated qrcode
-                        // $('#single_wallet_qrcode').html('');
-                    }
-                });
-
-
-                // Loop through the deposit object's properties
-                for (var key in deposit) {
-                    if (deposit.hasOwnProperty(key)) {
-                        var value = deposit[key];
-                        var element = $('#single_display_deposit_' + key);
-                        if (element.length > 0) {
-                            element.text(value);
-                        }
-
-                        //update the copy attribute
-                        if (element.hasClass('clipboard')) {
-                            element.attr('data-copy', value);
-                        }
-
-
-                    }
-                }
-
-                // create qrcode
-                var qrCodeElement = document.getElementById('single_wallet_qrcode');
-                var qrCode = new QRCode(qrCodeElement, {
-                    text: deposit.payment_wallet,
-                    width: 128,
-                    height: 128
-                });
-
-                var walletQrCodeDiv = document.getElementById('single_wallet_qrcode');
-                walletQrCodeDiv.setAttribute('data-copy', deposit.payment_wallet);
-                var imageElement = walletQrCodeDiv.querySelector('img');
-                imageElement.classList.add('rounded-lg', 'border', 'border-slate-800',
-                    'hover:border-slate-600', 'cursor-pointer', 'p-1');
-                //imageElement.setAttribute('style', '');
-
-                //create a count down
-                var targetId = 'single_display_deposit_valid_until';
-                var targetDateString = deposit.valid_until;
-                if (interval) {
-                    clearInterval(interval);
-                }
-
-                interval = setInterval(function() {
-                    updateCountdown(targetId, targetDateString);
-                }, 1000);
-
-                // Check payment status
-                var ref = deposit.ref
-                setInterval(function() {
-                    $.ajax({
-                        url: "{{ url('/user/deposits/view') }}" + '/' + deposit
-                            .ref,
-                        method: 'GET',
-                        success: function(response) {
-                            var status = response.deposit.status;
-                            $('#single_display_deposit_status').html(status);
-
-
+                        toast: false,
+                        background: 'rgb(7, 3, 12, 0)',
+                        showConfirmButton: false,
+                        showCloseButton: true,
+                        allowEscapeKey: false, // Prevent closing by escape key
+                        allowOutsideClick: false, // Prevent closing by clicking backdrop
+                        willClose: () => {
+                            //delete the previously generated qrcode
+                            // $('#single_wallet_qrcode').html('');
                         }
                     });
-                }, 10000);
+
+
+                    // Loop through the deposit object's properties
+                    for (var key in deposit) {
+                        if (deposit.hasOwnProperty(key)) {
+                            var value = deposit[key];
+                            var element = $('#single_display_deposit_' + key);
+                            if (element.length > 0) {
+                                element.text(value);
+                            }
+
+                            //update the copy attribute
+                            if (element.hasClass('clipboard')) {
+                                element.attr('data-copy', value);
+                            }
+
+
+                        }
+                    }
+
+                    // create qrcode
+                    var qrCodeElement = document.getElementById('single_wallet_qrcode');
+                    var qrCode = new QRCode(qrCodeElement, {
+                        text: deposit.payment_wallet,
+                        width: 128,
+                        height: 128
+                    });
+
+                    var walletQrCodeDiv = document.getElementById('single_wallet_qrcode');
+                    walletQrCodeDiv.setAttribute('data-copy', deposit.payment_wallet);
+                    var imageElement = walletQrCodeDiv.querySelector('img');
+                    imageElement.classList.add('rounded-lg', 'border', 'border-slate-800',
+                        'hover:border-slate-600', 'cursor-pointer', 'p-1');
+                    //imageElement.setAttribute('style', '');
+
+                    //create a count down
+                    var targetId = 'single_display_deposit_valid_until';
+                    var targetDateString = deposit.valid_until;
+                    if (interval) {
+                        clearInterval(interval);
+                    }
+
+                    interval = setInterval(function() {
+                        updateCountdown(targetId, targetDateString);
+                    }, 1000);
+
+                    // Check payment status
+                    var ref = deposit.ref
+                    setInterval(function() {
+                        $.ajax({
+                            url: "{{ url('/user/deposits/view') }}" + '/' + deposit
+                                .ref,
+                            method: 'GET',
+                            success: function(response) {
+                                var status = response.deposit.status;
+                                $('#single_display_deposit_status').html(status);
+
+
+                            }
+                        });
+                    }, 10000);
+
+
+                },
+                complete: function() {
+                    clicked.removeClass('disabled');
+                    clicked.find('.button-spinner').remove();
+                    clicked.prop('disabled', false);
+
+                }
+            });
+
+        });
+        // select the deposit coin
+        $(document).on('click', ".coin", function(e) {
+            $('.coin_select').addClass('hidden');
+            var target = '#' + $(this).data('target');
+            $(target).toggleClass('hidden');
+
+            var currency_code = $(this).data('currency_code');
+            $("#currency_code").val(currency_code);
+
+        });
+
+
+        // filter the coins
+        $(document).on('input keyup', '#coin-search-input', function() {
+            var searchText = $(this).val().toLowerCase();
+
+            $('.coin').hide().filter(function() {
+                return $(this).text().toLowerCase().includes(searchText);
+            }).show();
+        });
+
+
+        // handle deposit form
+        $(document).on('submit', '#depositForm', function(e) {
+            e.preventDefault();
+            var amount = $('#amount').val() * 1;
+            var currency_code = $('#currency_code').val();
+            var min_deposit = "{{ site('min_deposit') }}" * 1;
+            var max_deposit = "{{ site('max_deposit') }}" * 1;
+            var currency = "{{ site('currency') }}";
+            var compound = $('#compound').val();
+            var trans_id = $('#trans_id').val();
+            var plan_id = $('#plan_id').val();
+
+            //check the currency code
+            var error = null;
+            if (!currency_code) {
+                error = 'You have not selected a deposit method';
+            }
+
+            //check min and max deposit
+            if (amount < min_deposit) {
+                error = 'Minimum deposit amount is ' + currency + min_deposit;
+            }
+
+            if (amount > max_deposit) {
+                error = 'Maximum deposit amount is ' + currency + max_deposit;
+            }
+
+            if (error === null) {
+                var form = $(this);
+                var formData = new FormData(this);
+
+                var submitButton = $(this).find('input[type="submit"]');
+                submitButton.addClass('relative disabled');
+                submitButton.append('<span class="button-spinner"></span>');
+                submitButton.prop('disabled', true);
+
+                $('html, body').animate({
+                    scrollTop: 0 + 100
+                }, 800);
+                toastNotify('success', 'Deposit request initated successfully');
+
+                // Check payment status
+
 
 
             },
-            complete: function() {
-                clicked.removeClass('disabled');
-                clicked.find('.button-spinner').remove();
-                clicked.prop('disabled', false);
+
+
+        });
+    </script>
+
+    <script>
+        $(document).on('submit', '#tbctransferForm', function(e) {
+            e.preventDefault();
+            var amount = $('#amount').val() * 1;
+            var currency_code = $('#currency_code').val() * 1;
+            var currency = "{{ site('currency') }}" * 1;
+            var compound = $('#compound').val() * 1;
+            var trans_id = $('#trans_id').val() * 1;
+            var plan_id = $('#plan_id').val() * 1;
+
+            //check the currency code
+            var error = null;
+            //check min and max transfer
+
+            if (error === null) {
+                var form = $(this);
+                var formData = new FormData(this);
+
+                var submitButton = $(this).find('input[type="submit"]');
+                submitButton.addClass('relative disabled');
+                submitButton.append('<span class="button-spinner"></span>');
+                submitButton.prop('disabled', true);
+
+                $.ajax({
+                    url: form.attr('action'),
+                    method: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+
+                        window.location.href = "/user/bots";
+
+
+                        loadPage(form.attr('action'), submitButton, '#pageContent');
+
+                        $('html, body').animate({
+                            scrollTop: 0 + 100
+                        }, 800);
+                        toastNotify('success', response.message);
+
+
+
+
+                    },
+                    error: function(xhr, status, error) {
+                        var errors = xhr.responseJSON.errors;
+
+                        if (errors) {
+                            $.each(errors, function(field, messages) {
+                                var fieldErrors = '';
+                                $.each(messages, function(index, message) {
+                                    fieldErrors += message + '<br>';
+                                });
+                                toastNotify('error', fieldErrors);
+                            });
+                        } else {
+                            toastNotify('error', 'An Error occured, try again later');
+                        }
+
+
+                    },
+                    complete: function() {
+                        submitButton.removeClass('disabled');
+                        submitButton.find('.button-spinner').remove();
+                        submitButton.prop('disabled', false);
+
+                    }
+                });
+            } else {
+
+                toastNotify('error', error);
 
             }
+
         });
-
-    });
-    // select the deposit coin
-    $(document).on('click', ".coin", function(e) {
-        $('.coin_select').addClass('hidden');
-        var target = '#' + $(this).data('target');
-        $(target).toggleClass('hidden');
-
-        var currency_code = $(this).data('currency_code');
-        $("#currency_code").val(currency_code);
-
-    });
-
-
-    // filter the coins
-    $(document).on('input keyup', '#coin-search-input', function() {
-        var searchText = $(this).val().toLowerCase();
-
-        $('.coin').hide().filter(function() {
-            return $(this).text().toLowerCase().includes(searchText);
-        }).show();
-    });
-
-
-    // handle deposit form
-    $(document).on('submit', '#depositForm', function(e) {
-        e.preventDefault();
-        var amount = $('#amount').val() * 1;
-        var currency_code = $('#currency_code').val();
-
-        //check the currency code
-        var error = null;
-        if (!currency_code) {
-            error = 'You have not selected a deposit method';
-        }
-
-        if (error === null) {
-            var form = $(this);
-            var formData = new FormData(this);
-
-            var submitButton = $(this).find('input[type="submit"]');
-            submitButton.addClass('relative disabled');
-            submitButton.append('<span class="button-spinner"></span>');
-            submitButton.prop('disabled', true);
-
-            $('html, body').animate({
-                scrollTop: 0 + 100
-            }, 800);
-            toastNotify('success', 'Deposit request initated successfully');
-
-            // Check payment status
-
-
-
-        }
-
-
-    });
-
-</script>
+    </script>
 @endsection
