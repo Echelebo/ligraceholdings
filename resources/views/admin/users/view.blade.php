@@ -477,7 +477,7 @@
                                     </span>
                                     <input type="text" name="username" placeholder="Username" id="username"
                                         class="theme1-text-input" {!! is_required('username', false) !!}
-                                        
+
                                         value="{{ old('username') ?? $user->username }}">
                                     <label for="username" class="placeholder-label text-gray-300 ts-gray-2 px-2">Username
                                         {!! is_required('username') !!}</label>
@@ -715,8 +715,10 @@
                                         </option>
                                         <option value="debit" >Debit
                                         </option>
-                                        
+
                                     </select>
+
+
                                     <label for="type" class="placeholder-label text-gray-300 ts-gray-2 px-2">Type
                                         {!! is_required('name') !!}</label>
                                     <span class="text-xs text-red-500">
@@ -746,11 +748,11 @@
                                 </div>
                             </div>
 
-                            
-                        </div>
-                        
 
-                        
+                        </div>
+
+
+
                         <div class="w-full grid grid-cols-1 gap-5 mt-10 mb-10">
                             <button type="submit"
                                 class="bg-purple-500 px-2 py-1 rounded-full hover:text-white transition-all">Proceed </button>
@@ -813,12 +815,12 @@
                                 </div>
                             </div>
 
-                            
-                            
-                        </div>
-                        
 
-                        
+
+                        </div>
+
+
+
                         <div class="w-full grid grid-cols-1 gap-5 mt-10 mb-10">
                             <button type="submit"
                                 class="bg-purple-500 px-2 py-1 rounded-full hover:text-white transition-all">Save Change </button>
@@ -836,7 +838,7 @@
                                 @csrf
                                 <button type="submit" class="mt-5 bg-purple-500 text-white px-2 py-1 rounded-full text-xs hover:scale-110 transition-all uppercase" type="submit">Yes,  Login</button>
                             </form>
-                            
+
                         </div>
                     </div>
                 `;
@@ -849,7 +851,7 @@
                                 @csrf
                                 <button type="submit" class="mt-5 bg-red-500 text-white px-2 py-1 rounded-full text-xs hover:scale-110 transition-all uppercase" type="submit">Yes,  Delete</button>
                             </form>
-                            
+
                         </div>
                     </div>
                 `;

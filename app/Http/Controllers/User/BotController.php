@@ -219,6 +219,9 @@ class BotController extends Controller
             ->orderBy('id', 'DESC')
             ->paginate(site('pagination'));
 
+        $activationsx = user()->botActivations()->get();
+        $capitalx = $activationsx->sum('capital');
+
         if (request()->bot) {
             $histories = user()
                 ->botHistory()
@@ -298,6 +301,8 @@ class BotController extends Controller
             'page_title',
             'bots',
             'activations',
+            'activationsx',
+            'capitalx',
             'histories',
             'days',
             'profits',
@@ -307,12 +312,17 @@ class BotController extends Controller
 
     public function earnings()
     {
-        $page_title = 'My Trading History';
+        $page_title = 'My History';
 
         $bots = Bot::where('status', 1)->get();
         $activations =  user()
             ->botActivations()
             ->with('bot')
+            ->orderBy('id', 'DESC')
+            ->paginate(site('pagination'));
+
+            $transactionsx = user()
+            ->transactions()
             ->orderBy('id', 'DESC')
             ->paginate(site('pagination'));
 
@@ -398,7 +408,8 @@ class BotController extends Controller
             'histories',
             'days',
             'profits',
-            'daily_data'
+            'daily_data',
+            'transactionsx'
         ));
     }
 

@@ -84,7 +84,7 @@
 
                 <p>
 
-                USDTTRC20 Wallet:  <font color="red"> <b>{{$depositusdtwallet->wallet_address ?? 'Wallet Address not set contact admin'}}</b></font>
+                Wallet:  <font color="red"> <b>{{$depositusdtwallet->wallet_address ?? 'Wallet Address not set contact admin'}}</b></font>
 
                 <br><b><span
                 class="clipboard cursor-pointer btn btn-warning m-t-xs" data-copy="{{$depositusdtwallet->wallet_address ?? 'Wallet Address not set contact admin'}}">Copy Wallet</span></b>

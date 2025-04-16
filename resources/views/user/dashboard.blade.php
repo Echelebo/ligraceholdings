@@ -51,7 +51,7 @@
         <div class="activity-block success">
             <div class="media">
                 <div class="media-body">
-                    <h5 class="font-weight-bold">$<span class="">{{ number_format($capital) }}</span></h5>
+                    <h5 class="font-weight-bold">$<span class="">{{ number_format(user()->balance)}}</span></h5>
                     <p>Investment</p>
                 </div>
                 <i class="fas fa-dollar-sign"></i>

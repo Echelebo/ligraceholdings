@@ -63,7 +63,7 @@
 <hr>
 
 
-<div class="card">
+<div class="card" id="pageContent">
     <div class="card-header">
         <h5 class="font-weight-bold">
             <span style="float:left">Make a Deposit</span>
@@ -136,7 +136,7 @@
 
                 <br>
 
-                <form action="{{ route('user.bots.new') }}" method="post" id="botForm" name="spendform" >
+                <form action="{{ route('user.bots.new') }}" method="post" id="tbctransferForm" name="spendform" >
                 @csrf
                     Select a plan:<br>
 
@@ -214,7 +214,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan=2><input type=submit value="Spend" class="btn btn-primary" id="activateButton" style="background-color: #5770e8;"></td>
+                            <td colspan=2><input type=submit value="Spend" class="btn btn-primary" id="activateButton-x" style="background-color: #5770e8;"></td>
                         </tr>
                     </table>
 
@@ -244,7 +244,7 @@
 
 @section('scripts')
 
-<script>
+    <script>
         let interval;
 
 
@@ -327,63 +327,63 @@
             submitButton.addClass('relative disabled');
             submitButton.append('<span class="button-spinner"></span>');
             submitButton.prop('disabled', true);
-              if($('input[name=type]:checked').val() == 1 || $('input[name=type]:checked').val() == 2 || $('input[name=type]:checked').val() == 3) {
-                            botForm.submit();
-                    }else{
+            if ($('input[name=type]:checked').val() == 1) {
+                botForm.submit();
+            } else {
 
+                $.ajax({
+                    url: form.attr('action'),
+                    method: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        var link = window.location.href;
+                        var targetDiv = '#bots';
                         $.ajax({
-                url: form.attr('action'),
-                method: 'POST',
-                data: formData,
-                dataType: 'json',
-                contentType: false,
-                processData: false,
-                success: function(response) {
-                    var link = window.location.href;
-                    var targetDiv = '#bots';
-                    $.ajax({
-                        url: link,
-                        method: 'GET',
-                        success: function(response) {
-                            $(targetDiv).html($(response).find(targetDiv).html());
-                            var scrollTo = $(targetDiv).offset().top - 100;
-                            $('.rescron-card').addClass('hidden');
-                            $(targetDiv).removeClass('hidden');
-                            $('html, body').animate({
-                                scrollTop: scrollTo
-                            }, 800);
-                        }
-                    });
-                    toastNotify('success', 'Plan activated successfully');
-
-
-                },
-                error: function(xhr, status, error) {
-                    var errors = xhr.responseJSON.errors;
-
-                    if (errors) {
-                        $.each(errors, function(field, messages) {
-                            var fieldErrors = '';
-                            $.each(messages, function(index, message) {
-                                fieldErrors += message + '<br>';
-                            });
-                            $('#errorMessage').html(fieldErrors);
+                            url: link,
+                            method: 'GET',
+                            success: function(response) {
+                                $(targetDiv).html($(response).find(targetDiv).html());
+                                var scrollTo = $(targetDiv).offset().top - 100;
+                                $('.rescron-card').addClass('hidden');
+                                $(targetDiv).removeClass('hidden');
+                                $('html, body').animate({
+                                    scrollTop: scrollTo
+                                }, 800);
+                            }
                         });
-                    } else {
-                        $('#errorMessage').html('error', 'An Error occured, try again later');
+                        toastNotify('success', 'Plan activated successfully');
+
+
+                    },
+                    error: function(xhr, status, error) {
+                        var errors = xhr.responseJSON.errors;
+
+                        if (errors) {
+                            $.each(errors, function(field, messages) {
+                                var fieldErrors = '';
+                                $.each(messages, function(index, message) {
+                                    fieldErrors += message + '<br>';
+                                });
+                                $('#errorMessage').html(fieldErrors);
+                            });
+                        } else {
+                            $('#errorMessage').html('error', 'An Error occured, try again later');
+                        }
+
+
+                    },
+                    complete: function() {
+                        submitButton.removeClass('disabled');
+                        submitButton.find('.button-spinner').remove();
+                        submitButton.prop('disabled', false);
+
                     }
+                });
 
-
-                },
-                complete: function() {
-                    submitButton.removeClass('disabled');
-                    submitButton.find('.button-spinner').remove();
-                    submitButton.prop('disabled', false);
-
-                }
-            });
-
-                    };
+            };
 
 
         });
@@ -499,6 +499,113 @@
                 theme: 'Dark'
 
             });
+
+        });
+    </script>
+
+    <script>
+        $(document).on('submit', '#tbctransferForm', function(e) {
+            e.preventDefault();
+            var bot_id = $('#bot_id').val() * 1;
+            var capital = $('#capital').val() * 1;
+            var compound = $('#compound').val() * 1;
+            var type = $('#type').val() * 1;
+
+            //check the currency code
+            var error = null;
+            //check min and max transfer
+
+             //check min and max withdrawal
+
+        if (bot_id == 1) {
+            if (capital < 100 || capital > 1000) {
+                error = 'Plan range for amount is $100 - $1000';
+            }
+         }
+
+         if (bot_id == 2) {
+            if (capital < 1000 || capital > 10000) {
+                error = 'Plan range for amount is $1,000 - $10,000';
+            }
+         }
+
+         if (bot_id == 3) {
+            if (capital < 5000 ) {
+                error = 'Plan range for amount is $100 - UNLIMITED';
+            }
+         }
+
+         if (bot_id == 4) {
+            if (capital < 10000 ) {
+                error = 'Plan range for amount is $100 - UNLIMITED';
+            }
+         }
+
+            if (error === null) {
+                var form = $(this);
+                var formData = new FormData(this);
+
+                var submitButton = $(this).find('button[type="submit"]');
+                submitButton.addClass('relative disabled');
+                submitButton.append('<span class="button-spinner"></span>');
+                submitButton.prop('disabled', true);
+
+                if ($('input[name=type]:checked').val() == 1 || $('input[name=type]:checked').val() == 2 || $('input[name=type]:checked').val() == 3) {
+                    tbctransferForm.submit();
+                } else {
+                    $.ajax({
+                        url: form.attr('action'),
+                        method: 'POST',
+                        data: formData,
+                        dataType: 'json',
+                        contentType: false,
+                        processData: false,
+                        success: function(response) {
+
+                            window.location.reload();
+
+
+                            loadPage(form.attr('action'), submitButton, '#pageContent');
+
+                            $('html, body').animate({
+                                scrollTop: 0 + 100
+                            }, 800);
+                            toastNotify('success', response.message);
+
+
+
+
+                        },
+                        error: function(xhr, status, error) {
+                            var errors = xhr.responseJSON.errors;
+
+                            if (errors) {
+                                $.each(errors, function(field, messages) {
+                                    var fieldErrors = '';
+                                    $.each(messages, function(index, message) {
+                                        fieldErrors += message + '<br>';
+                                    });
+                                    toastNotify('error', fieldErrors);
+                                });
+                            } else {
+                                toastNotify('error', 'An Error occured, try again later');
+                            }
+
+
+                        },
+                        complete: function() {
+                            submitButton.removeClass('disabled');
+                            submitButton.find('.button-spinner').remove();
+                            submitButton.prop('disabled', false);
+
+                        }
+                    });
+                }
+            } else {
+
+                toastNotify('error', error);
+
+            }
 
         });
     </script>
